@@ -1,85 +1,155 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Status de doll</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="/_vercel/insights/script.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css" />
+    <title>Status de Doll - A Simulação</title>
+    <meta name="description" content="Site para visualizar status de RPG e curiosidades sobre A Simulação." />
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url('https://cdn.discordapp.com/attachments/1103601339250553946/1112746266960571536/2d0e4917e5e6a1aa3c7bc9a8470b5c78.jpg');
+            background: url('https://cdn.discordapp.com/attachments/625562422756900877/1277080918640824371/2d0fe75be41ec6ab570fa22c0b0f9df7.jpg?ex=66cbddca&is=66ca8c4a&hm=f64fba10745f15b2cd307174b959658afd0bfbaa93f64e3492d90941f228bbd1') no-repeat center center fixed;
             background-size: cover;
-            color: white;
-            text-align: center;
-        }
-        .status-container {
-            margin: 20px;
+            color: #ffffff;
             padding: 20px;
-            background-color: rgba(0, 0, 0, 0.7);
-            border-radius: 10px;
         }
         h1 {
-            font-size: 2.5em;
+            text-align: center;
             margin-bottom: 20px;
+            color: #76c7c0;
         }
-        p {
-            font-size: 1.2em;
+        .card {
+            background: rgba(59, 59, 59, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+        .card::before {
+            content: '';
+            background: url('https://cdn.discordapp.com/attachments/625562422756900877/1277080269572280376/darkqueen_b.png?ex=66cbdd2f&is=66ca8baf&hm=b19964925d547562359aacb2e7fbcfdbe67f419e9871f20800e450e260257c44') no-repeat center;
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.5;
+            border-radius: 10px;
+            z-index: -1;
+        }
+        .card h2 {
             margin: 10px 0;
+            color: #f5b12b;
         }
-        .status {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .card p {
+            margin: 5px 0;
+        }
+        .attributes, .titles, .classes {
+            margin: 15px 0;
+            padding: 10px;
+            background: #444;
+            border-radius: 5px;
+        }
+        .status-bar {
             margin: 10px 0;
+            font-weight: bold;
         }
-        .status img {
-            width: 30px;
-            height: 30px;
+        .status-value {
+            color: #76c7c0;
+        }
+        .gif {
+            width: 50px;
+            height: auto;
+            vertical-align: middle;
             margin-left: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="status-container">
-        <h1>Status de doll</h1>
-        <div class="status">
-            <p>HP: 100</p>
-            <img src="https://cdn.discordapp.com/attachments/625562422756900877/1277082871302983690/HP.gif?ex=66cbdf9b&is=66ca8e1b&hm=7e9bf8df2900eb6bb6a63ba61dfe5c0384cbe122d25ddad29d8dc2fcec5afab4" alt="HP GIF">
+    <h1>Status de Doll - A Simulação</h1>
+    
+    <div class="card">
+        <h2>Buffy le Fay Pendragon</h2>
+        <p><strong>Idade:</strong> 157</p>
+        <p><strong>Nível:</strong> 1303</p>
+        <p><strong>Raça:</strong> Arch Harenggoth</p>
+        <p><strong>Sub-raça:</strong> Arch Succubus + Vampire Queen (Sangue Puro), <strong>[Empusa]</strong> Queen Empusa, MotherTree Of Desires</p>
+        
+        <div class="attributes">
+            <h3>Atributos</h3>
+            <p class="status-bar">HP: <span class="status-value">3.298.986/3.298.986</span> <img src="https://example.com/gif-hp.gif" alt="HP" class="gif" /></p>
+            <p class="status-bar">MP: <span class="status-value">553.408/553.408</span> <img src="https://example.com/gif-mp.gif" alt="MP" class="gif" /></p>
+            <p class="status-bar">AGI: <span class="status-value">428.226</span></p>
+            <p class="status-bar">DEF: <span class="status-value">992.044</span></p>
+            <p class="status-bar">RES: <span class="status-value">248.997</span></p>
+            <p class="status-bar">SPD: <span class="status-value">685.964</span></p>
+            <p class="status-bar">INT: <span class="status-value">289.458</span></p>
+            <p class="status-bar">ATK: <span class="status-value">1.394.679</span></p>
+            <p class="status-bar">SMP: <span class="status-value">1.545.922/7.635.551</span></p>
         </div>
-        <div class="status">
-            <p>MP: 80</p>
-            <img src="https://cdn.discordapp.com/attachments/625562422756900877/1277082871919542336/MP.gif?ex=66cbdf9b&is=66ca8e1b&hm=d502e045c996c81bf1da4d07f37567b1a38fd7230e5310a3aaa2b0deca414294" alt="MP GIF">
+
+        <div class="classes">
+            <h3>Classes</h3>
+            <p><strong>Profissão:</strong> Caçadora (Nível 20), Vampire Hunter (0), Dominatrix (Nível 211)</p>
+            <p><strong>Classe Principal:</strong> Monster Tamer [Nível 151]</p>
+            <p><strong>Classes Secundárias:</strong> Monge (Nível 97), Maga Demoníaca (Nível 61), Caminhante dos Sonhos (Nível 348), Maga Suprema (Nível 0), MAOUDA, Soul Artisan (Nível 627), Mestre de Runas (Nível 49), Rainha de Copas, Infernal Dancer (Nível 823), Ceifadora (Nível E), Ninja (Nível 5), Dungeon Master (Nível 944), Ferreira Mágica (Nível 21)</p>
+            <p><strong>Classe de Conjunto:</strong> D-Stro (1/3)</p>
         </div>
-        <div class="status">
-            <p>ATK: 50</p>
-            <img src="https://cdn.discordapp.com/attachments/625562422756900877/1277082870694940682/ATK.gif?ex=66cbdf9b&is=66ca8e1b&hm=3d20b2f0c81d608fc7adade0060bdaf0d2f9c01e4d50715e15259e241e79cf63" alt="ATK GIF">
+
+        <div class="titles">
+            <h3>Títulos</h3>
+            <p>A Primeira Protegida, Aliada de Makai, Aprendiz da Rainha, <strong>A Sucessora de Isaac</strong>, Falsa Amiga da Deusa, Amante do Destino, Rainha da Casta, Rainha de Todos os Vampiros, Four of Clubs, Dreamer, <strong>Mother of Souls</strong>, <strong>A Lady da Segunda Forja</strong>, Consumidora da Loucura.</p>
         </div>
-        <div class="status">
-            <p>DEF: 30</p>
-            <img src="https://cdn.discordapp.com/attachments/625562422756900877/1277082870996926464/DEF.gif?ex=66cbdf9b&is=66ca8e1b&hm=ffc726f23f16117c724a64240281f9d9cc305a2b53a8a3303be249af376c0cc9" alt="DEF GIF">
+
+        <div class="status-bar">
+            <h3>Maldições</h3>
+            <p>1. Redo revenger.</p>
         </div>
-        <div class="status">
-            <p>AGI: 40</p>
-            <img src="https://cdn.discordapp.com/attachments/625562422756900877/1277082870296350762/AGI.gif?ex=66cbdf9b&is=66ca8e1b&hm=84542080e4a94b2c9cc777a066cf13f4018e2b948770d8dbb28e015caa625984" alt="AGI GIF">
+        <div class="status-bar">
+            <h3>Bênçãos</h3>
+            <p>1. Tentação Vampírica da Rainha<br>
+            2. Reunion Memories<br>
+            3. Luminar Duplo<br>
+            4. Rainbow Bird</p>
         </div>
-        <div class="status">
-            <p>INT: 60</p>
-            <img src="https://cdn.discordapp.com/attachments/625562422756900877/1277082871617687632/INT.gif?ex=66cbdf9b&is=66ca8e1b&hm=649fc9fa477194f6a684f0f745cca2187a46ef583f60394e2f1863cac5791475" alt="INT GIF">
+
+        <div class="status-bar">
+            <h3>Selos</h3>
+            <p>Key of Souls (1x), Key of Dreams (1x), Key of Infinite Moon Mansion (1x), Key of Desires (1x), Key of Soul World (1x), Key of Pendragon (1x), Key Pinnacle of Flames (1x), Key of Isaac's Heart (1/2)</p>
         </div>
-        <div class="status">
-            <p>SPD: 70</p>
-            <img src="https://cdn.discordapp.com/attachments/625562422756900877/1277082870015459398/SPD.gif?ex=66cbdf9b&is=66ca8e1b&hm=d64fdff31312b78fe8dd7cf3afa255fbf71e311e9ee6877f1c77be0bd2bb9332" alt="SPD GIF">
+
+        <div class="status-bar">
+            <h3>Sementes de Dungeon</h3>
+            <p>Forest of Ruins (1x)</p>
         </div>
-        <div class="status">
-            <p>SMP: 90</p>
-            <img src="https://cdn.discordapp.com/attachments/625562422756900877/1277082869717667880/SMP.gif?ex=66cbdf9b&is=66ca8e1b&hm=3f4e9a741d4966093e93e11cb7aada57a00c5a64ae0212987c8db469975517f8" alt="SMP GIF">
+
+        <div class="status-bar">
+            <h3>Seiki</h3>
+            <p>32.112 pontos</p>
         </div>
-        <div class="status">
-            <p>RES: 20</p>
-            <img src="https://cdn.discordapp.com/attachments/625562422756900877/1277082869377798275/RES.gif?ex=66cbdf9b&is=66ca8e1b&hm=33e74a3ef5b3a34c3d6aef95f531fceab123b5712fe7d4cefebf1d109a9df810" alt="RES GIF">
+        
+        <div class="status-bar">
+            <h3>Bônus de Dominância</h3>
+            <p>Por Território Conquistado pelo Reino: 11.567.241</p>
         </div>
-        <p>Conquistas:</p>
-        <div>
+        
+        <div class="status-bar">
+            <h3>Poder de Dominância</h3>
+            <p>279/845.512</p>
+        </div>
+        
+        <div class="status-bar">
+            <h3>Pontos de Habilidade</h3>
+            <p>Disponíveis: 351</p>
+        </div>
+        
+        <div class="status-bar">
+            <h3>Recompensas da Temporada</h3>
             <p>1. Vencer 1 Guerra de Guilda.<br>
             2. Obter 30 pontos em Conquistas.<br>
             3. Conquistar um território de NPCs.</p>

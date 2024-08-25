@@ -1,10 +1,11 @@
 body {
     font-family: Arial, sans-serif;
-    background: url('https://github.com/PrinnyXII/html-starter/raw/main/assets/imagens/Celestia%201F.jpg') no-repeat center center; 
+    background: url('https://raw.githubusercontent.com/PrinnyXII/html-starter/main/assets/imagens/Celestia%201F.jpg') no-repeat center center; 
     background-size: cover; 
     height: 100vh; 
     color: #ffffff;
     padding: 20px;
+    margin: 0; /* Remove a margem padrão do body */
 }
 
 h1 {

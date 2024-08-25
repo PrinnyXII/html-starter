@@ -1,125 +1,131 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
+<html lang="en">
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="/_vercel/insights/script.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css" />
-    <title>Status do RPG - A Simulação</title>
-    <meta name="description" content="Site para visualizar status de RPG e curiosidades sobre A Simulação." />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
+    />
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #1e1e1e;
-            color: #ffffff;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-        }
-        .status-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin: 20px 0;
-        }
-        .status-bar {
-            background: #555;
-            border-radius: 5px;
-            margin: 10px;
-            height: 30px;
-            position: relative;
-            width: 200px;
-        }
-        .status {
-            height: 100%;
-            background: #76c7c0;
-            border-radius: 5px;
-            text-align: center;
-            line-height: 30px;
-            color: #000;
-        }
-        .curiosities {
-            background: #444;
-            padding: 10px;
-            border-radius: 5px;
-            margin: 20px 0;
-        }
+      body {
+        background-color: #1e1e2f;
+        color: #ffffff;
+        font-family: 'Arial', sans-serif;
+      }
+      h1, h2, h3 {
+        text-align: center;
+        color: #f1c40f;
+      }
+      .status-card {
+        background: #2c3e50;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 20px auto;
+        width: 80%;
+        max-width: 800px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      }
+      .attribute {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #34495e;
+        padding: 10px 0;
+      }
+      .footer {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 0.9em;
+      }
+      .curiosities {
+        margin: 20px auto;
+        width: 80%;
+        max-width: 800px;
+        background: #34495e;
+        padding: 15px;
+        border-radius: 8px;
+      }
     </style>
-</head>
-<body>
-    <h1>Status do RPG - A Simulação</h1>
-    
-    <div class="status-container">
-        <div class="status-bar" id="healthBar">
-            <div class="status" id="healthStatus">100 / 100 HP</div>
-        </div>
-        <div class="status-bar" id="manaBar">
-            <div class="status" id="manaStatus">50 / 50 MP</div>
-        </div>
-        <div class="status-bar" id="staminaBar">
-            <div class="status" id="staminaStatus">75 / 75 ST</div>
-        </div>
-        <div class="status-bar" id="experienceBar">
-            <div class="status" id="experienceStatus">150 / 300 XP</div>
-        </div>
-    </div>
+    <title>Status RPG - A Simulação</title>
+  </head>
+  <body>
+    <h1>Status do Usuário</h1>
+    <div class="status-card">
+      <h2>Nome: Buffy le Fay Pendragon <a:buffycore:1195188464178712646></h2>
+      <p><strong>Idade:</strong> 157</p>
+      <p><strong>Nível:</strong> 1303</p>
+      <p><strong>Raça:</strong> Arch Harenggoth <a:shoggotheyes:1194491022529548418></p>
+      <p><strong>Sub-raça:</strong> Arch Succubus + Vampire Queen (Sangue Puro) <span>**[Empusa]**</span> <:QueenEmpusa:1193630550204891247> <:MotherTreeOfDesires:1193652897104269363></p>
+      
+      <h3>Profissão</h3>
+      <p>Caçadora (Nível 20), Vampire Hunter (0), Dominatrix (Nível 211).</p>
+      <p><strong>Classe Principal:</strong> Monster Tamer [Nível 151]</p>
+      <h3>Classes Secundárias</h3>
+      <p>Monge (Nível 97), Maga Demoníaca (Nível 61), Caminhante dos Sonhos (Nível 348), Maga Suprema (Nível 0), MAOUDA, Soul Artisan (Nível 627), Mestre de Runas (Nível 49), Rainha de Copas, Infernal Dancer (Nível 823), Ceifadora (Nível E), Ninja (Nível 5), Dungeon Master (Nível 944), Ferreira mágica (Nível 21).</p>
 
-    <button onclick="updateStatus()">Atualizar Status</button>
+      <h3>Títulos</h3>
+      <p>A Primeira Protegida, Aliada de Makai, Aprendiz da Rainha, <strong>A Sucessora de Isaac</strong> <:successorsymbol:1194333787019034624>, Falsa Amiga da Deusa, Amante do Destino, Rainha da Casta, Rainha de Todos os Vampiros, Four of Clubs, Dreamer, <strong>Mother of Souls</strong>, <strong>A Lady da Segunda Forja</strong>, Consumidora da Loucura.</p>
+
+      <h3>Maldições</h3>
+      <p>1. Redo revenger.</p>
+
+      <h3>Bênçãos</h3>
+      <p>1. Tentação Vampírica da Rainha</p>
+      <p>2. Reunion Memories</p>
+      <p>3. Luminar Duplo</p>
+      <p>4. Rainbow Bird</p>
+
+      <h3>Selos</h3>
+      <p>- Key of Souls (1x)</p>
+      <p>- Key of Dreams (1x)</p>
+      <p>- Key of Infinite Moon Mansion (1x)</p>
+      <p>- Key of Desires (1x)</p>
+      <p>- Key of Soul World (1x)</p>
+      <p>- Key of Pendragon (1x)</p>
+      <p>- Key pinnacle of flames (1x)</p>
+      <p>- Key of Isaac's Heart (1/2)</p>
+
+      <h3>Sementes de Dungeon</h3>
+      <p>Forest of Ruins (1x) <a:pseed:1194487285975101500></p>
+
+      <h3>Atributos</h3>
+      <div class="attribute"><span>Pontos de Vida:</span> <span>3.298.986/3.298.986</span></div>
+      <div class="attribute"><span>Pontos de Mana:</span> <span>553.408/553.408</span></div>
+      <div class="attribute"><span>Agilidade:</span> <span>428.226</span></div>
+      <div class="attribute"><span>Defesa:</span> <span>992.044</span></div>
+      <div class="attribute"><span>Resistência:</span> <span>248.997</span></div>
+      <div class="attribute"><span>Velocidade:</span> <span>685.964</span></div>
+      <div class="attribute"><span>Inteligência:</span> <span>289.458</span></div>
+      <div class="attribute"><span>Ataque:</span> <span>1.394.679</span></div>
+      <div class="attribute"><span>Pontos de Mana Sagrada:</span> <span>1.545.922/7.635.551</span></div>
+
+      <h3>Seiki</h3>
+      <p>32.112 pontos</p>
+      <h3>Bônus de Dominância por Território Conquistado pelo Reino</h3>
+      <p>11.567.241</p>
+      <h3>Poder de Dominância</h3>
+      <p>279/845.512</p>
+      <h3>Pontos de Habilidade Disponíveis</h3>
+      <p>351</p>
+      <h3>Pontos de Recompensa</h3>
+      <p>272.330.324</p>
+
+      <h3>Status</h3>
+      <div class="attribute"><span style="color: green;">[Verde]</span> <strong>100%</strong></div>
+      <div class="attribute"><span style="color: blue;">[Azul]</span> <strong>100%</strong></div>
+    </div>
 
     <div class="curiosities">
-        <h2>Curiosidades sobre A Simulação</h2>
-        <ul>
-            <li>O mundo é dividido em diferentes reinos, cada um com suas próprias culturas e tradições.</li>
-            <li>As habilidades podem ser aprimoradas com a experiência adquirida em batalhas e explorações.</li>
-            <li>A mágica em A Simulação é influenciada pela energia dos Naturias, seres personificados das energias do mundo.</li>
-            <li>Os jogadores podem se juntar a guildas para formar alianças e participar de eventos exclusivos.</li>
-            <li>Os dungeons são gerados dinamicamente, oferecendo novas experiências a cada visita.</li>
-        </ul>
+      <h2>Curiosidades sobre A Simulação</h2>
+      <p>1. O mundo de A Simulação é repleto de mitologias e culturas diferentes.</p>
+      <p>2. Cada raça possui habilidades únicas que podem ser aprimoradas ao longo do jogo.</p>
+      <p>3. As dungeons têm características dinâmicas que mudam conforme os jogadores interagem com o ambiente.</p>
+      <p>4. O sistema de classes permite combinações criativas, resultando em estilos de jogo variados.</p>
+      <p>5. Eventos especiais ocorrem em datas específicas, oferecendo recompensas únicas.</p>
     </div>
 
-    <script>
-        // Função para simular a atualização do status
-        function updateStatus() {
-            // Simulação de valores de status
-            const health = Math.floor(Math.random() * 101);
-            const mana = Math.floor(Math.random() * 51);
-            const stamina = Math.floor(Math.random() * 76);
-            const experience = Math.floor(Math.random() * 301);
-            
-            // Atualizar a barra de saúde
-            const healthBar = document.getElementById('healthBar');
-            const healthStatus = document.getElementById('healthStatus');
-            const healthPercentage = (health / 100) * 100;
-
-            healthStatus.style.width = healthPercentage + '%';
-            healthStatus.textContent = health + ' / 100 HP';
-
-            // Atualizar a barra de mana
-            const manaBar = document.getElementById('manaBar');
-            const manaStatus = document.getElementById('manaStatus');
-            const manaPercentage = (mana / 50) * 100;
-
-            manaStatus.style.width = manaPercentage + '%';
-            manaStatus.textContent = mana + ' / 50 MP';
-
-            // Atualizar a barra de resistência
-            const staminaBar = document.getElementById('staminaBar');
-            const staminaStatus = document.getElementById('staminaStatus');
-            const staminaPercentage = (stamina / 75) * 100;
-
-            staminaStatus.style.width = staminaPercentage + '%';
-            staminaStatus.textContent = stamina + ' / 75 ST';
-
-            // Atualizar a barra de experiência
-            const experienceBar = document.getElementById('experienceBar');
-            const experienceStatus = document.getElementById('experienceStatus');
-            const experienceMax = 300; // Max XP
-            const experiencePercentage = (experience / experienceMax) * 100;
-
-            experienceStatus.style.width = experiencePercentage + '%';
-            experienceStatus.textContent = experience + ' / ' + experienceMax + ' XP';
-        }
-    </script>
-</body>
+    <div class="footer">
+      <p>&copy; 2024 A Simulação. Todos os direitos reservados.</p>
+    </div>
+  </body>
 </html>

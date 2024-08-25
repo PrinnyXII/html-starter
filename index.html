@@ -1,131 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="pt-BR">
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
-    />
+    <script defer src="/_vercel/insights/script.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css" />
+    <title>Status do RPG - A Simulação</title>
+    <meta name="description" content="Site para visualizar status de RPG e curiosidades sobre A Simulação." />
     <style>
-      body {
-        background-color: #1e1e2f;
-        color: #ffffff;
-        font-family: 'Arial', sans-serif;
-      }
-      h1, h2, h3 {
-        text-align: center;
-        color: #f1c40f;
-      }
-      .status-card {
-        background: #2c3e50;
-        border-radius: 8px;
-        padding: 20px;
-        margin: 20px auto;
-        width: 80%;
-        max-width: 800px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-      }
-      .attribute {
-        display: flex;
-        justify-content: space-between;
-        border-bottom: 1px solid #34495e;
-        padding: 10px 0;
-      }
-      .footer {
-        text-align: center;
-        margin-top: 20px;
-        font-size: 0.9em;
-      }
-      .curiosities {
-        margin: 20px auto;
-        width: 80%;
-        max-width: 800px;
-        background: #34495e;
-        padding: 15px;
-        border-radius: 8px;
-      }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2b2b2b;
+            color: #ffffff;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #76c7c0;
+        }
+        .card {
+            background: #3b3b3b;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+        .card h2 {
+            margin: 10px 0;
+            color: #f5b12b;
+        }
+        .card p {
+            margin: 5px 0;
+        }
+        .attributes, .titles, .classes {
+            margin: 15px 0;
+            padding: 10px;
+            background: #444;
+            border-radius: 5px;
+        }
+        .status-bar {
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        .status-value {
+            color: #76c7c0;
+        }
     </style>
-    <title>Status RPG - A Simulação</title>
-  </head>
-  <body>
-    <h1>Status do Usuário</h1>
-    <div class="status-card">
-      <h2>Nome: Buffy le Fay Pendragon <a:buffycore:1195188464178712646></h2>
-      <p><strong>Idade:</strong> 157</p>
-      <p><strong>Nível:</strong> 1303</p>
-      <p><strong>Raça:</strong> Arch Harenggoth <a:shoggotheyes:1194491022529548418></p>
-      <p><strong>Sub-raça:</strong> Arch Succubus + Vampire Queen (Sangue Puro) <span>**[Empusa]**</span> <:QueenEmpusa:1193630550204891247> <:MotherTreeOfDesires:1193652897104269363></p>
-      
-      <h3>Profissão</h3>
-      <p>Caçadora (Nível 20), Vampire Hunter (0), Dominatrix (Nível 211).</p>
-      <p><strong>Classe Principal:</strong> Monster Tamer [Nível 151]</p>
-      <h3>Classes Secundárias</h3>
-      <p>Monge (Nível 97), Maga Demoníaca (Nível 61), Caminhante dos Sonhos (Nível 348), Maga Suprema (Nível 0), MAOUDA, Soul Artisan (Nível 627), Mestre de Runas (Nível 49), Rainha de Copas, Infernal Dancer (Nível 823), Ceifadora (Nível E), Ninja (Nível 5), Dungeon Master (Nível 944), Ferreira mágica (Nível 21).</p>
+</head>
+<body>
+    <h1>Status do RPG - A Simulação</h1>
+    
+    <div class="card">
+        <h2>Buffy le Fay Pendragon</h2>
+        <p><strong>Idade:</strong> 157</p>
+        <p><strong>Nível:</strong> 1303</p>
+        <p><strong>Raça:</strong> Arch Harenggoth</p>
+        <p><strong>Sub-raça:</strong> Arch Succubus + Vampire Queen (Sangue Puro), <strong>[Empusa]</strong> Queen Empusa, MotherTree Of Desires</p>
+        
+        <div class="attributes">
+            <h3>Atributos</h3>
+            <p class="status-bar">HP: <span class="status-value">3.298.986/3.298.986</span></p>
+            <p class="status-bar">MP: <span class="status-value">553.408/553.408</span></p>
+            <p class="status-bar">AGI: <span class="status-value">428.226</span></p>
+            <p class="status-bar">DEF: <span class="status-value">992.044</span></p>
+            <p class="status-bar">RES: <span class="status-value">248.997</span></p>
+            <p class="status-bar">SPD: <span class="status-value">685.964</span></p>
+            <p class="status-bar">INT: <span class="status-value">289.458</span></p>
+            <p class="status-bar">ATK: <span class="status-value">1.394.679</span></p>
+            <p class="status-bar">SMP: <span class="status-value">1.545.922/7.635.551</span></p>
+        </div>
 
-      <h3>Títulos</h3>
-      <p>A Primeira Protegida, Aliada de Makai, Aprendiz da Rainha, <strong>A Sucessora de Isaac</strong> <:successorsymbol:1194333787019034624>, Falsa Amiga da Deusa, Amante do Destino, Rainha da Casta, Rainha de Todos os Vampiros, Four of Clubs, Dreamer, <strong>Mother of Souls</strong>, <strong>A Lady da Segunda Forja</strong>, Consumidora da Loucura.</p>
+        <div class="classes">
+            <h3>Classes</h3>
+            <p><strong>Profissão:</strong> Caçadora (Nível 20), Vampire Hunter (0), Dominatrix (Nível 211)</p>
+            <p><strong>Classe Principal:</strong> Monster Tamer [Nível 151]</p>
+            <p><strong>Classes Secundárias:</strong> Monge (Nível 97), Maga Demoníaca (Nível 61), Caminhante dos Sonhos (Nível 348), Maga Suprema (Nível 0), MAOUDA, Soul Artisan (Nível 627), Mestre de Runas (Nível 49), Rainha de Copas, Infernal Dancer (Nível 823), Ceifadora (Nível E), Ninja (Nível 5), Dungeon Master (Nível 944), Ferreira Mágica (Nível 21)</p>
+            <p><strong>Classe de Conjunto:</strong> D-Stro(1/3)</p>
+        </div>
 
-      <h3>Maldições</h3>
-      <p>1. Redo revenger.</p>
+        <div class="titles">
+            <h3>Títulos</h3>
+            <p>A Primeira Protegida, Aliada de Makai, Aprendiz da Rainha, <strong>A Sucessora de Isaac</strong>, Falsa Amiga da Deusa, Amante do Destino, Rainha da Casta, Rainha de Todos os Vampiros, Four of Clubs, Dreamer, <strong>Mother of Souls</strong>, <strong>A Lady da Segunda Forja</strong>, Consumidora da Loucura.</p>
+        </div>
 
-      <h3>Bênçãos</h3>
-      <p>1. Tentação Vampírica da Rainha</p>
-      <p>2. Reunion Memories</p>
-      <p>3. Luminar Duplo</p>
-      <p>4. Rainbow Bird</p>
+        <div class="status-bar">
+            <h3>Maldições</h3>
+            <p>1. Redo revenger.</p>
+        </div>
+        <div class="status-bar">
+            <h3>Bênçãos</h3>
+            <p>1. Tentação Vampírica da Rainha<br>
+            2. Reunion Memories<br>
+            3. Luminar Duplo<br>
+            4. Rainbow Bird</p>
+        </div>
 
-      <h3>Selos</h3>
-      <p>- Key of Souls (1x)</p>
-      <p>- Key of Dreams (1x)</p>
-      <p>- Key of Infinite Moon Mansion (1x)</p>
-      <p>- Key of Desires (1x)</p>
-      <p>- Key of Soul World (1x)</p>
-      <p>- Key of Pendragon (1x)</p>
-      <p>- Key pinnacle of flames (1x)</p>
-      <p>- Key of Isaac's Heart (1/2)</p>
+        <div class="status-bar">
+            <h3>Selos</h3>
+            <p>Key of Souls (1x), Key of Dreams (1x), Key of Infinite Moon Mansion (1x), Key of Desires (1x), Key of Soul World (1x), Key of Pendragon (1x), Key pinnacle of flames (1x), Key of Isaac's Heart (1/2)</p>
+        </div>
 
-      <h3>Sementes de Dungeon</h3>
-      <p>Forest of Ruins (1x) <a:pseed:1194487285975101500></p>
+        <div class="status-bar">
+            <h3>Sementes de Dungeon</h3>
+            <p>Forest of Ruins (1x)</p>
+        </div>
 
-      <h3>Atributos</h3>
-      <div class="attribute"><span>Pontos de Vida:</span> <span>3.298.986/3.298.986</span></div>
-      <div class="attribute"><span>Pontos de Mana:</span> <span>553.408/553.408</span></div>
-      <div class="attribute"><span>Agilidade:</span> <span>428.226</span></div>
-      <div class="attribute"><span>Defesa:</span> <span>992.044</span></div>
-      <div class="attribute"><span>Resistência:</span> <span>248.997</span></div>
-      <div class="attribute"><span>Velocidade:</span> <span>685.964</span></div>
-      <div class="attribute"><span>Inteligência:</span> <span>289.458</span></div>
-      <div class="attribute"><span>Ataque:</span> <span>1.394.679</span></div>
-      <div class="attribute"><span>Pontos de Mana Sagrada:</span> <span>1.545.922/7.635.551</span></div>
+        <div class="status-bar">
+            <h3>Seiki</h3>
+            <p>32.112 pontos</p>
+        </div>
+        
+        <div class="status-bar">
+            <h3>Bônus de Dominância</h3>
+            <p>Por Território Conquistado pelo Reino: 11.567.241</p>
+        </div>
+        
+        <div class="status-bar">
+            <h3>Poder de Dominância</h3>
+            <p>279/845.512</p>
+        </div>
+        
+        <div class="status-bar">
+            <h3>Pontos de Habilidade</h3>
+            <p>Disponíveis: 351</p>
+        </div>
+        
+        <div class="status-bar">
+            <h3>Pontos de Recompensa</h3>
+            <p>272.330.324</p>
+        </div>
+        
+        <div class="status-bar">
+            <h3>Taxa de Assimilação</h3>
+            <p class="status-value">52.81%</p>
+        </div>
 
-      <h3>Seiki</h3>
-      <p>32.112 pontos</p>
-      <h3>Bônus de Dominância por Território Conquistado pelo Reino</h3>
-      <p>11.567.241</p>
-      <h3>Poder de Dominância</h3>
-      <p>279/845.512</p>
-      <h3>Pontos de Habilidade Disponíveis</h3>
-      <p>351</p>
-      <h3>Pontos de Recompensa</h3>
-      <p>272.330.324</p>
-
-      <h3>Status</h3>
-      <div class="attribute"><span style="color: green;">[Verde]</span> <strong>100%</strong></div>
-      <div class="attribute"><span style="color: blue;">[Azul]</span> <strong>100%</strong></div>
+        <div class="status-bar">
+            <h3>Status de Experiência</h3>
+            <p><strong>[Verde]</strong> 100% | <strong>[Azul]</strong> 100%</p>
+        </div>
     </div>
 
-    <div class="curiosities">
-      <h2>Curiosidades sobre A Simulação</h2>
-      <p>1. O mundo de A Simulação é repleto de mitologias e culturas diferentes.</p>
-      <p>2. Cada raça possui habilidades únicas que podem ser aprimoradas ao longo do jogo.</p>
-      <p>3. As dungeons têm características dinâmicas que mudam conforme os jogadores interagem com o ambiente.</p>
-      <p>4. O sistema de classes permite combinações criativas, resultando em estilos de jogo variados.</p>
-      <p>5. Eventos especiais ocorrem em datas específicas, oferecendo recompensas únicas.</p>
-    </div>
-
-    <div class="footer">
-      <p>&copy; 2024 A Simulação. Todos os direitos reservados.</p>
-    </div>
-  </body>
+</body>
 </html>

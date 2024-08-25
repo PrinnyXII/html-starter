@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills</title>
+    <style>
+        /* Estilos básicos */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+        }
+        .skill {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #fff;
+        }
+        #skills-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Skills</h1>
+    <div id="skills-container">
+        <!-- As skills serão carregadas aqui -->
+    </div>
+
+    <script>
+        // Função para carregar as skills (pode ser adaptada para um futuro JSON)
+        const skills = [
+            {
+                "name": "Habilidade 1",
+                "description": "Descrição da habilidade 1.",
+                "level": 1
+            },
+            {
+                "name": "Habilidade 2",
+                "description": "Descrição da habilidade 2.",
+                "level": 2
+            }
+        ];
+
+        const container = document.getElementById('skills-container');
+        skills.forEach(skill => {
+            const skillDiv = document.createElement('div');
+            skillDiv.className = 'skill';
+            skillDiv.innerHTML = `<h2>${skill.name}</h2><p>${skill.description}</p><p>Nível: ${skill.level}</p>`;
+            container.appendChild(skillDiv);
+        });
+    </script>
+</body>
+</html>

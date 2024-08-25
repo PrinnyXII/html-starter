@@ -1,8 +1,43 @@
 body {
     font-family: Arial, sans-serif;
-    background: url('https://github.com/PrinnyXII/html-starter/raw/main/assets/imagens/Celestia%201F.jpg') no-repeat center center; /* URL da imagem de fundo */
-    background-size: cover; /* Garante que a imagem cubra todo o fundo */
-    height: 100vh; /* Garante que o corpo ocupe 100% da altura da janela */
+    background: url('https://github.com/PrinnyXII/html-starter/raw/main/assets/imagens/Celestia%201F.jpg') no-repeat center center; 
+    background-size: cover; 
+    height: 100vh; 
     color: #ffffff;
     padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.status-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.attributes {
+    margin-top: 15px;
+}
+
+.mana-gif {
+    width: 30px; /* Ajuste o tamanho do GIF como desejar */
+    vertical-align: middle; /* Alinha o GIF com o texto */
+}
+
+.green {
+    color: green;
+}
+
+.blue {
+    color: blue;
+}
+
+ul {
+    list-style-type: disc;
+    margin-top: 10px;
+    padding-left: 20px;
 }

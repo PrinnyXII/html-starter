@@ -25,36 +25,112 @@
             max-width: 600px;
             margin: 0 auto;
         }
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input {
+            width: calc(100% - 22px);
+            padding: 5px;
+            margin-top: 5px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            width: 100%;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <h1>Skills</h1>
+
+    <form id="skill-form">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" required>
+        
+        <label for="description">Descrição:</label>
+        <input type="text" id="description" required>
+        
+        <label for="level">Nível:</label>
+        <input type="number" id="level" required>
+        
+        <button type="submit">Adicionar Skill</button>
+    </form>
+
     <div id="skills-container">
         <!-- As skills serão carregadas aqui -->
     </div>
 
     <script>
-        // Função para carregar as skills (pode ser adaptada para um futuro JSON)
-        const skills = [
-            {
-                "name": "Habilidade 1",
-                "description": "Descrição da habilidade 1.",
-                "level": 1
-            },
-            {
-                "name": "Habilidade 2",
-                "description": "Descrição da habilidade 2.",
-                "level": 2
-            }
-        ];
+        // Função para carregar as skills
+        let skills = [];
 
-        const container = document.getElementById('skills-container');
-        skills.forEach(skill => {
-            const skillDiv = document.createElement('div');
-            skillDiv.className = 'skill';
-            skillDiv.innerHTML = `<h2>${skill.name}</h2><p>${skill.description}</p><p>Nível: ${skill.level}</p>`;
-            container.appendChild(skillDiv);
+        function loadSkills() {
+            fetch('/skills')
+                .then(response => response.json())
+                .then(data => {
+                    skills = data;
+                    displaySkills();
+                });
+        }
+
+        function displaySkills() {
+            const container = document.getElementById('skills-container');
+            container.innerHTML = ''; // Limpa o container
+            skills.forEach(skill => {
+                const skillDiv = document.createElement('div');
+                skillDiv.className = 'skill';
+                skillDiv.innerHTML = `<h2>${skill.name}</h2><p>${skill.description}</p><p>Nível: ${skill.level}</p>`;
+                container.appendChild(skillDiv);
+            });
+        }
+
+        // Adiciona o evento de envio do formulário
+        document.getElementById('skill-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Previne o comportamento padrão de recarregar a página
+            const name = document.getElementById('name').value;
+            const description = document.getElementById('description').value;
+            const level = document.getElementById('level').value;
+
+            // Adiciona a nova skill ao array
+            const newSkill = {
+                name: name,
+                description: description,
+                level: parseInt(level)
+            };
+            skills.push(newSkill);
+
+            // Atualiza a exibição das skills
+            displaySkills();
+
+            // Salva a nova skill no servidor
+            fetch('/add-skill', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newSkill)
+            });
+
+            // Limpa o formulário
+            this.reset();
         });
+
+        // Carrega as skills ao carregar a página
+        window.onload = loadSkills;
     </script>
 </body>
 </html>

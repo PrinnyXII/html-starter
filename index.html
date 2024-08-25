@@ -27,6 +27,20 @@
             margin: 20px auto;
             width: 80%;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            position: relative; /* Para o posicionamento do pseudo-elemento */
+        }
+        .card::before {
+            content: '';
+            background: url('https://cdn.discordapp.com/attachments/625562422756900877/1277080269572280376/darkqueen_b.png?ex=66cbdd2f&is=66ca8baf&hm=b19964925d547562359aacb2e7fbcfdbe67f419e9871f20800e450e260257c44') no-repeat center;
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.5; /* Ajuste a transparência aqui */
+            border-radius: 10px; /* Para manter os cantos arredondados */
+            z-index: -1; /* Para ficar atrás do conteúdo */
         }
         .card h2 {
             margin: 10px 0;
@@ -135,20 +149,9 @@
         </div>
         
         <div class="status-bar">
-            <h3>Pontos de Recompensa</h3>
-            <p>272.330.324</p>
-        </div>
-        
-        <div class="status-bar">
-            <h3>Taxa de Assimilação</h3>
-            <p class="status-value">52.81%</p>
-        </div>
-
-        <div class="status-bar">
-            <h3>Status de Experiência</h3>
-            <p><strong>[Verde]</strong> 100% | <strong>[Azul]</strong> 100%</p>
+            <h3>Recompensas da Temporada</h3>
+            <p>1. Vencer 1 Guerra de Guilda. 2. Obter 30 pontos em Conquistas. 3. Conquistar um território de NPCs.</p>
         </div>
     </div>
-
 </body>
 </html>

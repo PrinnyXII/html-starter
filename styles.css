@@ -1,0 +1,8 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('https://github.com/PrinnyXII/html-starter/raw/main/assets/imagens/Celestia%201F.jpg') no-repeat center center; /* URL da imagem de fundo */
+    background-size: cover; /* Garante que a imagem cubra todo o fundo */
+    height: 100vh; /* Garante que o corpo ocupe 100% da altura da janela */
+    color: #ffffff;
+    padding: 20px;
+}

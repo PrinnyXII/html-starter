@@ -1,129 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="pt-BR">
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="/_vercel/insights/script.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
-    />
-    <title>Status RPG - A Simulação</title>
-    <meta
-      name="description"
-      content="Visualize seu status na Simulação."
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css" />
+    <title>Status RPG</title>
+    <meta name="description" content="Status e informações do RPG A Simulação" />
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        background: url('https://raw.githubusercontent.com/PrinnyXII/html-starter/main/assets/imagens/Celestia%201F.jpg') no-repeat center center fixed;
-        background-size: cover;
-        color: #ffffff;
-        padding: 20px;
-      }
-      h1, h2 {
-        text-align: center;
-      }
-      .status-container {
-        max-width: 800px;
-        margin: 0 auto;
-        background-color: rgba(0, 0, 0, 0.7);
-        padding: 20px;
-        border-radius: 8px;
-      }
-      .status-bar {
-        margin: 10px 0;
-      }
-      .gif {
-        width: 20px; /* Ajuste o tamanho do GIF conforme necessário */
-        vertical-align: middle;
-      }
-      .attribute {
-        display: flex;
-        justify-content: space-between;
-        padding: 5px 0;
-      }
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://raw.githubusercontent.com/PrinnyXII/html-starter/main/assets/imagens/Celestia%201F.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+            padding: 20px;
+        }
+        .status-section {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .status-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .status-bar {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        .status-value {
+            font-weight: bold;
+        }
+        .gif {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+        }
     </style>
-  </head>
-  <body>
-    <h1>Status RPG - A Simulação</h1>
-    <div class="status-container">
-      <h2>Seu Status</h2>
-      <p class="status-bar">Taxa de assimilação: 52.81%</p>
-      <p class="status-bar">Nome: Buffy le Fay Pendragon</p>
-      <p class="status-bar">Idade: 157</p>
-      <p class="status-bar">Nível: 1303</p>
-      <p class="status-bar">Raça: Arch Harenggoth</p>
-      <p class="status-bar">Sub-raça: Arch Succubus + Vampire Queen (Sangue Puro), [Empusa] Queen Empusa, MotherTree Of Desires</p>
-      
-      <p class="status-bar">Profissão: Caçadora (Nível 20), Vampire Hunter (0), Dominatrix (Nível 211).</p>
-      <p class="status-bar">Classe Principal: Monster Tamer [Nível 151]</p>
-      <p class="status-bar">Classes Secundárias: Monge (Nível 97), Maga Demoníaca (Nível 61), Caminhante dos Sonhos (Nível 348), Maga Suprema (Nível 0), MAOUDA, Soul Artisan (Nível 627), Mestre de Runas (Nível 49), Rainha de Copas, Infernal Dancer (Nível 823), Ceifadora (Nível E), Ninja (Nível 5) Dungeon Master (Nivel 944), Ferreira mágica (Nível 21).</p>
-
-      <p class="status-bar">Classe de conjunto: D-Stro(1/3).</p>
-      
-      <p class="status-bar">Títulos: A Primeira Protegida, Aliada de Makai, Aprendiz da Rainha, <strong>A Sucessora de Isaac</strong>, Falsa Amiga da Deusa, Amante do Destino, Rainha da Casta, Rainha de Todos os Vampiros, Four of Clubs, Dreamer, <strong>Mother of Souls</strong>, <strong>A Lady da Segunda Forja</strong>, Consumidora da Loucura.</p>
-
-      <p class="status-bar">Body Set: [1], [2]</p>
-      
-      <p class="status-bar">Maldições: 1. Redo revenger.</p>
-
-      <p class="status-bar">Bênçãos: 1. Tentação Vampírica da Rainha, 2. Reunion Memories, 3. Luminar Duplo, 4. Rainbow Bird.</p>
-
-      <p class="status-bar">Selos: 
-        - Key of Souls (1x), 
-        - Key of Dreams (1x), 
-        - Key of Infinite Moon Mansion (1x), 
-        - Key of Desires (1x), 
-        - Key of Soul World (1x), 
-        - Key of Pendragon (1x), 
-        - Key pinnacle of flames (1x), 
-        - Key of Isaac's Heart (1/2).
-      </p>
-
-      <p class="status-bar">Sementes de Dungeon: Forest of Ruins (1x)</p>
-
-      <div class="attribute">
-        <span>HP: <span class="status-value">3.298.986/3.298.986</span></span>
-        <img src="https://raw.githubusercontent.com/PrinnyXII/html-starter/main/assets/gifs/aa.gif" alt="HP" class="gif" />
-      </div>
-      <div class="attribute">
-        <span>MP: <span class="status-value">553.408/553.408</span></span>
-        <img src="https://raw.githubusercontent.com/PrinnyXII/html-starter/main/assets/gifs/aa.gif" alt="MP" class="gif" />
-      </div>
-
-      <div class="attribute">
-        <span>AGI: <span class="status-value">428.226</span></span>
-      </div>
-      <div class="attribute">
-        <span>DEF: <span class="status-value">992.044</span></span>
-      </div>
-      <div class="attribute">
-        <span>RES: <span class="status-value">248.997</span></span>
-      </div>
-      <div class="attribute">
-        <span>SPD: <span class="status-value">685.964</span></span>
-      </div>
-      <div class="attribute">
-        <span>INT: <span class="status-value">289.458</span></span>
-      </div>
-      <div class="attribute">
-        <span>ATK: <span class="status-value">1.394.679</span></span>
-      </div>
-      <div class="attribute">
-        <span>SMP: <span class="status-value">1.545.922/7.635.551</span></span>
-      </div>
-
-      <p class="status-bar">Seiki: 32.112 pontos</p>
-      <p class="status-bar">Bônus de Dominância por Território Conquistado pelo Reino: 11.567.241</p>
-      <p class="status-bar">Poder de Dominância: 279/845.512</p>
-      <p class="status-bar">Pontos de Habilidade Disponíveis: 351</p>
-      <p class="status-bar">Pontos de recompensa: 272.330.324</p>
-
-      <div class="status-bar">
-        <span style="color: green;">[Verde] 100%</span>
-        <span style="color: blue;">[Azul] 100%</span>
-      </div>
+</head>
+<body>
+    <h1>Status do RPG</h1>
+    <div class="status-section">
+        <p class="status-title">Status do Jogador</p>
+        <p class="status-bar">HP: <span class="status-value">3.298.986/3.298.986</span></p>
+        <p class="status-bar">MP: <span class="status-value">553.408/553.408</span> <img src="https://raw.githubusercontent.com/PrinnyXII/html-starter/main/assets/gifs/aa.gif" alt="Mana" class="gif" /></p>
+        <p class="status-bar">Agilidade: <span class="status-value">428.226</span></p>
+        <p class="status-bar">Defesa: <span class="status-value">992.044</span></p>
+        <p class="status-bar">Resistência: <span class="status-value">248.997</span></p>
+        <p class="status-bar">Velocidade: <span class="status-value">685.964</span></p>
+        <p class="status-bar">Inteligência: <span class="status-value">289.458</span></p>
+        <p class="status-bar">Ataque: <span class="status-value">1.394.679</span></p>
+        <p class="status-bar">Pontos de Mana Sagrada: <span class="status-value">1.545.922/7.635.551</span></p>
     </div>
-  </body>
+</body>
 </html>

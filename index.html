@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel da Buffy</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="background1">
@@ -16,63 +18,65 @@
             <div class="linha-separadora"></div>
 
             <!-- Características -->
-            <div class="nova-secao">
-                <!-- Textos - Estado Civil; Sexualidade e Profissão -->
-                <div class="bloco-esquerdo">
-                    <!-- Estado Civil -->
-                    <div class="retangulo-texto">
-                        <span class="subtitulo">Estado Civil:</span>
-                        <button type="button" class="texto texto-clicavel-isaac" onclick="abrirJanelaEstadoCivil()">Casada 💍</button>
-                    </div>
+            <section id="caracteristicas">
+                <h2 class="titulo2">Características</h2>
+                <div class="nova-secao">
+                    <!-- Textos - Estado Civil; Sexualidade e Profissão -->
+                    <div class="bloco-esquerdo">
+                        <!-- Estado Civil -->
+                        <div class="retangulo-texto">
+                            <span class="subtitulo">Estado Civil:</span>
+                            <button type="button" class="texto texto-clicavel-isaac" onclick="abrirJanelaEstadoCivil()">Casada 💍</button>
+                        </div>
 
-                    <!-- Sexualidade -->
-                    <div class="retangulo-texto">
-                        <span class="subtitulo">Sexualidade:</span><span class="texto">Bissexual</span>
-                    </div>
+                        <!-- Sexualidade -->
+                        <div class="retangulo-texto">
+                            <span class="subtitulo">Sexualidade:</span><span class="texto">Bissexual</span>
+                        </div>
 
-                    <!-- Profissão com Detalhes Ocultos -->
-                    <div class="retangulo-texto">
-                        <span class="subtitulo">Profissão:</span>
-                        <span class="texto">Caçadora</span> <span class="texto-brilhante2">(Nível 20)</span>
-                        <button class="botao-expandir-profissao" onclick="toggleProfissao()">▼</button>
-                    </div>
+                        <!-- Profissão com Detalhes Ocultos -->
+                        <div class="retangulo-texto">
+                            <span class="subtitulo">Profissão:</span>
+                            <span class="texto">Caçadora</span> <span class="texto-brilhante2">(Nível 20)</span>
+                            <button class="botao-expandir-profissao" onclick="toggleProfissao()">▼</button>
+                        </div>
 
-                    <!-- Retângulo Oculto para Detalhes -->
-                    <div class="retangulo-detalhes-profissao" id="detalhesProfissao">
-                        <span class="texto">Vampire Hunter </span> <span class="texto-brilhante2">(0)</span> <span class="texto">, Dominatrix </span> <span class="texto-brilhante2">(Nível 211)</span>
-                    </div>
-                </div>
-
-                <!-- Buffy Pixel Art -->
-                <div class="bloco-centro">
-                    <img src="https://github.com/PrinnyXII/st/blob/main/rep/Buffy/buffy%20o%20poet%20que%20move.gif?raw=truef" alt="Buffy Pixel Art" class="imagem-central">
-                </div>
-
-                <!-- Barras - Autoestima e Fama/Moral -->
-                <div class="bloco-direito">
-                    <!-- Barra de Autoestima -->
-                    <div>
-                        <div class="titulo-barra">Autoestima</div>
-                        <div class="barra-porcentagem">
-                            <div class="preenchimento-barra" id="barra-autoestima"></div>
-                            <span class="texto-barra" id="texto-autoestima"></span>
+                        <!-- Retângulo Oculto para Detalhes -->
+                        <div class="retangulo-detalhes-profissao" id="detalhesProfissao">
+                            <span class="texto">Vampire Hunter </span> <span class="texto-brilhante2">(0)</span> <span class="texto">, Dominatrix </span> <span class="texto-brilhante2">(Nível 211)</span>
                         </div>
                     </div>
 
-                    <!-- Barra de Fama / Moral -->
-                    <div>
-                        <div class="titulo-barra">Fama / Moral</div>
-                        <div class="barra-porcentagem">
-                            <div class="preenchimento-barra" id="barra-fama"></div>
-                            <span class="texto-barra" id="texto-fama"></span>
+                    <!-- Buffy Pixel Art -->
+                    <div class="bloco-centro">
+                        <img src="https://github.com/PrinnyXII/st/blob/main/rep/Buffy/buffy%20o%20poet%20que%20move.gif?raw=truef" alt="Buffy Pixel Art" class="imagem-central">
+                    </div>
+
+                    <!-- Barras - Autoestima e Fama/Moral -->
+                    <div class="bloco-direito">
+                        <!-- Barra de Autoestima -->
+                        <div>
+                            <div class="titulo-barra">Autoestima</div>
+                            <div class="barra-porcentagem">
+                                <div class="preenchimento-barra" id="barra-autoestima"></div>
+                                <span class="texto-barra" id="texto-autoestima"></span>
+                            </div>
                         </div>
-                        <div class="status-fama">
-                            <span id="status-fama"></span>
+
+                        <!-- Barra de Fama / Moral -->
+                        <div>
+                            <div class="titulo-barra">Fama / Moral</div>
+                            <div class="barra-porcentagem">
+                                <div class="preenchimento-barra" id="barra-fama"></div>
+                                <span class="texto-barra" id="texto-fama"></span>
+                            </div>
+                            <div class="status-fama">
+                                <span id="status-fama"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
+            </section>
             <!-- Janela Flutuante para Estado Civil -->
             <div class="janela-estado-civil" id="janelaEstadoCivil">
                 <div class="conteudo-janela-isaac">
@@ -124,7 +128,7 @@
             </div>
 
             <!-- Player de Música Isaac -->
-            <div class="player-musica-isaac" id="playerMusicaIsaac">
+            <div class="player-musica-isaac" id="playerMusicaIsaac" style="display: none;">
                 <!-- Botão de fechar -->
                 <button class="botao-fechar-musica-isaac" onclick="fecharPlayer()">✖︎</button>
 
@@ -173,7 +177,8 @@
 
             <div class="linha-separadora"></div>
 
-            <!-- Títulos -->
+             <!-- Títulos -->
+            <section id="titulos">
             <h2 class="titulo2">Emblemas de Títulos</h2>
 
             <div class="carrossel-titulos">
@@ -260,6 +265,7 @@
                     </div>
                 </div>
             </div>
+            </section>
 
             <div class="janela-titulos" id="janelaTitulo1" style="display: none;">
                 <div class="janela-botoes">
@@ -419,163 +425,4 @@
              <div class="janela-titulos" id="janelaTitulo15" style="display: none;">
                 <div class="janela-botoes">
                     <button class="botao-expandir" onclick="expandirJanelaTitulo(15)">❐</button>
-                    <button class="botao-fechar" onclick="fecharJanelaTitulo(15)">✖︎</button>
-                </div>
-                <div class="conteudo-janela">
-                    <h3>Título: Soberana das Primeiras Terras</h3>
-                </div>
-            </div>
-
-             <div class="janela-titulos" id="janelaTitulo16" style="display: none;">
-                <div class="janela-botoes">
-                    <button class="botao-expandir" onclick="expandirJanelaTitulo(16)">❐</button>
-                    <button class="botao-fechar" onclick="fecharJanelaTitulo(16)">✖︎</button>
-                </div>
-                <div class="conteudo-janela">
-                    <h3>Título: Detentora do Fim</h3>
-                </div>
-            </div>
-
-             <div class="janela-titulos" id="janelaTitulo17" style="display: none;">
-                <div class="janela-botoes">
-                    <button class="botao-expandir" onclick="expandirJanelaTitulo(17)">❐</button>
-                    <button class="botao-fechar" onclick="fecharJanelaTitulo(17)">✖︎</button>
-                </div>
-                <div class="conteudo-janela">
-                    <h3>Título: Mãe do Início</h3>
-                </div>
-            </div>
-
-            <div class="janela-titulos" id="janelaTitulo18" style="display: none;">
-                <div class="janela-botoes">
-                    <button class="botao-expandir" onclick="expandirJanelaTitulo(18)">❐</button>
-                    <button class="botao-fechar" onclick="fecharJanelaTitulo(18)">✖︎</button>
-                </div>
-                <div class="conteudo-janela">
-                   <h3>Título: Agressora de Primordiais</h3>
-                </div>
-            </div>
-
-            <div class="janela-titulos" id="janelaTitulo19" style="display: none;">
-                <div class="janela-botoes">
-                    <button class="botao-expandir" onclick="expandirJanelaTitulo(19)">❐</button>
-                    <button class="botao-fechar" onclick="fecharJanelaTitulo(19)">✖︎</button>
-                </div>
-                <div class="conteudo-janela">
-                    <h3>Título: Mãe Agressora</h3>
-                </div>
-            </div>
-
-            <div class="janela-titulos" id="janelaTitulo20" style="display: none;">
-                <div class="janela-botoes">
-                    <button class="botao-expandir" onclick="expandirJanelaTitulo(20)">❐</button>
-                    <button class="botao-fechar" onclick="fecharJanelaTitulo(20)">✖︎</button>
-                </div>
-                <div class="conteudo-janela">
-                    <h3>Título: Guardiã do Elísio</h3>
-                </div>
-            </div>
-
-            <!-- Atributos -->
-            <h2 class="titulo2">Atributos</h2>
-
-            <div class="atributos-container">
-                <!-- Primeira linha de atributos: HP e MP -->
-                <div class="atributo">
-                    <div class="icone-atributo"><img src="https://github.com/PrinnyXII/st/blob/main/rep/HP.gif?raw=true" alt="HP Icone"></div>
-                    <div class="conteudo-atributo">
-                        <div class="titulo-e-marcacao">
-                            <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
-                            <div class="titulo-barra-atributo">HP:</div>
-                        </div>
-                        <div class="barra-porcentagem-atributo">
-                            <div class="preenchimento-barra-atributo hp" id="barra-hp"></div>
-                            <span class="texto-barra-atributo" id="texto-hp"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="atributo">
-                    <div class="icone-atributo"><img src="https://github.com/PrinnyXII/st/blob/main/rep/MP.gif?raw=true" alt="MP Icone"></div>
-                    <div class="conteudo-atributo">
-                        <div class="titulo-e-marcacao">
-                            <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
-                            <div class="titulo-barra-atributo">MP:</div>
-                        </div>
-                        <div class="barra-porcentagem-atributo">
-                            <div class="preenchimento-barra-atributo mp" id="barra-mp"></div>
-                            <span class="texto-barra-atributo" id="texto-mp"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Segunda linha de atributos: AGI e DEF -->
-                <div class="atributo">
-                    <div class="icone-atributo"><img src="https://github.com/PrinnyXII/st/blob/main/rep/AGI.gif?raw=true" alt="AGI Icone"></div>
-                    <div class="conteudo-atributo">
-                        <div class="titulo-e-marcacao">
-                            <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
-                            <div class="titulo-barra-atributo">AGI:</div>
-                        </div>
-                        <div class="barra-porcentagem-atributo">
-                            <div class="preenchimento-barra-atributo agi" id="barra-agi"></div>
-                            <span class="texto-barra-atributo" id="texto-agi"></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="atributo">
-                    <div class="icone-atributo"><img src="https://github.com/PrinnyXII/st/blob/main/rep/DEF.gif?raw=true" alt="DEF Icone"></div>
-                    <div class="conteudo-atributo">
-                        <div class="titulo-e-marcacao">
-                            <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
-                            <div class="titulo-barra-atributo">DEF:</div>
-                        </div>
-                        <div class="barra-porcentagem-atributo">
-                            <div class="preenchimento-barra-atributo def" id="barra-def"></div>
-                            <span class="texto-barra-atributo" id="texto-def"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Terceira linha de atributos: RES e SPD -->
-                <div class="atributo">
-                    <div class="icone-atributo"><img src="https://github.com/PrinnyXII/st/blob/main/rep/RES.gif?raw=true" alt="RES Icone"></div>
-                    <div class="conteudo-atributo">
-                        <div class="titulo-e-marcacao">
-                            <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
-                            <div class="titulo-barra-atributo">RES:</div>
-                        </div>
-                        <div class="barra-porcentagem-atributo">
-                            <div class="preenchimento-barra-atributo res" id="barra-res"></div>
-                            <span class="texto-barra-atributo" id="texto-res"></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="atributo">
-                    <div class="icone-atributo"><img src="https://github.com/PrinnyXII/st/blob/main/rep/SPD.gif?raw=true" alt="SPD Icone"></div>
-                    <div class="conteudo-atributo">
-                        <div class="titulo-e-marcacao">
-                            <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
-                            <div class="titulo-barra-atributo">SPD:</div>
-                        </div>
-                        <div class="barra-porcentagem-atributo">
-                            <div class="preenchimento-barra-atributo spd" id="barra-spd"></div>
-                            <span class="texto-barra-atributo" id="texto-spd"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Quarta linha de atributos: INT e ATK -->
-                <div class="atributo">
-                    <div class="icone-atributo"><img src="https://github.com/PrinnyXII/st/blob/main/rep/INT.gif?raw=true" alt="Icone de INT"></div>
-                    <div class="conteudo-atributo">
-                        <div class="titulo-e-marcacao">
-                            <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
-                            <div class="titulo-barra-atributo">INT:</div>
-                        </div>
-                        <div class="barra-porcentagem-atributo">
-                            <div class="preenchimento-barra-atributo int" id="barra-int"></div>
-                            <span class="texto-barra-atributo" id="texto-int"></span>
-                        </div>
-                    </div>
-                </div>
+                    <button class

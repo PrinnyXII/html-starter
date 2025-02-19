@@ -810,6 +810,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Aether ---
     atualizarAether(porcentagemAether);  // Valor inicial
+
+    inicializarPlayerMusica();
+
 });
 
 // --- Carregamento de Seções (usando a versão correta de loadSection) ---
@@ -842,8 +845,6 @@ loadSection("secao-caracteristicas", "Seções/6-Caracteristicas.html",  functio
     document.getElementById("fecharPlayer")?.addEventListener("click", fecharPlayer); //Botão fechar player
     document.querySelector(".botao-favoritar-isaac")?.addEventListener("click", favoritarMusica);
     document.querySelector(".botao-menu-isaac")?.addEventListener("click", toggleLista);  //Botão para mostrar a lista
-
-    inicializarPlayerMusica();
 
     atualizarBarra('barra-autoestima', 'texto-autoestima', 99); //Inicia os valores da barra
     atualizarBarra('barra-fama', 'texto-fama', 94, 'status-fama'); //Inicia os valores da barra

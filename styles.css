@@ -11,26 +11,6 @@
             align-items: center;
             padding: 80px 0px;
         }
-
-        .background2 {
-            border: 1px solid #A020F0;
-            border-radius: 30px;
-            padding: 50px; 
-            background-image: url('https://github.com/PrinnyXII/st/blob/main/rep/Buffy/Floresta/Criar%20e%20spawnar%20um%20boss.png?raw=true'); 
-            background-color: rgba(0, 0, 0, 0.85);
-            background-blend-mode: overlay;
-            background-size: auto; 
-            background-position: center;
-            background-repeat: no-repeat; 
-            background-attachment: fixed;    
-            width: 100%;
-            max-width: 995px; 
-            box-sizing: border-box;
-            min-height: 100vh;
-            overflow: hidden;    
-            animation: borda-brilhante 3s infinite;
-            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.5);  
-        }
         /* Tira borda branca */
             html, body {
             margin: 0;

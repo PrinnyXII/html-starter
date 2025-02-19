@@ -88,6 +88,14 @@ function togglePlayerMusicaIsaac() {
         estadoCivil.style.zIndex = '900'; // Coloca a janela de estado civil atrás (se estiver aberta)
         centralizarElementosPlayer();    // Centraliza os elementos (função definida abaixo)
         selecionarMusica(1);          // Carrega a música 1 por padrão
+
+        // ADICIONE ESTA LINHA AQUI:
+        progressBar.addEventListener('input', () => {
+            if (!isNaN(audio.duration) && isFinite(audio.duration)) {
+                audio.currentTime = (progressBar.value / 100) * audio.duration;
+            }
+        });
+
     } else {
         player.style.display = 'none';  // Esconde o player
         estadoCivil.style.zIndex = '1000';// Restaura o z-index da janela de estado civil

@@ -18,11 +18,10 @@ function loadSection(id, url, callback) {
 // --- Buffy Música (Abre/Fecha Janela) ---
 // Esta função é chamada quando o usuário clica no botão de música da Buffy (na seção de aura).
 function toggleJanelaMusica() {
-    const janela = document.getElementById('janelaMusica'); // Pega o elemento da janela.
+    const janela = document.getElementById('janelaMusica'); // Pega o elemento da janela
     // Alterna a visibilidade da janela.  Se estiver visível, esconde; se estiver escondida, mostra.
     janela.style.display = (janela.style.display === 'none' || janela.style.display === '') ? 'block' : 'none';
 }
-
 
 // --- Barra de Experiência ---
 // Esta função atualiza a barra de experiência (largura e texto).  Ela recebe a porcentagem como argumento.
@@ -40,25 +39,27 @@ function updateExpBar(percentage) {
 }
 
 // --- Características - Profissão (Mostra/Esconde Detalhes) ---
+// Esta função é chamada quando o usuário clica no botão para expandir/recolher os detalhes da profissão.
 function toggleProfissao() {
-    const detalhes = document.getElementById('detalhesProfissao');
-    if (detalhes) {
-      detalhes.style.display = (detalhes.style.display === 'none' || detalhes.style.display === '') ? 'block' : 'none';
+    const detalhes = document.getElementById('detalhesProfissao'); //Pega a div dos detalhes
+    if (detalhes) { //Verifica se o elemento existe
+      detalhes.style.display = (detalhes.style.display === 'none' || detalhes.style.display === '') ? 'block' : 'none'; //Mostra/Esconde
     }
 }
 
 // --- Estado Civil (Abre/Fecha Janela) ---
+// Funções para abrir e fechar a janela flutuante de estado civil.
 function abrirJanelaEstadoCivil() {
     const janela = document.getElementById("janelaEstadoCivil");
-      if (janela) {
-        janela.style.display = "block";
+      if (janela) {  //Verifica se a janela existe
+        janela.style.display = "block"; //Mostra
     }
 }
 
 function fecharJanelaEstadoCivil() {
     const janela = document.getElementById("janelaEstadoCivil");
-    if (janela) {
-        janela.style.display = "none";
+    if (janela) { //Verifica se a janela existe
+        janela.style.display = "none"; //Esconde
     }
 }
 // --- Player de Música Isaac (Refatorado) ---
@@ -89,7 +90,7 @@ function togglePlayerMusicaIsaac() {
         centralizarElementosPlayer();    // Centraliza os elementos (função definida abaixo)
         selecionarMusica(1);          // Carrega a música 1 por padrão
 
-        // ADICIONE ESTA LINHA AQUI:
+        // ADICIONADO AQUI: O event listener para a barra de progresso
         progressBar.addEventListener('input', () => {
             if (!isNaN(audio.duration) && isFinite(audio.duration)) {
                 audio.currentTime = (progressBar.value / 100) * audio.duration;
@@ -118,6 +119,7 @@ function fecharPlayer() {
     musicaTocando = false;      // Atualiza o estado
     atualizarBotaoPlay();     // Atualiza o botão play/pause
 }
+
 // Função para centralizar os elementos do player (chamada quando o player é aberto)
 function centralizarElementosPlayer() {
     const capaMusica = document.querySelector('.capa-musica-isaac');
@@ -156,7 +158,6 @@ const listaDeMusicas = [
         link: "assets/musicas/Musica3.mp3",          // <-- e caminhos válidos
     },
 ];
-
 // Função para selecionar uma música da lista (por ID)
 function selecionarMusica(id) {
     const musicaSelecionada = listaDeMusicas.find((musica) => musica.id === id);
@@ -188,7 +189,7 @@ function selecionarMusica(id) {
 
 // Função para abrir/fechar a lista de músicas
 function toggleLista() {
-    const lista = document.getElementById('listaMusicas'); //Foi corrigido para listaMusicas, pois não possui sufixo -isaac
+    const lista = document.getElementById('listaMusicas');
     if(lista){ //Verifica se a lista existe
       lista.style.display = (lista.style.display === 'block') ? 'none' : 'block';
       if (lista.style.display === 'block') { //Só atualiza se for mostrada
@@ -196,6 +197,7 @@ function toggleLista() {
       }
     }
 }
+
 // Funções para controlar a reprodução
 function retroceder10s() {
     // Verifica se a duração é válida *antes* de tentar modificar currentTime
@@ -209,8 +211,9 @@ function avancar10s() {
         audio.currentTime = Math.min(audio.duration, audio.currentTime + 10); // Evita ir além da duração
     }
 }
+
 function playPause() {
-    if (!audio) {
+    if (!audio) { //Verifica se o audio existe
         console.error("Erro: Elemento 'audio' não encontrado!");
         return;
     }
@@ -224,6 +227,7 @@ function playPause() {
     }
     atualizarBotaoPlay(); // Atualiza o botão em *ambos* os casos (play e pause)
 }
+
 // Função para atualizar o texto do botão play/pause (► ou II)
 function atualizarBotaoPlay() {
     const botaoPlay = document.querySelector('.botao-controle-isaac:nth-child(2)'); // Seleciona o botão correto
@@ -231,6 +235,7 @@ function atualizarBotaoPlay() {
        botaoPlay.textContent = musicaTocando ? 'II' : '►'; // Usa um caractere de pause mais consistente
     }
 }
+
 // --- Favoritar e salvar estado (localStorage) ---
 const storageKey = 'musicasFavoritadas';
 let musicasFavoritadas = JSON.parse(localStorage.getItem(storageKey)) || {}; // Carrega do localStorage, ou usa um objeto vazio
@@ -263,7 +268,7 @@ function favoritarMusica() {
 // --- Atualização da barra de progresso e tempo ---
 
 // Atualiza a barra de progresso quando o usuário *arrasta* o controle
-progressBar.addEventListener('input', () => {
+progressBar.addEventListener('input', () => {  //AGORA PODE USAR, POIS ESTÁ DENTRO DO PLAYER
      if (!isNaN(audio.duration) && isFinite(audio.duration)) {
         audio.currentTime = (progressBar.value / 100) * audio.duration;
     }
@@ -371,49 +376,48 @@ function pausarCarrossel() {
 
 // Funções para abrir, fechar e expandir as janelas de título (usando template literals)
 function abrirJanelaTitulo(id) {
-    const janela = document.getElementById(`janelaTitulo${id}`); // Usa interpolação de string
-      if (janela) { //Verifica se a janela existe
-        janela.style.display = 'block'; //Mostra a janela
+    const janela = document.getElementById(`janelaTitulo${id}`);
+      if (janela) {
+        janela.style.display = 'block';
     }
 }
 
 function fecharJanelaTitulo(id) {
-    const janela = document.getElementById(`janelaTitulo${id}`); // Usa interpolação de string
-      if (janela) { //Verifica se a janela existe
-        janela.style.display = 'none';  //Esconde a janela
+    const janela = document.getElementById(`janelaTitulo${id}`);
+      if (janela) {
+        janela.style.display = 'none';
         iniciarCarrossel(); // Reinicia o carrossel ao fechar a janela
     }
 }
 
 function expandirJanelaTitulo(id) {
-    const janela = document.getElementById(`janelaTitulo${id}`); // Usa interpolação de string
-      if (janela) { //Verifica se a janela existe
-        janela.classList.toggle('janela-expandida'); //Alterna entre expandido e normal
+    const janela = document.getElementById(`janelaTitulo${id}`);
+      if (janela) {
+        janela.classList.toggle('janela-expandida');
     }
 }
 
 // --- Movimentação manual das janelas flutuantes (Títulos) ---
 //Essa parte permite que o usuário arraste as janelas
-document.querySelectorAll('.janela-titulos').forEach((janela) => { //Pega todas as janelas de título
-    let isDragging = false; //Variável de estado
-    let startX, startY;    //Posição inicial do mouse
+document.querySelectorAll('.janela-titulos').forEach((janela) => {
+    let isDragging = false, startX, startY;
 
-    janela.addEventListener('mousedown', (e) => { //Quando o botão do mouse é pressionado
-        isDragging = true;                      //Começa a arrastar
-        startX = e.clientX - janela.offsetLeft;  //Calcula a diferença entre a posição do mouse e a da janela
-        startY = e.clientY - janela.offsetTop;   //Calcula a diferença
+    janela.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.clientX - janela.offsetLeft;
+        startY = e.clientY - janela.offsetTop;
         janela.style.cursor = 'grabbing'; // Muda o cursor para indicar que está arrastando
     });
 
-    document.addEventListener('mousemove', (e) => { //Quando o mouse se move
-        if (isDragging) { //Só faz algo se estiver arrastando
-            janela.style.left = `${e.clientX - startX}px`; //Move a janela horizontalmente
-            janela.style.top = `${e.clientY - startY}px`;  //Move a janela verticalmente
+    document.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+            janela.style.left = `${e.clientX - startX}px`;
+            janela.style.top = `${e.clientY - startY}px`;
         }
     });
 
-    document.addEventListener('mouseup', () => { //Quando o botão do mouse é solto
-        isDragging = false; // Para de arrastar
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
         janela.style.cursor = 'move'; // Restaura o cursor
     });
 });
@@ -524,10 +528,10 @@ const chaves = [
 
 // Função para navegar entre as chaves (agora recebe o ID diretamente)
 function navegar(id) {
-    chaveAtual = id;  // Define a chave atual como o ID passado
-    const chave = chaves[chaveAtual]; // Pega os dados da chave do array 'chaves'
+    chaveAtual = id;
+    const chave = chaves[chaveAtual];
 
-    // Atualiza Retângulo Item (usa os seletores corretos)
+    // Atualiza Retângulo Item
     document.getElementById("titulo-item").textContent = chave.nome;
     document.querySelector("#retangulo-item .descricao-detalhada").textContent = chave.descricao;
 
@@ -540,16 +544,14 @@ function navegar(id) {
     document.querySelector("#retangulo-efeitos .detalhes-detalhados").textContent = chave.detalhes;
 
     // Atualiza Destaque dos Círculos
-    atualizarDestaqueCirculo(chaveAtual + 1);  // +1 porque os IDs no HTML começam em 1
+    atualizarDestaqueCirculo(chaveAtual + 1);
 }
 
-// Função para destacar o círculo da chave ativa
 function atualizarDestaqueCirculo(id) {
-    //Pega todos os circulos
     document.querySelectorAll(".circulo-pequeno").forEach((circulo, index) => {
-        circulo.classList.remove("active"); // Remove a classe 'active' de todos os círculos
-        if (index + 1 === id) { //Se o index for igual ao id, ele adiciona a class 'active'
-            circulo.classList.add("active"); // Adiciona a classe 'active' apenas ao círculo correto
+        circulo.classList.remove("active"); // Remove a classe de todos
+        if (index + 1 === id) {
+            circulo.classList.add("active"); // Adiciona apenas ao correto
         }
     });
 }
@@ -727,8 +729,6 @@ function atualizarStatusNecessidade(grupoId, porcentagem, tipo) {
 }
 
 // --- Aether ---
-// ... (todo o código anterior do script.js, até a linha onde você define a função atualizarAether) ...
-    // --- Aether ---
 let porcentagemAether = 101;//Valor inicial
 function atualizarAether(porcentagem) {  //Função separada para o Aether.
     if (porcentagem > 102) porcentagem = 102; //Limite
@@ -737,37 +737,35 @@ function atualizarAether(porcentagem) {  //Função separada para o Aether.
     document.getElementById("preenchimentoAether").style.width = `${(porcentagem / 102) * 100}%`; //Calcula a porcentagem
     document.getElementById("textoAether").textContent = `Aether: ${porcentagem}%`; // Mostra no texto
 }
-
 // --- Inicialização (DOMContentLoaded) ---
 // Este código é executado *depois* que todo o HTML (estático) da página é carregado,
 // mas *antes* de carregar as seções dinamicamente (com loadSection).
 document.addEventListener('DOMContentLoaded', () => {
-
-    // --- Música Isaac (já no DOMContentLoaded, pois os botões estão no HTML principal) ---
-    musicasFavoritadas = JSON.parse(localStorage.getItem(storageKey)) || {}; // Carrega favoritos
-    atualizarListaMusicas();       // Cria a lista de músicas no menu.  *Importante* fazer isso antes de selecionar a música.
+    // --- Música Isaac (já no DOMContentLoaded, pois os botões *agora* estão no HTML principal) ---
+    musicasFavoritadas = JSON.parse(localStorage.getItem(storageKey)) || {}; // Carrega favoritos, ou []
+    atualizarListaMusicas();       // Cria a lista de músicas no menu.
     selecionarMusica(1);      // Toca a primeira música (ou a música padrão)
     document.getElementById('listaMusicas').style.display = 'none'; // Esconde a lista
     atualizarBotaoPlay();    // Atualiza o botão play/pause
 
     // --- Barra de Experiência ---
-    updateExpBar(73); // Define a porcentagem inicial
+     updateExpBar(73); // Define a porcentagem inicial
 
     // --- Autoestima e Fama/Moral (valores iniciais) ---
     atualizarBarra('barra-autoestima', 'texto-autoestima', 99);
     atualizarBarra('barra-fama', 'texto-fama', 94, 'status-fama');
 
-// --- Títulos - Inicia o carrossel ---
+   // --- Títulos - Inicia o carrossel ---
     iniciarCarrossel();
 
     // --- Atributos (valores iniciais) ---
-    for (let atributo in atributos) {
+      for (let atributo in atributos) {
         const { total, porcentagem } = atributos[atributo];
         atualizarAtributoAtual(atributo, total, porcentagem);
     }
 
     // --- Selos/Chaves (estado inicial) ---
-    const estadosIniciais = {  //Quais circulos iniciam ativos
+      const estadosIniciais = {  //Quais circulos iniciam ativos
         circulo1: true,
         circulo2: false,
         circulo3: true,
@@ -785,7 +783,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    navegar(0); // Começa mostrando a primeira chave
+     navegar(0); // Começa mostrando a primeira chave
 
     // --- Bençãos/Maldições (Diamante do Meio) ---
     const diamantes = document.querySelectorAll('.diamante-item');
@@ -823,12 +821,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Aether ---
     atualizarAether(porcentagemAether);  // Valor inicial
 
-    inicializarPlayerMusica(); //Inicializa player.  *AGORA AQUI*
+    inicializarPlayerMusica(); //Inicializa player *DEPOIS* de tudo, no DOMContentLoaded
 });
-
 // --- Carregamento de Seções (usando a versão correta de loadSection) ---
-// Agora, as seções são carregadas, *e os event listeners são adicionados
-// dentro das funções de callback, DEPOIS que a seção é carregada*.
+// Agora, as seções são carregadas.
+// Os event listeners para os botões da seção de características
+// foram adicionados *dentro* do callback de loadSection, para garantir
+// que os elementos existam antes de tentar manipulá-los.
 
 loadSection("secao-aura", "Seções/1-Aura-Buffy.html", function() {
     const playerMusica = document.querySelector("#janelaMusica iframe");
@@ -839,7 +838,7 @@ loadSection("secao-aura", "Seções/1-Aura-Buffy.html", function() {
     }
 });
 
-//Carrega as seções, agora sem funções dentro.
+//Carrega as seções, agora sem funções dentro, exceto a primeira.
 loadSection("secao-assimilacao", "Seções/2-Taxa-de-Assimilação.html");
 loadSection("secao-cabecalho", "Seções/3-Cabeçalho.html");
 loadSection("secao-bahdinheiro", "Seções/4-Barra-Dinheiro.html");
@@ -849,21 +848,16 @@ loadSection("secao-classes", "Seções/5-Classes.html");
 //Adiciona os event listeners aqui, pois é depois que essa seção carrega que temos acesso aos botões
 loadSection("secao-caracteristicas", "Seções/6-Caracteristicas.html",  function () {
     console.log("Seção Características carregada!");
-    //Os event listeners que estavam aqui, agora estão no DOMContentLoaded
 
+     // Adiciona os event listeners *depois* que a seção for carregada.
+     // O operador '?.' (optional chaining) evita erros se o elemento não existir.
     document.getElementById("botaoProfissao")?.addEventListener("click", toggleProfissao); //Botão Profissão
     document.getElementById("botaoEstadoCivil")?.addEventListener("click", abrirJanelaEstadoCivil); //Botão Estado Civil
     document.getElementById("fecharEstadoCivil")?.addEventListener("click", fecharJanelaEstadoCivil); //Botão fechar janela
     document.getElementById("fecharPlayer")?.addEventListener("click", fecharPlayer); //Botão fechar player
-    document.querySelector(".botao-favoritar-isaac")?.addEventListener("click", favoritarMusica);
+    document.querySelector(".botao-favoritar-isaac")?.addEventListener("click", favoritarMusica); //Botão Favoritar
     document.querySelector(".botao-menu-isaac")?.addEventListener("click", toggleLista);  //Botão para mostrar a lista
 
     atualizarBarra('barra-autoestima', 'texto-autoestima', 99); //Inicia os valores da barra
     atualizarBarra('barra-fama', 'texto-fama', 94, 'status-fama'); //Inicia os valores da barra
-
-    atualizarListaMusicas(); //Inicializa a lista de músicas
-    selecionarMusica(1);     //Começa pela primeira
-    document.getElementById("listaMusicas").style.display = "none"; //Esconde a lista ao iniciar
-    atualizarBotaoPlay();
 });
-

@@ -829,6 +829,9 @@ document.addEventListener('DOMContentLoaded', () => {
 // foram adicionados *dentro* do callback de loadSection, para garantir
 // que os elementos existam antes de tentar manipulá-los.
 
+  inicializarPlayerMusica();
+  loadSection("secao-aura", "teste.html"); // Carrega teste.html em secao-aura
+
 loadSection("secao-aura", "Seções/1-Aura-Buffy.html", function() {
     const playerMusica = document.querySelector("#janelaMusica iframe");
     if (playerMusica) {

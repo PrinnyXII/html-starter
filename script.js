@@ -264,14 +264,6 @@ function favoritarMusica() {
     }
 
 }
-
-// --- Atualização da barra de progresso e tempo ---
-
-// Atualiza a barra de progresso quando o usuário *arrasta* o controle
-progressBar.addEventListener('input', () => {  //AGORA PODE USAR, POIS ESTÁ DENTRO DO PLAYER
-     if (!isNaN(audio.duration) && isFinite(audio.duration)) {
-        audio.currentTime = (progressBar.value / 100) * audio.duration;
-    }
 });
 
 // Atualiza a barra de progresso e o tempo *conforme a música toca*

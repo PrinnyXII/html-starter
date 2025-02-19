@@ -829,32 +829,29 @@ loadSection("secao-aura", "Seções/1-Aura-Buffy.html", function() {
 });
 
 //Carrega as seções, agora sem funções dentro.
-//loadSection("secao-assimilacao", "Seções/2-Taxa-de-Assimilação.html");
-//loadSection("secao-cabecalho", "Seções/3-Cabeçalho.html");
-//loadSection("secao-bahdinheiro", "Seções/4-Barra-Dinheiro.html");
-//loadSection("secao-classes", "Seções/5-Classes.html");
+loadSection("secao-assimilacao", "Seções/2-Taxa-de-Assimilação.html");
+loadSection("secao-cabecalho", "Seções/3-Cabeçalho.html");
+loadSection("secao-bahdinheiro", "Seções/4-Barra-Dinheiro.html");
+loadSection("secao-classes", "Seções/5-Classes.html");
 
 //Seção que carrega a maior parte do código.
 //Adiciona os event listeners aqui, pois é depois que essa seção carrega que temos acesso aos botões
-//Seção que carrega a maior parte do código.
-//Adiciona os event listeners aqui, pois é depois que essa seção carrega que temos acesso aos botões
-// loadSection("secao-caracteristicas", "Seções/6-Caracteristicas.html",  function () {  <-- Adicione // aqui
-    //     console.log("Seção Características carregada!");
+loadSection("secao-caracteristicas", "Seções/6-Caracteristicas.html",  function () {
+    console.log("Seção Características carregada!");
 
-    //     document.getElementById("botaoProfissao")?.addEventListener("click", toggleProfissao); //Botão Profissão
-    //     document.getElementById("botaoEstadoCivil")?.addEventListener("click", abrirJanelaEstadoCivil); //Botão Estado Civil
-    //    document.getElementById("fecharEstadoCivil")?.addEventListener("click", fecharJanelaEstadoCivil); //Botão fechar janela
-    //    document.getElementById("fecharPlayer")?.addEventListener("click", fecharPlayer); //Botão fechar player
-    //     document.querySelector(".botao-favoritar-isaac")?.addEventListener("click", favoritarMusica);
-    //     document.querySelector(".botao-menu-isaac")?.addEventListener("click", toggleLista);  //Botão para mostrar a lista
+    document.getElementById("botaoProfissao")?.addEventListener("click", toggleProfissao); //Botão Profissão
+    document.getElementById("botaoEstadoCivil")?.addEventListener("click", abrirJanelaEstadoCivil); //Botão Estado Civil
+    document.getElementById("fecharEstadoCivil")?.addEventListener("click", fecharJanelaEstadoCivil); //Botão fechar janela
+    document.getElementById("fecharPlayer")?.addEventListener("click", fecharPlayer); //Botão fechar player
+    document.querySelector(".botao-favoritar-isaac")?.addEventListener("click", favoritarMusica);
+    document.querySelector(".botao-menu-isaac")?.addEventListener("click", toggleLista);  //Botão para mostrar a lista
 
-    //      inicializarPlayerMusica();
+    atualizarBarra('barra-autoestima', 'texto-autoestima', 99); //Inicia os valores da barra
+    atualizarBarra('barra-fama', 'texto-fama', 94, 'status-fama'); //Inicia os valores da barra
 
-    //      atualizarBarra('barra-autoestima', 'texto-autoestima', 99); //Inicia os valores da barra
-    //     atualizarBarra('barra-fama', 'texto-fama', 94, 'status-fama'); //Inicia os valores da barra
+    atualizarListaMusicas(); //Inicializa a lista de músicas
+    selecionarMusica(1);     //Começa pela primeira
+    document.getElementById("listaMusicas").style.display = "none"; //Esconde a lista ao iniciar
+    atualizarBotaoPlay();
+});
 
-    //     atualizarListaMusicas(); //Inicializa a lista de músicas
-    //     selecionarMusica(1);     //Começa pela primeira
-    //    document.getElementById("listaMusicas").style.display = "none"; //Esconde a lista ao iniciar
-    //     atualizarBotaoPlay();
-    // });

@@ -719,6 +719,8 @@ function atualizarStatusNecessidade(grupoId, porcentagem, tipo) {
 }
 
 // --- Aether ---
+// ... (todo o código anterior do script.js, até a linha onde você define a função atualizarAether) ...
+    // --- Aether ---
 let porcentagemAether = 101;//Valor inicial
 function atualizarAether(porcentagem) {  //Função separada para o Aether.
     if (porcentagem > 102) porcentagem = 102; //Limite
@@ -727,10 +729,12 @@ function atualizarAether(porcentagem) {  //Função separada para o Aether.
     document.getElementById("preenchimentoAether").style.width = `${(porcentagem / 102) * 100}%`; //Calcula a porcentagem
     document.getElementById("textoAether").textContent = `Aether: ${porcentagem}%`; // Mostra no texto
 }
+
 // --- Inicialização (DOMContentLoaded) ---
 // Este código é executado *depois* que todo o HTML (estático) da página é carregado,
 // mas *antes* de carregar as seções dinamicamente (com loadSection).
 document.addEventListener('DOMContentLoaded', () => {
+
     // --- Música Isaac (já no DOMContentLoaded, pois os botões estão no HTML principal) ---
     musicasFavoritadas = JSON.parse(localStorage.getItem(storageKey)) || {}; // Carrega favoritos
     atualizarListaMusicas();       // Cria a lista de músicas no menu.  *Importante* fazer isso antes de selecionar a música.
@@ -739,23 +743,23 @@ document.addEventListener('DOMContentLoaded', () => {
     atualizarBotaoPlay();    // Atualiza o botão play/pause
 
     // --- Barra de Experiência ---
-     updateExpBar(73); // Define a porcentagem inicial
+    updateExpBar(73); // Define a porcentagem inicial
 
     // --- Autoestima e Fama/Moral (valores iniciais) ---
     atualizarBarra('barra-autoestima', 'texto-autoestima', 99);
     atualizarBarra('barra-fama', 'texto-fama', 94, 'status-fama');
 
-   // --- Títulos - Inicia o carrossel ---
+// --- Títulos - Inicia o carrossel ---
     iniciarCarrossel();
 
     // --- Atributos (valores iniciais) ---
-      for (let atributo in atributos) {
+    for (let atributo in atributos) {
         const { total, porcentagem } = atributos[atributo];
         atualizarAtributoAtual(atributo, total, porcentagem);
     }
 
     // --- Selos/Chaves (estado inicial) ---
-      const estadosIniciais = {  //Quais circulos iniciam ativos
+    const estadosIniciais = {  //Quais circulos iniciam ativos
         circulo1: true,
         circulo2: false,
         circulo3: true,
@@ -773,7 +777,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-     navegar(0); // Começa mostrando a primeira chave
+    navegar(0); // Começa mostrando a primeira chave
 
     // --- Bençãos/Maldições (Diamante do Meio) ---
     const diamantes = document.querySelectorAll('.diamante-item');
@@ -811,8 +815,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Aether ---
     atualizarAether(porcentagemAether);  // Valor inicial
 
-    inicializarPlayerMusica();
-
+    inicializarPlayerMusica(); //Inicializa player.  *AGORA AQUI*
 });
 
 // --- Carregamento de Seções (usando a versão correta de loadSection) ---
@@ -838,6 +841,7 @@ loadSection("secao-classes", "Seções/5-Classes.html");
 //Adiciona os event listeners aqui, pois é depois que essa seção carrega que temos acesso aos botões
 loadSection("secao-caracteristicas", "Seções/6-Caracteristicas.html",  function () {
     console.log("Seção Características carregada!");
+    //Os event listeners que estavam aqui, agora estão no DOMContentLoaded
 
     document.getElementById("botaoProfissao")?.addEventListener("click", toggleProfissao); //Botão Profissão
     document.getElementById("botaoEstadoCivil")?.addEventListener("click", abrirJanelaEstadoCivil); //Botão Estado Civil

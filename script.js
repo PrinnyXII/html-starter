@@ -1,6 +1,6 @@
 // --- Funções Utilitárias ---
 
-// Função para carregar seções (mantém apenas a versão correta)
+// Função para carregar seções (versão correta, com callback)
 function loadSection(id, url, callback) {
     fetch(url)
         .then(response => response.text())
@@ -11,7 +11,7 @@ function loadSection(id, url, callback) {
         .catch(error => console.error('Erro ao carregar a seção:', error));
 }
 
-// --- Buffy Música ---
+// --- Buffy Música (Abre/Fecha Janela) ---
 function toggleJanelaMusica() {
     const janela = document.getElementById('janelaMusica');
     janela.style.display = (janela.style.display === 'none' || janela.style.display === '') ? 'block' : 'none';
@@ -31,24 +31,13 @@ function updateExpBar(percentage) {
     }
 }
 
-
-// --- Classes - Texto retraído ---
-function mostrarTexto() {
-    const expandido = document.querySelector('.expandido'); //Não está sendo utilizado
-    if (expandido) {
-        expandido.style.display = expandido.style.display === 'none' ? 'block' : 'none';
-    } else {
-        console.error("Elemento '.expandido' não encontrado!");
-    }
-}
-
-// --- Caracteristicas - Profissão ---
+// --- Caracteristicas - Profissão (Mostra/Esconde Detalhes) ---
 function toggleProfissao() {
     const detalhes = document.getElementById('detalhesProfissao');
     detalhes.style.display = (detalhes.style.display === 'none' || detalhes.style.display === '') ? 'block' : 'none';
 }
 
-// --- Estado Civil ---
+// --- Estado Civil (Abre/Fecha Janela) ---
 function abrirJanelaEstadoCivil() {
     const janela = document.getElementById("janelaEstadoCivil");
     janela.style.display = "block";
@@ -58,8 +47,7 @@ function fecharJanelaEstadoCivil() {
     document.getElementById("janelaEstadoCivil").style.display = "none";
 }
 
-
-// --- Player de Música Isaac ---
+// --- Player de Música Isaac (Refatorado) ---
 // Variáveis para elementos do player (selecionados uma vez)
 const playerMusica = document.querySelector('.player-musica-isaac');
 const audio = document.querySelector('audio');
@@ -70,8 +58,8 @@ const nomeMusicaIsaacElement = document.querySelector('.nome-musica-isaac');
 const autorMusicaIsaacElement = document.querySelector('.autor-musica-isaac');
 const capaMusicaIsaacElement = document.querySelector('.capa-musica-isaac img');
 const playerBackgroundElement = document.querySelector('.player-musica-isaac');
+const audioSource = document.querySelector('#audio-player source'); // Elemento source
 let musicaTocando = false; // Inicializa a variável
-
 
 function togglePlayerMusicaIsaac() {
     const player = document.getElementById('playerMusicaIsaac');
@@ -109,7 +97,6 @@ function centralizarElementosPlayer() {
     player.style.alignItems = 'center';
     player.style.justifyContent = 'space-between';
 }
-
 // --- Lista de músicas com informações ---
 const listaDeMusicas = [
     {
@@ -138,10 +125,6 @@ const listaDeMusicas = [
     },
 ];
 
-
-
-// --- Funções do Player de Música ---
-
 function selecionarMusica(id) {
     const musicaSelecionada = listaDeMusicas.find((musica) => musica.id === id);
 
@@ -151,30 +134,36 @@ function selecionarMusica(id) {
         capaMusicaIsaacElement.src = musicaSelecionada.capa;
         playerBackgroundElement.style.backgroundImage =
             `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('${musicaSelecionada.background}')`;
-        document.querySelector('#audio-player source').src = musicaSelecionada.link;
+        audioSource.src = musicaSelecionada.link; // Usa audioSource
+        audio.load(); // Recarrega o áudio
 
-        audio.load();
-        audio.play();
-        musicaTocando = true;
-        atualizarBotaoPlay();
-
-        atualizarFavoritoVisual(id); // Atualiza favorito
+        // Toca a música *depois* de ter certeza que ela carregou
+        audio.oncanplaythrough = () => {
+            audio.play().catch(error => console.warn("Reprodução automática bloqueada pelo navegador."));
+            musicaTocando = true;
+            atualizarBotaoPlay();
+            atualizarFavoritoVisual(id); // Atualiza o ícone de favorito
+        };
     }
 }
 
-
 // Função para abrir/fechar a lista de músicas
 function toggleLista() {
-    const lista = document.getElementById('listaMusicas'); //Foi corrigido para listaMusicas, pois não possui sufixo -isaac
+    const lista = document.getElementById('listaMusicas');
     lista.style.display = (lista.style.display === 'block') ? 'none' : 'block';
 }
 
 function retroceder10s() {
-    audio.currentTime = Math.max(0, audio.currentTime - 10);
+    // Verifica se a duração é válida ANTES de tentar modificar currentTime
+    if (!isNaN(audio.duration) && isFinite(audio.duration)) {
+        audio.currentTime = Math.max(0, audio.currentTime - 10);
+    }
 }
 
 function avancar10s() {
-    audio.currentTime = Math.min(audio.duration, audio.currentTime + 10);
+    if (!isNaN(audio.duration) && isFinite(audio.duration)) {
+        audio.currentTime = Math.min(audio.duration, audio.currentTime + 10);
+    }
 }
 
 function playPause() {
@@ -182,7 +171,8 @@ function playPause() {
         audio.pause();
         musicaTocando = false;
     } else {
-        audio.play();
+        // Tenta tocar.  Se falhar (ex: autoplay bloqueado), mostra um aviso.
+        audio.play().catch(error => console.warn("Reprodução automática bloqueada pelo navegador."));
         musicaTocando = true;
     }
     atualizarBotaoPlay();
@@ -209,23 +199,28 @@ function atualizarFavoritoVisual(id) {
 }
 
 function favoritarMusica() {
-    const musicaAtual = listaDeMusicas.find((musica) => musica.nome === document.querySelector('.nome-musica-isaac').textContent);
-     if (musicaAtual) { //Verifica se encontrou a música
+    const musicaAtual = listaDeMusicas.find((musica) => musica.nome === nomeMusicaIsaacElement.textContent); //Simplificado
+    if(musicaAtual){
         musicasFavoritadas[musicaAtual.id] = !musicasFavoritadas[musicaAtual.id];
         atualizarFavoritoVisual(musicaAtual.id);
         localStorage.setItem(storageKey, JSON.stringify(musicasFavoritadas));
     }
+
 }
 
 // --- Atualiza o progresso e tempo ---
 audio.addEventListener('timeupdate', () => {
-    const tempo = formatarTempo(audio.currentTime);
-    tempoAtual.textContent = tempo;
-    progressBar.value = (audio.currentTime / audio.duration) * 100;
+     if (!isNaN(audio.currentTime) && isFinite(audio.currentTime)) { //Verifica se é um número
+        tempoAtual.textContent = formatarTempo(audio.currentTime);
+        progressBar.value = (audio.currentTime / audio.duration) * 100;
+     }
 });
 
+// --- Atualiza a barra ao arrastar ---
 progressBar.addEventListener('input', () => {
-    audio.currentTime = (progressBar.value / 100) * audio.duration;
+     if (!isNaN(audio.duration) && isFinite(audio.duration)) { //Verifica se é um número
+        audio.currentTime = (progressBar.value / 100) * audio.duration;
+     }
 });
 
 function formatarTempo(segundos) {
@@ -234,26 +229,27 @@ function formatarTempo(segundos) {
     return `${minutos}:${restoSegundos < 10 ? '0' : ''}${restoSegundos}`;
 }
 
+// Atualiza o tempo total quando os metadados da música são carregados
 audio.addEventListener('loadedmetadata', () => {
-    tempoTotal.textContent = formatarTempo(audio.duration);
-});
+    if (!isNaN(audio.duration) && isFinite(audio.duration)){ //Verifica se é número
+        tempoTotal.textContent = formatarTempo(audio.duration);
+    }
 
+});
 
 function atualizarListaMusicas() {
     const listaContainer = document.getElementById('listaMusicas');
-    listaContainer.innerHTML = ''; // Limpa a lista
+    listaContainer.innerHTML = ''; // Limpa a lista antes de recriá-la
 
     listaDeMusicas.forEach((musica) => {
         const item = document.createElement('p');
-        item.textContent = musica.nome;
-        item.addEventListener('click', () => selecionarMusica(musica.id));
+        item.textContent = musica.nome; // Nome sincronizado
+        item.addEventListener('click', () => selecionarMusica(musica.id)); // Seleciona a música ao clicar
         listaContainer.appendChild(item);
     });
 }
 
-
-// --- Fama/Moral - Barra de Progresso e Estado ---
-//Função Refatorada
+// --- Fama/Moral - Barra de Progresso e Estado (Função Refatorada) ---
 function atualizarBarra(idBarra, idTexto, porcentagem, idStatus = null) {
     const barra = document.getElementById(idBarra);
     const texto = document.getElementById(idTexto);
@@ -295,8 +291,6 @@ function atualizarBarra(idBarra, idTexto, porcentagem, idStatus = null) {
     }
 }
 
-
-
 // --- Títulos - Carrossel Automático ---
 let carrosselInterval;
 const carrossel = document.querySelector('.carrossel-imagens');
@@ -329,7 +323,6 @@ document.querySelectorAll('.titulo-item').forEach((item) => {
 });
 
 // --- Funções para as janelas flutuantes dos títulos ---
-
 function abrirJanelaTitulo(id) {
     const janela = document.getElementById(`janelaTitulo${id}`);
       if (janela) {
@@ -376,7 +369,6 @@ document.querySelectorAll('.janela-titulos').forEach((janela) => {
     });
 });
 
-
 // --- Atributos ---
 function toggleCheckbox(element) {
     element.classList.toggle("checked");
@@ -402,9 +394,8 @@ const atributos = {
     unknown: { total: 100, porcentagem: 47.19 }
 };
 
-
 // --- Selos/Chaves ---
-let chaveAtual = 0;
+let chaveAtual = 0; // Índice da chave ativa
 
 const chaves = [
     {
@@ -511,6 +502,7 @@ function atualizarDestaqueCirculo(id) {
     });
 }
 
+// --- Função ativada ao clicar em "Clique para Ativar" ---
 function ativarChave() {
     console.log("Função ativarChave() chamada. Implemente a lógica aqui.");
     // Adicione aqui o código que deve ser executado quando a chave for ativada.
@@ -590,23 +582,24 @@ function atualizarEA(porcentagem) {
 }
 
 
-// --- Categoria Mãe ---
-//Funções Refatoradas
+// --- Categoria Mãe (Funções Refatoradas)---
+
 function abrirJanelaFilho(id) {
-    const janela = document.getElementById(`janelaFilho${id}`); // Usar ID
+    const janela = document.getElementById(`janela${id}`); // Usa template string
     if (janela) {
         janela.style.display = 'block';
     }
 }
+
 function fecharJanelaFilho(id) {
-     const janela = document.getElementById(`janelaFilho${id}`); // Usar ID
+    const janela = document.getElementById(`janela${id}`); // Usa template string
     if (janela) {
         janela.style.display = 'none';
     }
 }
 
 function expandirJanelaFilho(id) {
-    const janela = document.getElementById(`janelaFilho${id}`); // Usar ID
+    const janela = document.getElementById(`janela${id}`); // Usa template string
     if (janela) {
         janela.classList.toggle('janela-expandida');
     }
@@ -681,13 +674,12 @@ function atualizarAether(porcentagem) {
     document.getElementById("textoAether").textContent = `Aether: ${porcentagem}%`; // Usar IDs
 }
 
-
 // --- Inicialização (DOMContentLoaded) ---
 document.addEventListener('DOMContentLoaded', () => {
     // --- Música Isaac ---
     musicasFavoritadas = JSON.parse(localStorage.getItem(storageKey)) || {};
     atualizarListaMusicas();
-    selecionarMusica(1);
+    selecionarMusica(1); // Toca música 1
     document.getElementById('listaMusicas').style.display = 'none'; // Esconde lista
     atualizarBotaoPlay();
 
@@ -773,5 +765,25 @@ loadSection("secao-aura", "Seções/1-Aura-Buffy.html", function() {
         console.error("O elemento #janelaMusica iframe não foi encontrado.");
     }
 });
+
 loadSection("secao-assimilacao", "Seções/2-Taxa-de-Assimilação.html");
-loadSection("se
+loadSection("secao-cabecalho", "Seções/3-Cabeçalho.html");
+loadSection("secao-bahdinheiro", "Seções/4-Barra-Dinheiro.html", function () {
+    console.log("Seção Barra de Experiência carregada!");
+        var progressBar = document.getElementById('expBar');
+        if (progressBar) {
+            var percentage = 73; //
+            progressBar.style.width = percentage + '%';
+
+            // Atualizar o texto da barra
+            var textSpan = document.querySelector('.barra-texto');
+            if (textSpan) {
+                textSpan.textContent = '1303 - ' + percentage + '%';
+            }
+        } else {
+            console.error("Elemento 'expBar' não encontrado.");
+        }
+});
+loadSection("secao-classes", "Seções/5-Classes.html", function () {
+    console.log("Seção Classes carregada!");
+});

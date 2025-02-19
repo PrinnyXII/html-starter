@@ -832,12 +832,7 @@ document.addEventListener('DOMContentLoaded', () => {
   inicializarPlayerMusica();
   loadSection("secao-aura", "teste.html"); // Carrega teste.html em secao-aura
 
-loadSection("secao-aura", "Seções/1-Aura-Buffy.html", function() {
-    const playerMusica = document.querySelector("#janelaMusica iframe");
-    if (playerMusica) {
-        playerMusica.src = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1961843283%3Fsecret_token%3Ds-lg9054r5PuH";
-    } else {
-        console.error("O elemento #janelaMusica iframe não foi encontrado.");
+
     }
 });
 

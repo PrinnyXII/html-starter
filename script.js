@@ -830,9 +830,14 @@ document.addEventListener('DOMContentLoaded', () => {
 // que os elementos existam antes de tentar manipulá-los.
 
   inicializarPlayerMusica();
-  loadSection("secao-aura", "teste.html"); // Carrega teste.html em secao-aura
+  loadSection("secao-caracteristicas", "teste.html"); // Carrega teste.html em secao-aura
 
-
+loadSection("secao-aura", "Seções/1-Aura-Buffy.html", function() {
+    const playerMusica = document.querySelector("#janelaMusica iframe");
+    if (playerMusica) {
+        playerMusica.src = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1961843283%3Fsecret_token%3Ds-lg9054r5PuH";
+    } else {
+        console.error("O elemento #janelaMusica iframe não foi encontrado.");
     }
 });
 
@@ -844,7 +849,7 @@ loadSection("secao-classes", "Seções/5-Classes.html");
 
 //Seção que carrega a maior parte do código.
 //Adiciona os event listeners aqui, pois é depois que essa seção carrega que temos acesso aos botões
-loadSection("secao-caracteristicas", "Seções/6-Caracteristicas.html",  function () {
+loadSection("secao-", "Seções/6-Caracteristicas.html",  function () {
     console.log("Seção Características carregada!");
 
      // Adiciona os event listeners *depois* que a seção for carregada.

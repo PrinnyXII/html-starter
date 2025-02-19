@@ -1,60 +1,70 @@
-// --- Função para carregar seções (APENAS a versão com callback) ---
+// --- Funções Utilitárias ---
+
+// Função para carregar seções (APENAS a versão correta, com callback)
+// Esta função é a base para carregar o conteúdo das seções externas.
 function loadSection(id, url, callback) {
-    fetch(url)
-        .then(response => response.text())
+    fetch(url) // Faz uma requisição para buscar o arquivo HTML da seção
+        .then(response => response.text()) // Extrai o conteúdo HTML da resposta
         .then(data => {
-            document.getElementById(id).innerHTML = data;
-            if (callback) callback();
+            document.getElementById(id).innerHTML = data; // Insere o HTML no elemento com o ID especificado
+            if (callback) callback(); // Executa a função de callback (se houver) DEPOIS de inserir o HTML
         })
-        .catch(error => console.error('Erro ao carregar a seção:', error));
+        .catch(error => console.error('Erro ao carregar a seção:', error)); // Trata erros (ex: arquivo não encontrado)
 }
 
 // --- Buffy Música (Abre/Fecha Janela) ---
+// Esta função é chamada quando o usuário clica no botão de música da Buffy.
 function toggleJanelaMusica() {
-    const janela = document.getElementById('janelaMusica');
+    const janela = document.getElementById('janelaMusica'); // Pega o elemento da janela
+    // Alterna a visibilidade da janela: se estiver visível, esconde; se estiver escondida, mostra.
     janela.style.display = (janela.style.display === 'none' || janela.style.display === '') ? 'block' : 'none';
 }
 
+
 // --- Barra de Experiência ---
+// Esta função atualiza a barra de experiência (largura e texto).
 function updateExpBar(percentage) {
-    const progressBar = document.getElementById('expBar'); // Certifique-se de que o ID está correto no HTML
-    if (progressBar) {
-        progressBar.style.width = percentage + '%';
-        const textSpan = document.querySelector('.barra-texto'); // Seletor correto
-        if (textSpan) {
-            textSpan.textContent = '1303 - ' + percentage + '%';
+    const progressBar = document.getElementById('expBar'); // Pega o elemento da barra de progresso
+    if (progressBar) { // Verifica se o elemento existe (boa prática)
+        progressBar.style.width = percentage + '%'; // Define a largura da barra
+        const textSpan = document.querySelector('.barra-texto'); // Pega o elemento de texto
+        if (textSpan) { // Verifica se o elemento existe
+            textSpan.textContent = '1303 - ' + percentage + '%'; // Atualiza o texto
         }
     } else {
-        console.error("Elemento 'expBar' não encontrado.");
+        console.error("Elemento 'expBar' não encontrado."); // Mensagem de erro se o elemento não for encontrado
     }
 }
+
+
 
 // --- Características - Profissão (Mostra/Esconde Detalhes) ---
+// Esta função é chamada quando o usuário clica no botão para expandir/recolher os detalhes da profissão.
 function toggleProfissao() {
-    const detalhes = document.getElementById('detalhesProfissao');
-    if (detalhes) { // Verifica se o elemento existe
-      detalhes.style.display = (detalhes.style.display === 'none' || detalhes.style.display === '') ? 'block' : 'none';
+    const detalhes = document.getElementById('detalhesProfissao'); //Pega a div dos detalhes
+    if (detalhes) { //Verifica se o elemento existe
+      detalhes.style.display = (detalhes.style.display === 'none' || detalhes.style.display === '') ? 'block' : 'none'; //Mostra/Esconde
     }
-
 }
 
+
 // --- Estado Civil (Abre/Fecha Janela) ---
+// Funções para abrir e fechar a janela flutuante de estado civil.
 function abrirJanelaEstadoCivil() {
     const janela = document.getElementById("janelaEstadoCivil");
-    if (janela) { //Verifica se a janela existe
-        janela.style.display = "block";
+      if (janela) {  //Verifica se a janela existe
+        janela.style.display = "block"; //Mostra
     }
-
 }
 
 function fecharJanelaEstadoCivil() {
     const janela = document.getElementById("janelaEstadoCivil");
-      if (janela) { //Verifica se a janela existe
-        janela.style.display = "none";
+    if (janela) { //Verifica se a janela existe
+        janela.style.display = "none"; //Esconde
     }
 }
-
 // --- Player de Música Isaac (Refatorado) ---
+
 // Variáveis para elementos do player (selecionados uma vez, no escopo global)
 const playerMusica = document.querySelector('.player-musica-isaac'); // Elemento principal do player
 const audio = document.querySelector('audio');  // Elemento <audio>
@@ -68,7 +78,6 @@ const playerBackgroundElement = document.querySelector('.player-musica-isaac'); 
 const audioSource = document.querySelector('#audio-player source'); // Elemento <source> dentro do <audio>
 let musicaTocando = false; // Variável de estado: true se a música está tocando, false se não.
 
-// --- Funções do Player de Música ---
 
 // Função principal para abrir/fechar o player
 function togglePlayerMusicaIsaac() {
@@ -90,19 +99,15 @@ function togglePlayerMusicaIsaac() {
 function fecharPlayer() {
     const player = document.getElementById('playerMusicaIsaac');
     const estadoCivil = document.getElementById('janelaEstadoCivil');
-
     if(player){
-        player.style.display = 'none'; // Esconde o player
+       player.style.display = 'none'; // Esconde o player
     }
-    
     if(estadoCivil){
-        estadoCivil.style.zIndex = '1000'; // Restaura o z-index
+      estadoCivil.style.zIndex = '1000'; // Restaura o z-index
     }
-    
     if(audio){
-        audio.pause();              // Para a música
+      audio.pause();              // Para a música
     }
-    
     musicaTocando = false;      // Atualiza o estado
     atualizarBotaoPlay();     // Atualiza o botão play/pause
 }
@@ -127,23 +132,23 @@ const listaDeMusicas = [
         autor: "Kurae Radiânthia Pendragon Isaac",
         capa: "https://github.com/Cueinhah/Painel-de-Buffy/blob/main/assets/Imagens%20Isaac/sac2.jpg?raw=true",
         background: "https://github.com/Cueinhah/Painel-de-Buffy/blob/main/assets/Imagens%20Isaac/sac1.jpg?raw=true",
-        link: "https://github.com/PrinnyXII/st/raw/refs/heads/main/rep/Isaac/CryingAlone-Nowhere.mp3", //  Caminho relativo correto
+        link: "assets/musicas/Crying Alone - Nowhere - Memory Breaker.mp3", //  Caminho relativo correto
     },
     {
         id: 2,
         nome: "Música 2",
         autor: "Artista 2",
         capa: "https://imgur.com/ExemploCapa2.png",  // <-- Use URLs válidas
-        background: "https://imgur.com/ExemploBackground2.png",
+        background: "https://imgur.com/ExemploBackground2.png", // <-- Use URLs válidas
         link: "assets/musicas/Musica2.mp3",       // <-- e caminhos válidos/URL
     },
     {
         id: 3,
         nome: "Música 3",
         autor: "Artista 3",
-        capa: "https://imgur.com/ExemploCapa3.png",
-        background: "https://imgur.com/ExemploBackground3.png",
-        link: "assets/musicas/Musica3.mp3",
+        capa: "https://imgur.com/ExemploCapa3.png",  // <-- Use URLs válidas
+        background: "https://imgur.com/ExemploBackground3.png", // <-- Use URLs válidas
+        link: "assets/musicas/Musica3.mp3",          // <-- e caminhos válidos
     },
 ];
 
@@ -171,16 +176,19 @@ function selecionarMusica(id) {
             atualizarFavoritoVisual(id); // Atualiza o ícone de favorito
         };
     }
+    else {
+        console.error("Música não encontrada!");
+    }
 }
 
 // Função para abrir/fechar a lista de músicas
 function toggleLista() {
-     const lista = document.getElementById('listaMusicas');
-    if(lista){
-        lista.style.display = (lista.style.display === 'block') ? 'none' : 'block';
-        if (lista.style.display === 'block') {
+    const lista = document.getElementById('listaMusicas'); //Foi corrigido para listaMusicas, pois não possui sufixo -isaac
+    if(lista){ //Verifica se a lista existe
+      lista.style.display = (lista.style.display === 'block') ? 'none' : 'block';
+      if (lista.style.display === 'block') {
           atualizarListaMusicas();
-        }
+      }
     }
 }
 
@@ -199,6 +207,10 @@ function avancar10s() {
 }
 
 function playPause() {
+    if (!audio) {
+        console.error("Erro: Elemento 'audio' não encontrado!");
+        return;
+    }
     if (musicaTocando) {
         audio.pause();
         musicaTocando = false;
@@ -213,7 +225,9 @@ function playPause() {
 // Função para atualizar o texto do botão play/pause (► ou II)
 function atualizarBotaoPlay() {
     const botaoPlay = document.querySelector('.botao-controle-isaac:nth-child(2)'); // Seleciona o botão correto
-    botaoPlay.textContent = musicaTocando ? 'II' : '►'; // Usa um caractere de pause mais consistente
+    if(botaoPlay){
+       botaoPlay.textContent = musicaTocando ? 'II' : '►'; // Usa um caractere de pause mais consistente
+    }
 }
 
 // --- Favoritar e salvar estado (localStorage) ---
@@ -223,7 +237,7 @@ let musicasFavoritadas = JSON.parse(localStorage.getItem(storageKey)) || {}; // 
 // Função para atualizar a aparência do botão de favoritar (coração)
 function atualizarFavoritoVisual(id) {
     const botaoFavoritar = document.querySelector('.botao-favoritar-isaac');
-     if (botaoFavoritar) { //Verifica se o botão existe
+    if (botaoFavoritar) {
         if (musicasFavoritadas[id]) {
             botaoFavoritar.classList.add('favoritado'); // Adiciona a classe CSS
             botaoFavoritar.textContent = '💖';          // Coração preenchido
@@ -231,40 +245,41 @@ function atualizarFavoritoVisual(id) {
             botaoFavoritar.classList.remove('favoritado'); // Remove a classe CSS
             botaoFavoritar.textContent = '🤍';          // Coração vazio
         }
-    }
+}
 }
 
 // Função para favoritar/desfavoritar uma música
 function favoritarMusica() {
-   const musicaAtual = listaDeMusicas.find((musica) => musica.nome === nomeMusicaIsaacElement.textContent);
+   const musicaAtual = listaDeMusicas.find((musica) => musica.nome === nomeMusicaIsaacElement.textContent); //Simplificado
     if(musicaAtual){
-        musicasFavoritadas[musicaAtual.id] = !musicasFavoritadas[musicaAtual.id];
-        atualizarFavoritoVisual(musicaAtual.id);
-        localStorage.setItem(storageKey, JSON.stringify(musicasFavoritadas));
+        musicasFavoritadas[musicaAtual.id] = !musicasFavoritadas[musicaAtual.id];  //Inverte o estado (true/false)
+        atualizarFavoritoVisual(musicaAtual.id);  //Chama a função de atualização
+        localStorage.setItem(storageKey, JSON.stringify(musicasFavoritadas)); // Salva no localStorage
     }
+
 }
 
 // --- Atualização da barra de progresso e tempo ---
 
 // Atualiza a barra de progresso quando o usuário *arrasta* o controle
 progressBar.addEventListener('input', () => {
-    if (!isNaN(audio.duration) && isFinite(audio.duration)) {
+     if (!isNaN(audio.duration) && isFinite(audio.duration)) {
         audio.currentTime = (progressBar.value / 100) * audio.duration;
     }
 });
 
 // Atualiza a barra de progresso e o tempo *conforme a música toca*
 audio.addEventListener('timeupdate', () => {
-    if (!isNaN(audio.currentTime) && isFinite(audio.currentTime)) {
-        tempoAtual.textContent = formatarTempo(audio.currentTime); // Formata o tempo
-        progressBar.value = (audio.currentTime / audio.duration) * 100; // Atualiza a barra
+    if(!isNaN(audio.currentTime) && isFinite(audio.currentTime)){
+       tempoAtual.textContent = formatarTempo(audio.currentTime);
+       progressBar.value = (audio.currentTime / audio.duration) * 100;
     }
 });
 
 // Atualiza o tempo total *quando a música carrega*
 audio.addEventListener('loadedmetadata', () => {
     if(!isNaN(audio.duration) && isFinite(audio.duration)){
-        tempoTotal.textContent = formatarTempo(audio.duration);
+      tempoTotal.textContent = formatarTempo(audio.duration);
     }
 });
 
@@ -274,6 +289,7 @@ function formatarTempo(segundos) {
     const restoSegundos = Math.floor(segundos % 60);
     return `${minutos}:${restoSegundos < 10 ? '0' : ''}${restoSegundos}`; // Adiciona um zero se < 10
 }
+
 function atualizarListaMusicas() {
     const listaContainer = document.getElementById('listaMusicas');
     if(listaContainer){
@@ -284,43 +300,116 @@ function atualizarListaMusicas() {
             item.textContent = musica.nome; // Nome sincronizado
             item.addEventListener('click', () => selecionarMusica(musica.id)); // Seleciona a música ao clicar
             listaContainer.appendChild(item);
-    });
+        });
     }
 }
 
-// --- Títulos - Carrossel Automático ---
-let carrosselInterval;
+// --- Inicialização do Player ---
+document.addEventListener('DOMContentLoaded', () => {
+   atualizarListaMusicas(); //Cria a lista de músicas.
+   selecionarMusica(1);
+   document.getElementById('listaMusicas').style.display = 'none';
+   atualizarBotaoPlay();
+
+    // Adiciona listeners para os botões.  *Precisa* estar aqui e *não* no
+    // loadSection, porque esses elementos estão no index.html, e não em uma seção.
+    document.querySelector(".botao-favoritar-isaac")?.addEventListener("click", favoritarMusica);
+    document.querySelector(".botao-menu-isaac")?.addEventListener("click", toggleLista);  // Botão "≡"
+
+    // *Não* adicione os listeners dos botões de play/pause, etc., aqui!
+    //  Eles são adicionados dentro de inicializarPlayerMusica().
+});
+
+function inicializarPlayerMusica() {
+     console.log("Inicializando Player de Música...");
+
+    // Capturar elementos corretamente após o carregamento
+    //  (agora usando as variáveis globais, se disponíveis)
+    window.audio = audio || document.querySelector("#audio-player"); // Usa a variável global, ou busca se não existir
+    window.audioSource = audioSource || document.querySelector("#audio-player source");
+    window.progressBar = progressBar || document.getElementById("progress-bar");
+    window.tempoAtual = tempoAtual || document.getElementById("tempo-atual"); // Não é necessário se já foi definido
+    window.tempoTotal = tempoTotal || document.getElementById("tempo-total"); // Não é necessário se já foi definido
+
+    //Verifica se os elementos foram encontrados
+     if (!audio || !audioSource || !progressBar || !tempoAtual || !tempoTotal) {
+        console.error("Erro ao inicializar o player: elementos não encontrados.");
+        return; // Sai da função se algum elemento não for encontrado
+    }
+
+     // Adiciona os listeners aos botões de controle *depois* de garantir
+    // que os elementos existem, e *dentro* de inicializarPlayerMusica()
+    document.querySelector(".botao-controle-isaac:nth-child(1)")?.addEventListener("click", retroceder10s); // ⏪
+    document.querySelector(".botao-controle-isaac:nth-child(2)")?.addEventListener("click", playPause);       // ► ou II
+    document.querySelector(".botao-controle-isaac:nth-child(3)")?.addEventListener("click", avancar10s);     // ⏩
+
+}
+// --- Fama/Moral - Barra de Progresso e Estado (Função Refatorada) ---
+//Esta é uma função genérica para atualizar as barras.
+function atualizarBarra(idBarra, idTexto, porcentagem, idStatus = null) {
+    const barra = document.getElementById(idBarra);
+    const texto = document.getElementById(idTexto);
+
+    if (barra && texto) { //Verifica se os elementos foram encontrados
+        barra.style.width = `${porcentagem}%`;
+        texto.textContent = `${porcentagem}%`;
+
+        let cor;
+        if (porcentagem <= 20) {
+            cor = 'darkred';
+        } else if (porcentagem <= 40) {
+            cor = '#FF9100';
+        } else if (porcentagem <= 60) {
+            cor = '#00D19A';
+        } else if (porcentagem <= 80) {
+            cor = '#D622EF';
+        } else {
+            cor = '#6222EF';
+        }
+        barra.style.backgroundColor = cor;
+
+        if (idStatus) { //Se um ID de status for fornecido
+            const status = document.getElementById(idStatus);
+            if(status){ //Verifica se o elemento existe
+                let textoStatus;
+                if (porcentagem <= 20) {
+                    textoStatus = 'Infame - Condenado - Vilão - Corrupto';
+                } else if (porcentagem <= 40) {
+                    textoStatus = 'Desprezado - Mal-Visto - Suspeito - Anti-Herói';
+                } else if (porcentagem <= 60) {
+                    textoStatus = 'Ambíguo - Neutro - Indiferente - Equilibrado';
+                } else if (porcentagem <= 80) {
+                    textoStatus = 'Respeitado - Admirado - Herói - Protetor';
+                } else {
+                    textoStatus = 'Renomado - Lendário - Venerado - Salvador';
+                }
+                status.textContent = textoStatus;
+            }
+
+        }
+    }
+}
+
+// --- Títulos (Carrossel) ---
+let carrosselInterval; // Variável para controlar o intervalo do carrossel
 const carrossel = document.querySelector('.carrossel-imagens');
 const carrosselContainer = document.querySelector('.carrossel-titulos');
 
 function iniciarCarrossel() {
     carrosselInterval = setInterval(() => {
-        carrossel.scrollLeft += 1;
+        carrossel.scrollLeft += 1; // Move o carrossel para a esquerda (1 pixel por vez)
+        // Se chegou ao final, volta para o início
         if (carrossel.scrollLeft >= carrossel.scrollWidth - carrossel.offsetWidth) {
             carrossel.scrollLeft = 0;
         }
-    }, 30);
+    }, 30); // Intervalo de 30 milissegundos (ajuste para controlar a velocidade)
 }
 
 function pausarCarrossel() {
-    clearInterval(carrosselInterval);
+    clearInterval(carrosselInterval); // Para o movimento do carrossel
 }
 
-// Eventos para o carrossel (pausa e retoma o movimento)
-carrosselContainer.addEventListener('mouseover', pausarCarrossel);
-carrosselContainer.addEventListener('mouseout', iniciarCarrossel);
-
-// Gerenciar cliques nas bolinhas do carrossel
-document.querySelectorAll('.titulo-item').forEach((item) => {
-    item.addEventListener('click', (e) => {
-        pausarCarrossel();
-        const id = e.currentTarget.getAttribute('onclick').match(/\d+/)[0];
-        abrirJanelaTitulo(id);
-    });
-});
-
-// --- Funções para as janelas flutuantes dos títulos ---
-
+// Funções para abrir, fechar e expandir as janelas de título (usando template literals)
 function abrirJanelaTitulo(id) {
     const janela = document.getElementById(`janelaTitulo${id}`);
       if (janela) {
@@ -332,18 +421,19 @@ function fecharJanelaTitulo(id) {
     const janela = document.getElementById(`janelaTitulo${id}`);
       if (janela) {
         janela.style.display = 'none';
-        iniciarCarrossel(); // Reinicia o carrossel
+        iniciarCarrossel(); // Reinicia o carrossel ao fechar a janela
     }
 }
 
 function expandirJanelaTitulo(id) {
     const janela = document.getElementById(`janelaTitulo${id}`);
-      if (janela) {
+     if (janela) {
         janela.classList.toggle('janela-expandida');
     }
 }
 
 // --- Movimentação manual das janelas flutuantes (Títulos) ---
+//Essa parte permite que o usuário arraste as janelas
 document.querySelectorAll('.janela-titulos').forEach((janela) => {
     let isDragging = false, startX, startY;
 
@@ -351,7 +441,7 @@ document.querySelectorAll('.janela-titulos').forEach((janela) => {
         isDragging = true;
         startX = e.clientX - janela.offsetLeft;
         startY = e.clientY - janela.offsetTop;
-        janela.style.cursor = 'grabbing';
+        janela.style.cursor = 'grabbing'; // Muda o cursor para indicar que está arrastando
     });
 
     document.addEventListener('mousemove', (e) => {
@@ -363,7 +453,7 @@ document.querySelectorAll('.janela-titulos').forEach((janela) => {
 
     document.addEventListener('mouseup', () => {
         isDragging = false;
-        janela.style.cursor = 'move';
+        janela.style.cursor = 'move'; // Restaura o cursor
     });
 });
 
@@ -393,8 +483,9 @@ const atributos = {
 };
 
 // --- Selos/Chaves ---
-let chaveAtual = 0; // Índice da chave ativa
+let chaveAtual = 0; // Índice da chave ativa (começa em 0)
 
+// Array com os dados de cada chave
 const chaves = [
     {
         id: 0,
@@ -504,24 +595,30 @@ function atualizarDestaqueCirculo(id) {
 function ativarChave() {
     console.log("Função ativarChave() chamada. Implemente a lógica aqui.");
     // Adicione aqui o código que deve ser executado quando a chave for ativada.
+    // Isso vai depender do que você quer que aconteça.  Pode ser, por exemplo:
+    // - Abrir uma janela flutuante com mais informações.
+    // - Aplicar algum efeito na página.
+    // - Enviar uma requisição para um servidor.
+    // - ... etc.
 }
 
 // --- Bençãos e Maldições ---
-let posicaoCarrossel = 0;
+let posicaoCarrossel = 0; // Posição inicial do carrossel
 
 function moverCarrossel(direcao) {
     const carrossel = document.querySelector('.carrossel-diamantes');
     const itens = carrossel.querySelectorAll('.diamante-item');
 
-    itens.forEach(item => item.classList.remove('ativo'));
-    posicaoCarrossel = (posicaoCarrossel + direcao + itens.length) % itens.length;
-    itens[posicaoCarrossel].classList.add('ativo');
+    itens.forEach(item => item.classList.remove('ativo')); // Remove a classe 'ativo' de todos
+    posicaoCarrossel = (posicaoCarrossel + direcao + itens.length) % itens.length; // Calcula a nova posição
+    itens[posicaoCarrossel].classList.add('ativo'); // Adiciona 'ativo' ao item correto
 
-    const tamanhoItem = itens[posicaoCarrossel].offsetWidth + 10;
+    // Faz o scroll horizontal para manter o item central visível
+    const tamanhoItem = itens[posicaoCarrossel].offsetWidth + 10; // Inclui o gap (espaçamento)
     carrossel.scrollLeft = posicaoCarrossel * tamanhoItem - (carrossel.clientWidth - tamanhoItem) / 2;
 }
 
-
+// Funções para abrir, fechar e expandir as janelas de bênçãos/maldições
 function abrirJanela(idJanela) {
      const janela = document.getElementById(idJanela);
         if(janela){
@@ -529,14 +626,12 @@ function abrirJanela(idJanela) {
         }
 }
 
-
 function fecharJanela(idJanela) {
    const janela = document.getElementById(idJanela);
         if(janela){
             janela.style.display = 'none';
         }
 }
-
 
 function expandirJanela(idJanela) {
     const janela = document.getElementById(idJanela);
@@ -574,15 +669,15 @@ function atualizarEA(porcentagem) {
     const barraEA = document.getElementById('preenchimento-ea');
     const textoEA = document.getElementById('texto-ea');
 
-    porcentagem = Math.max(0, Math.min(100, porcentagem));
+    porcentagem = Math.max(0, Math.min(100, porcentagem)); // Garante que a porcentagem esteja entre 0 e 100
     barraEA.style.width = `${porcentagem}%`;
     textoEA.textContent = `EA: ${porcentagem}%`;
-    }
+}
 
 // --- Categoria Mãe (Funções Refatoradas)---
 
 function abrirJanelaFilho(id) {
-    const janela = document.getElementById(`janela${id}`); // Usa template string e ID correto
+    const janela = document.getElementById(`janela${id}`); // Usa template string e ID correto: janelaKaito, janelaTwenty
     if (janela) {
         janela.style.display = 'block';
     }
@@ -595,22 +690,23 @@ function fecharJanelaFilho(id) {
 }
 
 function expandirJanelaFilho(id) {
-     const janela = document.getElementById(`janela${id}`); // Usa template string e ID correto
+    const janela = document.getElementById(`janela${id}`); // Usa template string e ID correto
     if (janela) {
         janela.classList.toggle('janela-expandida');
     }
 }
 
-
 // --- Necessidades Básicas/Temporárias (Função Unificada) ---
+//Juntei as duas funções para atualizar as necessidades em uma só.
 function atualizarStatusNecessidade(grupoId, porcentagem, tipo) {
     const fillBar = document.getElementById(`barra-progresso-${grupoId}`);
     const progressText = document.getElementById(`progresso-texto-${grupoId}`);
     const statusIndicator = document.getElementById(`estado-${grupoId}`);
 
+    //Verificação se os elementos existem
     if(!fillBar || !progressText || !statusIndicator) {
         console.error(`Elementos não encontrados para ${grupoId}`);
-        return; // Sai da função se algum elemento não for encontrado.
+        return;  //Sai da função se algum elemento não for encontrado
     }
 
     fillBar.style.width = `${porcentagem}%`;
@@ -619,7 +715,7 @@ function atualizarStatusNecessidade(grupoId, porcentagem, tipo) {
     let color = '';
     let status = '';
 
-    if (tipo === 'basica') {
+    if (tipo === 'basica') {  //Lógica para necessidades básicas
         if (porcentagem <= 0) {
             color = '#00B59B';
             status = 'Nulo';
@@ -639,7 +735,7 @@ function atualizarStatusNecessidade(grupoId, porcentagem, tipo) {
             color = '#00B59B';
             status = 'Excelente';
         }
-    } else if (tipo === 'temporaria') {
+    } else if (tipo === 'temporaria') { //Lógica para necessidades temporárias
         if (porcentagem <= 0) {
             color = '#00B59B';
             status = 'Nulo';
@@ -667,42 +763,41 @@ function atualizarStatusNecessidade(grupoId, porcentagem, tipo) {
 
 // --- Aether ---
 let porcentagemAether = 101;//Valor inicial
-function atualizarAether(porcentagem) {
-    if (porcentagem > 102) porcentagem = 102;
-    if (porcentagem < 0) porcentagem = 0;
+function atualizarAether(porcentagem) {  //Função separada para o Aether.
+    if (porcentagem > 102) porcentagem = 102; //Limite
+    if (porcentagem < 0) porcentagem = 0;    //Limite
 
-    document.getElementById("preenchimentoAether").style.width = `${(porcentagem / 102) * 100}%`;
-    document.getElementById("textoAether").textContent = `Aether: ${porcentagem}%`;
+    document.getElementById("preenchimentoAether").style.width = `${(porcentagem / 102) * 100}%`; //Calcula a porcentagem
+    document.getElementById("textoAether").textContent = `Aether: ${porcentagem}%`; // Mostra no texto
 }
-
 // --- Inicialização (DOMContentLoaded) ---
+// Este código é executado *depois* que todo o HTML (estático) da página é carregado.
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Música Isaac ---
-    musicasFavoritadas = JSON.parse(localStorage.getItem(storageKey)) || {};
-    atualizarListaMusicas();
-    selecionarMusica(1); // Toca música 1
-    document.getElementById('listaMusicas').style.display = 'none'; // Esconde lista
-    atualizarBotaoPlay();
+    // --- Música Isaac (inicialização) ---
+    musicasFavoritadas = JSON.parse(localStorage.getItem(storageKey)) || {}; // Carrega favoritos do localStorage
+    atualizarListaMusicas();       // Cria a lista de músicas no menu
+    selecionarMusica(1);      // Toca a primeira música
+    document.getElementById('listaMusicas').style.display = 'none'; // Esconde a lista inicialmente
+    atualizarBotaoPlay();    // Atualiza o botão play/pause
 
     // --- Barra de Experiência ---
-     updateExpBar(73);
+     updateExpBar(73); // Define a porcentagem inicial
 
-    // --- Autoestima e Fama/Moral ---
+    // --- Autoestima e Fama/Moral (valores iniciais) ---
     atualizarBarra('barra-autoestima', 'texto-autoestima', 99);
     atualizarBarra('barra-fama', 'texto-fama', 94, 'status-fama');
 
    // --- Títulos - Inicia o carrossel ---
     iniciarCarrossel();
 
-    // --- Atributos ---
+    // --- Atributos (valores iniciais) ---
       for (let atributo in atributos) {
         const { total, porcentagem } = atributos[atributo];
         atualizarAtributoAtual(atributo, total, porcentagem);
     }
 
-    // --- Selos/Chaves ---
-    // Estado inicial dos círculos (agora usando classList.add)
-      const estadosIniciais = {
+    // --- Selos/Chaves (estado inicial) ---
+      const estadosIniciais = {  //Quais circulos iniciam ativos
         circulo1: true,
         circulo2: false,
         circulo3: true,
@@ -712,7 +807,7 @@ document.addEventListener('DOMContentLoaded', () => {
         circulo7: true,
         circulo8: false
     };
-
+    //Define quais circulos iniciam ativos e quais não.
     for (const [id, ativo] of Object.entries(estadosIniciais)) {
         const circulo = document.getElementById(id);
         if (ativo) {
@@ -720,19 +815,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    navegar(0); // Começa mostrando a primeira chave
+     navegar(0); // Começa mostrando a primeira chave
 
     // --- Bençãos/Maldições (Diamante do Meio) ---
     const diamantes = document.querySelectorAll('.diamante-item');
     const meio = Math.floor(diamantes.length / 2);
-    if (diamantes[meio]) {
+    if (diamantes[meio]) {  //Verifica se encontrou o elemento
         diamantes[meio].classList.add('ativo');
     }
 
     // --- Barra EA ---
-    atualizarEA(53);
+    atualizarEA(53);  // Valor inicial da barra EA
 
-    // --- Necessidades ---
+    // --- Necessidades (valores iniciais) ---
+    //Chamada para atualizar as necessidades básicas:
     atualizarStatusNecessidade('grupo-higiene', 100, 'basica');
     atualizarStatusNecessidade('grupo-banheiro', 100, 'basica');
     atualizarStatusNecessidade('grupo-sono', 100, 'basica');
@@ -743,6 +839,8 @@ document.addEventListener('DOMContentLoaded', () => {
     atualizarStatusNecessidade('grupo-foco', 99, 'basica');
     atualizarStatusNecessidade('grupo-felicidade', 99, 'basica');
     atualizarStatusNecessidade('grupo-tesao', 99, 'basica');
+
+    //Chamada para atualizar as necessidades temporárias:
     atualizarStatusNecessidade('grupo-enjoo', 0, 'temporaria');
     atualizarStatusNecessidade('grupo-fadiga', 0, 'temporaria');
     atualizarStatusNecessidade('grupo-estresse', 0, 'temporaria');
@@ -753,24 +851,38 @@ document.addEventListener('DOMContentLoaded', () => {
     atualizarStatusNecessidade('grupo-desgaste', 0, 'temporaria');
 
     // --- Aether ---
-    atualizarAether(porcentagemAether);
+    atualizarAether(porcentagemAether);  // Valor inicial
     
+    //Adiciona listeners para os botões da seção de caracteristicas
+    document.getElementById("botaoProfissao")?.addEventListener("click", toggleProfissao);
+    document.getElementById("botaoEstadoCivil")?.addEventListener("click", abrirJanelaEstadoCivil);
+    
+    //Adicona listeners aos botões de fechar das janelas
+    document.getElementById("fecharEstadoCivil")?.addEventListener("click", fecharJanelaEstadoCivil);
+     document.getElementById("fecharPlayer")?.addEventListener("click", fecharPlayer);
+
+    //Inicializa o player após a seção de caracteristicas ter sido carregada
+     inicializarPlayerMusica();
+
+    //Atualiza a lista de músicas, garante que a primeira seja selecionada e esconde a lista
+     atualizarListaMusicas();
+     selecionarMusica(1);
+     document.getElementById("listaMusicas").style.display = "none";
+
+     //Atualiza o botão de play/pause, para garantir que esteja no estado correto
+     atualizarBotaoPlay();
 });
 
 // --- Carregamento de Seções (usando a versão correta de loadSection) ---
+// Agora, as seções são carregadas, *e os event listeners são adicionados
+// dentro das funções de callback, DEPOIS que a seção é carregada*.
 
-loadSection("secao-aura", "Seções/1-Aura-Buffy.html", function() {
-    const playerMusica = document.querySelector("#janelaMusica iframe");
-    if (playerMusica) {
-        playerMusica.src = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1961843283%3Fsecret_token%3Ds-lg9054r5PuH";
-    } else {
-        console.error("O elemento #janelaMusica iframe não foi encontrado.");
-    }
-});
+loadSection("secao-aura", "Seções/1-Aura-Buffy.html"); //Essa seção carrega o iframe da musica, da primeira aba.
 
-//Carrega as seções, agora sem funções dentro.
 loadSection("secao-assimilacao", "Seções/2-Taxa-de-Assimilação.html");
 loadSection("secao-cabecalho", "Seções/3-Cabeçalho.html");
 loadSection("secao-bahdinheiro", "Seções/4-Barra-Dinheiro.html");
 loadSection("secao-classes", "Seções/5-Classes.html");
+
+//Seção que carrega a maior parte do código.
 loadSection("secao-caracteristicas", "Seções/6-Caracteristicas.html");

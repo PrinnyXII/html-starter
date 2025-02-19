@@ -17,168 +17,12 @@
 
             <div class="linha-separadora"></div>
 
-            <!-- Características -->
-            <section id="caracteristicas">
-                <h2 class="titulo2">Características</h2>
-                <div class="nova-secao">
-                    <!-- Textos - Estado Civil; Sexualidade e Profissão -->
-                    <div class="bloco-esquerdo">
-                        <!-- Estado Civil -->
-                        <div class="retangulo-texto">
-                            <span class="subtitulo">Estado Civil:</span>
-                            <button type="button" class="texto texto-clicavel-isaac" onclick="abrirJanelaEstadoCivil()">Casada 💍</button>
-                        </div>
-
-                        <!-- Sexualidade -->
-                        <div class="retangulo-texto">
-                            <span class="subtitulo">Sexualidade:</span><span class="texto">Bissexual</span>
-                        </div>
-
-                        <!-- Profissão com Detalhes Ocultos -->
-                        <div class="retangulo-texto">
-                            <span class="subtitulo">Profissão:</span>
-                            <span class="texto">Caçadora</span> <span class="texto-brilhante2">(Nível 20)</span>
-                            <button class="botao-expandir-profissao" onclick="toggleProfissao()">▼</button>
-                        </div>
-
-                        <!-- Retângulo Oculto para Detalhes -->
-                        <div class="retangulo-detalhes-profissao" id="detalhesProfissao">
-                            <span class="texto">Vampire Hunter </span> <span class="texto-brilhante2">(0)</span> <span class="texto">, Dominatrix </span> <span class="texto-brilhante2">(Nível 211)</span>
-                        </div>
-                    </div>
-
-                    <!-- Buffy Pixel Art -->
-                    <div class="bloco-centro">
-                        <img src="https://github.com/PrinnyXII/st/blob/main/rep/Buffy/buffy%20o%20poet%20que%20move.gif?raw=truef" alt="Buffy Pixel Art" class="imagem-central">
-                    </div>
-
-                    <!-- Barras - Autoestima e Fama/Moral -->
-                    <div class="bloco-direito">
-                        <!-- Barra de Autoestima -->
-                        <div>
-                            <div class="titulo-barra">Autoestima</div>
-                            <div class="barra-porcentagem">
-                                <div class="preenchimento-barra" id="barra-autoestima"></div>
-                                <span class="texto-barra" id="texto-autoestima"></span>
-                            </div>
-                        </div>
-
-                        <!-- Barra de Fama / Moral -->
-                        <div>
-                            <div class="titulo-barra">Fama / Moral</div>
-                            <div class="barra-porcentagem">
-                                <div class="preenchimento-barra" id="barra-fama"></div>
-                                <span class="texto-barra" id="texto-fama"></span>
-                            </div>
-                            <div class="status-fama">
-                                <span id="status-fama"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- Janela Flutuante para Estado Civil -->
-            <div class="janela-estado-civil" id="janelaEstadoCivil">
-                <div class="conteudo-janela-isaac">
-                    <button class="botao-fechar" onclick="fecharJanelaEstadoCivil()">✖︎</button>
-                    <button class="botao-expandir" onclick="expandirJanela('janelaEstadoCivil')">❐</button>
-
-                    <!-- Botão de Música -->
-                    <div class="botao-musica-isaac" onclick="togglePlayerMusicaIsaac()">
-                        <span class="texto-botao-musica">♪</span>
-                    </div>
-
-                    <!-- Balão de Pensamento -->
-                    <div class="balao-pensamento">
-                        <span id="pensamento-texto">💤</span>
-                    </div>
-
-                    <!-- Bloco com Círculo e Informações Básicas -->
-                    <div class="bloco-circulo-isaac">
-                        <div class="circulo-marido">
-                            <img src="https://github.com/Cueinhah/Painel-de-Buffy/blob/main/assets/Imagens%20Isaac/sac3.jpg?raw=true" alt="Foto do Marido">
-                        </div>
-                        <div class="info-marido">
-                            <h3>Kurae Radiânthia Pendragon Isaac <span class="icone-coroa">亗</span></h3>
-                            <p><strong>Data do Casamento:</strong> ??</p>
-                            <p><strong>Local do Casamento:</strong> Elkhorn - Mana River</p>
-                        </div>
-                    </div>
-
-                    <!-- Bloco com Informações Detalhadas -->
-                    <div class="detalhes-marido">
-                        <p><strong>Skills:</strong></p>
-                        <ul>
-                            <li>[nenhuma]</li>
-                        </ul>
-                        <p><strong>Pets/Familiares:</strong></p>
-                        <ul>
-                            <li>[nenhum]</li>
-                        </ul>
-                        <p><strong>Missões em Conjunto:</strong></p>
-                        <ul>
-                            <li>[nenhuma]</li>
-                        </ul>
-                        <p><strong>Propriedades do Casal:</strong></p>
-                        <ul>
-                            <li>[nenhuma]</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Player de Música Isaac -->
-            <div class="player-musica-isaac" id="playerMusicaIsaac" style="display: none;">
-                <!-- Botão de fechar -->
-                <button class="botao-fechar-musica-isaac" onclick="fecharPlayer()">✖︎</button>
-
-                <!-- Lista de Música (≡) -->
-                <div class="menu-musica-isaac">
-                    <button class="botao-menu-isaac" onclick="toggleLista()">≡</button>
-                    <div class="lista-musicas-isaac" id="listaMusicas"></div>
-                </div>
-
-                <!-- Círculo com imagem -->
-                <div class="capa-musica-isaac">
-                    <img src="" alt="Capa da Música">
-                </div>
-
-                <!-- Informações e Controles -->
-                <div class="info-controles-isaac">
-                    <!-- Botão Favoritar e Informações da Música -->
-                    <div class="info-musica-isaac">
-                        <button class="botao-favoritar-isaac" onclick="favoritarMusica()">🤍</button>
-                        <div>
-                            <p class="nome-musica-isaac"></p>
-                            <p class="autor-musica-isaac"></p>
-                        </div>
-                    </div>
-                    <!-- Controles de Música -->
-                    <div class="controles-isaac">
-                        <button class="botao-controle-isaac" onclick="retroceder10s()">|◁</button>
-                        <button class="botao-controle-isaac" onclick="playPause()">►</button>
-                        <button class="botao-controle-isaac" onclick="avancar10s()">▷|</button>
-                    </div>
-                </div>
-
-                <!-- Linha de Progresso -->
-                <div class="linha-tempo">
-                    <span id="tempo-atual">00:00</span>
-                    <input type="range" id="progress-bar" value="0" max="100">
-                    <span id="tempo-total">00:00</span>
-                </div>
-
-                <!-- Elemento de Áudio -->
-                <audio id="audio-player">
-                    <source src="" type="audio/mpeg">
-                    Seu navegador não suporta o elemento de áudio.
-                </audio>
-            </div>
+            <div id="secao-caracteristicas"></div>
 
             <div class="linha-separadora"></div>
 
-             <!-- Títulos -->
-            <section id="titulos">
+            <!-- Títulos -->
+          <section id="titulos">  <!----- ADICIONADO section e ID ---->
             <h2 class="titulo2">Emblemas de Títulos</h2>
 
             <div class="carrossel-titulos">
@@ -252,7 +96,7 @@
                         <p class="texto-carrossel">Mãe do inicio</p>
                     </div>
                     <div class="titulo-item" onclick="abrirJanelaTitulo(18)">
-                        <div class="circulo-carrossel" style="background-image: url('https://github.com/PrinnyXII/st/blob/main/rep/Energias/ED8.jpg?raw=true');"></div>
+                       <div class="circulo-carrossel" style="background-image: url('https://github.com/PrinnyXII/st/blob/main/rep/Energias/ED8.jpg?raw=true');"></div>
                         <p class="texto-carrossel">Agressora de Primordiais</p>
                     </div>
                     <div class="titulo-item" onclick="abrirJanelaTitulo(19)">
@@ -260,13 +104,14 @@
                         <p class="texto-ativo-carrossel">Mãe Agressora</p>
                     </div>
                     <div class="titulo-item" onclick="abrirJanelaTitulo(20)">
-                        <div class="circulo-carrossel" style="background-image: url('https://github.com/PrinnyXII/st/blob/main/rep/Energias/ES2.jpg?raw=true');"></div>
+                      <div class="circulo-carrossel" style="background-image: url('https://github.com/PrinnyXII/st/blob/main/rep/Energias/ES2.jpg?raw=true');"></div>
                         <p class="texto-ativo-carrossel">Guardiã do Elísio</p>
                     </div>
                 </div>
             </div>
-          
+          </section>
 
+          <!-- Janelas de Títulos (Adicionei os IDs!) -->
             <div class="janela-titulos" id="janelaTitulo1" style="display: none;">
                 <div class="janela-botoes">
                     <button class="botao-expandir" onclick="expandirJanelaTitulo(1)">❐</button>
@@ -481,9 +326,10 @@
                     <h3>Título: Guardiã do Elísio</h3>
                 </div>
             </div>
-            </section>
+          </section>
+
             <!-- Atributos -->
-           <section id="atributos">
+          <section id="atributos">
             <h2 class="titulo2">Atributos</h2>
 
             <div class="atributos-container">
@@ -575,7 +421,7 @@
                 <!-- Quarta linha de atributos: INT e ATK -->
                 <div class="atributo">
                     <div class="icone-atributo"><img src="https://github.com/PrinnyXII/st/blob/main/rep/INT.gif?raw=true" alt="Icone de INT"></div>
-                        <div class="conteudo-atributo">
+                    <div class="conteudo-atributo">
                         <div class="titulo-e-marcacao">
                             <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
                             <div class="titulo-barra-atributo">INT:</div>
@@ -657,7 +503,8 @@
                         <!-- Círculos Pequenos -->
                        <div class="circulo-pequeno" id="circulo1" onclick="navegar(0)">
                             <img src="https://github.com/Cueinhah/Painel-de-Buffy/blob/main/assets/Recursos/Key%20of%20Souls.png?raw=true" alt="Key of Souls">
-                            <div class="janela-chave">Key of Souls <span class="quantidade">(1x)</span>
+                            <div class="janela-chave"
+                                >Key of Souls <span class="quantidade">(1x)</span>
                             </div>
                         </div>
                         <div class="circulo-pequeno" id="circulo2" onclick="navegar(1)">
@@ -737,9 +584,9 @@
                     </div>
                 </div>
             </div>
-          </section>
+        </section>
             <!-- Bençãos/Maldições -->
-          <section id='bencaos'>
+          <section id='bencaos'>  
             <h2 class="titulo2">Bençãos e Maldições</h2>
 
             <div class="carrossel-selos">
@@ -844,16 +691,16 @@
             </div>
 
             <div class="linha-separadora"></div>
-
+            
             <!-- Categoria Mãe -->
-            <section id="mae">
+          <section id="mae">
             <div class="categoria-mae">
                 <!-- Barra EA -->
                 <div class="barra-ea">
                     <div class="preenchimento-ea" id="preenchimento-ea"></div>
                     <span class="texto-ea" id="texto-ea">EA: 100%</span>
                 </div>
-
+                
                 <!-- Títulos EA -->
                 <div class="titulos-ea">
                     <span class="titulo-ea-esquerda">Título Anterior</span>
@@ -861,25 +708,25 @@
                     <span class="titulo-ea-direita">Próximo Título</span>
                 </div>
             </div>
-
+    
             <div class="container-ea">
                 <!-- Bloco Filhos -->
                 <div class="bloco-ea">
                     <h3>Filhos</h3>
                     <div class="item-ea">
-                        <button type='button' class="nome-filho" onclick="abrirJanelaFilho('Kaito')">Kurae Kaito Von Pendragon</button>
+                        <button type="button" class="nome-filho" onclick="abrirJanelaFilho('Kaito')">Kurae Kaito Von Pendragon</button>
                     </div>
                     <div class="item-ea">
-                       <button type='button' class="nome-filho" onclick="abrirJanelaFilho('Twenty')">Twenty Radiânthia Von Karmelin</button>
+                        <button type="button" class="nome-filho" onclick="abrirJanelaFilho('Twenty')">Twenty Radiânthia Von Karmelin</button>
                     </div>
                 </div>
-
+            
                 <!-- Setas no centro -->
                 <div class="setas-ea">
                     <span>➔</span>
                     <span>➔</span>
                 </div>
-
+            
                 <!-- Bloco Tutores -->
                 <div class="bloco-ea">
                     <h3>Tutores</h3>
@@ -891,8 +738,8 @@
                     </div>
                 </div>
             </div>
-            </section>
-
+         </section>
+            
             <!-- Janela Flutuante para Kaito -->
             <div class="janela-filhos" id="janelaKaito">
                 <div class="janela-botoes">
@@ -909,7 +756,7 @@
                     <p><strong>Mãe:</strong> Buffy le fay Pendragon Karmelin</p>
                 </div>
             </div>
-
+            
             <!-- Janela Flutuante para Twenty -->
             <div class="janela-filhos" id="janelaTwenty">
                 <div class="janela-botoes">
@@ -926,13 +773,13 @@
                     <p><strong>Mãe:</strong> Buffy le fay Pendragon Karmelin</p>
                 </div>
             </div>
-
+            
             <div class="linha-separadora"></div>
-
+    
             <!-- Necessidades Básicas -->
-           <section id='necessidades'>
+            <section id="necessidades">
             <h2 class="titulo2">Necessidades Básicas</h2>
-
+    
             <div class="necessidades-basicas-container">
                 <!-- Grupo 01 -->
                 <div class="necessidades-basicas" id="grupo-higiene">
@@ -950,7 +797,7 @@
                         </div>
                     </div>
                 </div>
-
+    
                 <div class="necessidades-basicas" id="grupo-banheiro">
                     <div class="circulo-nbasico">
                         <span class="circulo-texto-nbasico">🧻</span>
@@ -966,7 +813,7 @@
                         </div>
                     </div>
                 </div>
-
+    
                 <div class="necessidades-basicas" id="grupo-sono">
                     <div class="circulo-nbasico">
                         <span class="circulo-texto-nbasico">💤</span>
@@ -982,7 +829,7 @@
                         </div>
                     </div>
                 </div>
-
+    
                 <!-- Grupo 02 -->
                 <div class="necessidades-basicas" id="grupo-desgaste">
                     <div class="circulo-nbasico">
@@ -999,7 +846,7 @@
                         </div>
                     </div>
                 </div>
-
+    
                 <div class="necessidades-basicas" id="grupo-fome">
                     <div class="circulo-nbasico">
                         <span class="circulo-texto-nbasico">🍴</span>
@@ -1015,7 +862,7 @@
                         </div>
                     </div>
                 </div>
-
+    
                 <div class="necessidades-basicas" id="grupo-sede">
                     <div class="circulo-nbasico">
                         <span class="circulo-texto-nbasico">🥛</span>
@@ -1031,7 +878,7 @@
                         </div>
                     </div>
                 </div>
-
+    
                 <!-- Grupo 03 -->
                 <div class="necessidades-basicas" id="grupo-diversao">
                     <div class="circulo-nbasico">
@@ -1048,7 +895,7 @@
                         </div>
                     </div>
                 </div>
-
+    
                 <div class="necessidades-basicas" id="grupo-social">
                     <div class="circulo-nbasico">
                         <span class="circulo-texto-nbasico">🥂</span>
@@ -1064,7 +911,7 @@
                         </div>
                     </div>
                 </div>
-
+    
                 <div class="necessidades-basicas" id="grupo-foco">
                     <div class="circulo-nbasico">
                         <span class="circulo-texto-nbasico">🧠</span>
@@ -1083,8 +930,7 @@
 
                 <!-- Necessidades Temporárias -->
             <h2 class="titulo2">Necessidades Temporárias</h2>
-
-
+            
             <div class="necessidades-basicas-container">
                 <!-- Grupo 01 -->
                 <div class="necessidades-basicas" id="grupo-enjoo:">
@@ -1093,7 +939,7 @@
                     </div>
                     <div class="status-nbasico">
                         <span class="status-titulo-nbasico">Enjoo</span>
-                            <div class="bar-nbasico">
+                        <div class="bar-nbasico">
                             <div id="barra-progresso-grupo-enjoo" class="fill-nbasico"></div>
                             <span id="progresso-texto-grupo-enjoo" class="progresso-texto-nbasico">75%</span>
                         </div>
@@ -1102,7 +948,7 @@
                         </div>
                     </div>
                 </div>
-
+    
                 <div class="necessidades-basicas" id="grupo-fadiga">
                     <div class="circulo-nbasico">
                         <span class="circulo-texto-nbasico">☕</span>
@@ -1118,7 +964,7 @@
                         </div>
                     </div>
                 </div>
-
+    
                 <div class="necessidades-basicas" id="grupo-estresse">
                     <div class="circulo-nbasico">
                         <span class="circulo-texto-nbasico">💥</span>
@@ -1134,7 +980,7 @@
                         </div>
                     </div>
                 </div>
-
+    
                 <!-- Grupo 02 -->
                 <div class="necessidades-basicas" id="grupo-ansiedade">
                     <div class="circulo-nbasico">
@@ -1151,7 +997,7 @@
                         </div>
                     </div>
                 </div>
-
+    
                 <div class="necessidades-basicas" id="grupo-medo">
                     <div class="circulo-nbasico">
                         <span class="circulo-texto-nbasico">😨</span>
@@ -1167,7 +1013,7 @@
                         </div>
                     </div>
                 </div>
-
+    
                 <div class="necessidades-basicas" id="grupo-felicidade">
                     <div class="circulo-nbasico">
                         <span class="circulo-texto-nbasico">🥳</span>
@@ -1183,7 +1029,7 @@
                         </div>
                     </div>
                 </div>
-
+            
                 <!-- Grupo 03 -->
                 <div class="necessidades-basicas" id="grupo-tesao">
                     <div class="circulo-nbasico">
@@ -1200,7 +1046,7 @@
                         </div>
                     </div>
                 </div>
-
+    
                 <div class="necessidades-basicas" id="grupo-tedio">
                     <div class="circulo-nbasico">
                         <span class="circulo-texto-nbasico">😑</span>
@@ -1216,24 +1062,24 @@
                         </div>
                     </div>
                 </div>
-
+    
                 <div class="necessidades-basicas" id="grupo-raiva">
                     <div class="circulo-nbasico">
                         <span class="circulo-texto-nbasico">🤬</span>
                     </div>
-                    <div class="status-nbasico">
-                        <span class="status-titulo-nbasico">Raiva</span>
-                        <div class="bar-nbasico">
-                            <div id="barra-progresso-grupo-raiva" class="fill-nbasico"></div>
-                            <span id="progresso-texto-grupo-raiva" class="progresso-texto-nbasico">45%</span>
-                        </div>
-                        <div class="status-indicador-nbasico">
-                            <span id="estado-grupo-raiva" class="status-texto-nbasico">Necessidade Atual</span>
+                        <div class="status-nbasico">
+                            <span class="status-titulo-nbasico">Raiva</span>
+                            <div class="bar-nbasico">
+                                <div id="barra-progresso-grupo-raiva" class="fill-nbasico"></div>
+                                <span id="progresso-texto-grupo-raiva" class="progresso-texto-nbasico">45%</span>
+                            </div>
+                            <div class="status-indicador-nbasico">
+                                <span id="estado-grupo-raiva" class="status-texto-nbasico">Necessidade Atual</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-          </section>
+            </section>
 
             <div class="container-aether">
                 <!-- Bloco Energia Aether -->
@@ -1269,9 +1115,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
+            </section>
+        </div> <!-- Fim do background2 -->
+    </div>  <!-- Fim do background1 -->
     <script src="script.js"></script>
 </body>
 </html>

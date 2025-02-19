@@ -1,4 +1,1124 @@
- <body>
-   <div id="secao-caracteristicas"></div>
-    <script src="script.js"></script>
- </body>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel da Buffy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background1">
+        <div class="background2">
+            <div id="secao-aura"></div>
+            <div id="secao-assimilacao"></div>
+            <div id="secao-cabecalho"></div>
+            <div id="secao-bahdinheiro"></div>
+            <div id="secao-classes"></div>
+
+            <div class="linha-separadora"></div>
+
+            <div id="secao-caracteristicas"></div>
+
+            <div class="linha-separadora"></div>
+
+            <!-- Títulos -->
+          <section id="titulos">  <!----- ADICIONADO section e ID ---->
+            <h2 class="titulo2">Emblemas de Títulos</h2>
+
+            <div class="carrossel-titulos">
+                <div class="carrossel-imagens">
+                    <div class="titulo-item" onclick="abrirJanelaTitulo(1)">
+                        <div class="circulo-carrossel" style="background-image: url('https://github.com/PrinnyXII/st/blob/main/rep/Energias/ER1.jpg?raw=true');"></div>
+                        <p class="texto-carrossel">A Primeira Protegida</p>
+                    </div>
+                    <div class="titulo-item" onclick="abrirJanelaTitulo(2)">
+                        <div class="circulo-carrossel" style="background-image: url('https://github.com/PrinnyXII/st/blob/main/rep/Energias/ER2.jpg?raw=true');"></div>
+                        <p class="texto-carrossel">Aliada de Makai</p>
+                    </div>
+                    <div class="titulo-item" onclick="abrirJanelaTitulo(3)">
+                        <div class="circulo-carrossel" style="background-image: url('https://github.com/PrinnyXII/st/blob/main/rep/Energias/ER3.jpg?raw=true');"></div>
+                        <p class="texto-carrossel">Aprendiz da Rainha</p>
+                    </div>
+                    <div class="titulo-item" onclick="abrirJanelaTitulo(4)">
+                        <div class="circulo-carrossel" style="background-image: url('https://github.com/PrinnyXII/st/blob/main/rep/Energias/EB1.jpg?raw=true');"></div>
+                        <p class="texto-ativo-carrossel">A Sucessora de Isaac</p>
+                    </div>
+                    <div class="titulo-item" onclick="abrirJanelaTitulo(5)">
+                        <div class="circulo-carrossel" style="background-image: url('https://github.com/PrinnyXII/st/blob/main/rep/Energias/EL9.jpg?raw=true');"></div>
+                        <p class="texto-carrossel">Falsa Amiga da Deusa</p>
+                    </div>
+                    <div class="titulo-item" onclick="abrirJanelaTitulo(6)">
+                        <div class="circulo-carrossel" style="background-image: url('https://github.com/PrinnyXII/st/blob/main/rep/Energias/EL3.jpg?raw=true');"></div>
+                        <p class="texto-carrossel">Amante do Destino</p>
+                    </div>
+                    <div class="titulo-item" onclick="abrirJanelaTitulo(7)">
+                        <div class="circulo-carrossel" style="background-image: url('https://github.com/PrinnyXII/st/blob/main/rep/Energias/ED6.jpg?raw=true');"></div>
+                        <p class="texto-carrossel">Rainha da Casta</p>
+                    </div>
+                    <div class="titulo-item" onclick="abrirJanelaTitulo(8)">
+                        <div class="circulo-carrossel" style="background-image: url('https://github.com/PrinnyXII/st/blob/main/rep/Energias/ED5.jpg?raw=true');"></div>
+                        <p class="texto-ativo-carrossel">Rainha de Todos os Vampiros</p>
+                    </div>
+                    <div class="titulo-item" onclick="abrirJanelaTitulo(9)">
+                        <div class="circulo-carrossel" style="background-image: url('https://github.com/PrinnyXII/st/blob/main/rep/Energias/EC4.jpg?raw=true');"></div>
+                        <p class="texto-carrossel">Four of Clubs</p>
+                    </div>
+                    <div class="titulo-item" onclick="abrirJanelaTitulo(10)">
+                        <div class="circulo-carrossel" style="background-image: url('https://github.com/PrinnyXII/st/blob/main/rep/Energias/EC1.jpg?raw=true');"></div>
+                        <p class="texto-carrossel">Dreamer</p>
+                    </div>
+                    <div class="titulo-item" onclick="abrirJanelaTitulo(11)">
+                        <div class="circulo-carrossel" style="background-image: url('https://github.com/PrinnyXII/st/blob/main/rep/Energias/EE10.jpg?raw=true');"></div>
+                        <p class="texto-ativo-carrossel">Mother of Souls</p>
+                    </div>
+                    <div class="titulo-item" onclick="abrirJanelaTitulo(12)">
+                        <div class="circulo-carrossel" style="background-image: url('https://github.com/PrinnyXII/st/blob/main/rep/Energias/EI1.jpg?raw=true');"></div>
+                        <p class="texto-ativo-carrossel">A Lady da Segunda Forjas</p>
+                    </div>
+                    <div class="titulo-item" onclick="abrirJanelaTitulo(13)">
+                        <div class="circulo-carrossel" style="background-image: url('https://github.com/PrinnyXII/st/blob/main/rep/Energias/EC2.jpg?raw=true');"></div>
+                        <p class="texto-carrossel">Consumidora da Loucura</p>
+                    </div>
+                    <div class="titulo-item" onclick="abrirJanelaTitulo(14)">
+                        <div class="circulo-carrossel" style="background-image: url('https://github.com/PrinnyXII/st/blob/main/rep/Energias/EG2.jpg?raw=true');"></div>
+                        <p class="texto-ativo-carrossel">Lady do Segundo Domo</p>
+                    </div>
+                    <div class="titulo-item" onclick="abrirJanelaTitulo(15)">
+                        <div class="circulo-carrossel" style="background-image: url('https://github.com/PrinnyXII/st/blob/main/rep/Energias/EE7.jpg?raw=true');"></div>
+                        <p class="texto-carrossel">Soberana das Primeiras Terras</p>
+                    </div>
+                    <div class="titulo-item" onclick="abrirJanelaTitulo(16)">
+                        <div class="circulo-carrossel" style="background-image: url('https://github.com/PrinnyXII/st/blob/main/rep/Energias/ED2.jpg?raw=true');"></div>
+                        <p class="texto-carrossel">Detentora do fim</p>
+                    </div>
+                    <div class="titulo-item" onclick="abrirJanelaTitulo(17)">
+                        <div class="circulo-carrossel" style="background-image: url('https://github.com/PrinnyXII/st/blob/main/rep/Energias/EE5.jpg?raw=true');"></div>
+                        <p class="texto-carrossel">Mãe do inicio</p>
+                    </div>
+                    <div class="titulo-item" onclick="abrirJanelaTitulo(18)">
+                       <div class="circulo-carrossel" style="background-image: url('https://github.com/PrinnyXII/st/blob/main/rep/Energias/ED8.jpg?raw=true');"></div>
+                        <p class="texto-carrossel">Agressora de Primordiais</p>
+                    </div>
+                    <div class="titulo-item" onclick="abrirJanelaTitulo(19)">
+                        <div class="circulo-carrossel" style="background-image: url('https://github.com/PrinnyXII/st/blob/main/rep/Energias/ED3.jpg?raw=true');"></div>
+                        <p class="texto-ativo-carrossel">Mãe Agressora</p>
+                    </div>
+                    <div class="titulo-item" onclick="abrirJanelaTitulo(20)">
+                      <div class="circulo-carrossel" style="background-image: url('https://github.com/PrinnyXII/st/blob/main/rep/Energias/ES2.jpg?raw=true');"></div>
+                        <p class="texto-ativo-carrossel">Guardiã do Elísio</p>
+                    </div>
+                </div>
+            </div>
+          
+
+          <!-- Janelas de Títulos (Adicionei os IDs!) -->
+            <div class="janela-titulos" id="janelaTitulo1" style="display: none;">
+                <div class="janela-botoes">
+                    <button class="botao-expandir" onclick="expandirJanelaTitulo(1)">❐</button>
+                    <button class="botao-fechar" onclick="fecharJanelaTitulo(1)">✖︎</button>
+                </div>
+                <div class="conteudo-janela">
+                    <h3>Título: A Primeira Protegida</h3>
+                    <!-- Adicione aqui o conteúdo específico para este título -->
+                </div>
+            </div>
+
+             <div class="janela-titulos" id="janelaTitulo2" style="display: none;">
+                <div class="janela-botoes">
+                    <button class="botao-expandir" onclick="expandirJanelaTitulo(2)">❐</button>
+                    <button class="botao-fechar" onclick="fecharJanelaTitulo(2)">✖︎</button>
+                </div>
+                <div class="conteudo-janela">
+                    <h3>Título: Aliada de Makai</h3>
+                    <!-- Adicione aqui o conteúdo específico para este título -->
+                </div>
+            </div>
+
+            <div class="janela-titulos" id="janelaTitulo3" style="display: none;">
+                <div class="janela-botoes">
+                    <button class="botao-expandir" onclick="expandirJanelaTitulo(3)">❐</button>
+                    <button class="botao-fechar" onclick="fecharJanelaTitulo(3)">✖︎</button>
+                </div>
+                <div class="conteudo-janela">
+                    <h3>Título: Aprendiz da Rainha</h3>
+                </div>
+            </div>
+
+             <div class="janela-titulos" id="janelaTitulo4" style="display: none;">
+                <div class="janela-botoes">
+                    <button class="botao-expandir" onclick="expandirJanelaTitulo(4)">❐</button>
+                    <button class="botao-fechar" onclick="fecharJanelaTitulo(4)">✖︎</button>
+                </div>
+                <div class="conteudo-janela">
+                    <h3>Título: A Sucessora de Isaac</h3>
+                </div>
+            </div>
+
+            <div class="janela-titulos" id="janelaTitulo5" style="display: none;">
+                <div class="janela-botoes">
+                    <button class="botao-expandir" onclick="expandirJanelaTitulo(5)">❐</button>
+                    <button class="botao-fechar" onclick="fecharJanelaTitulo(5)">✖︎</button>
+                </div>
+                <div class="conteudo-janela">
+                    <h3>Título: Falsa Amiga da Deusa</h3>
+                </div>
+            </div>
+
+           <div class="janela-titulos" id="janelaTitulo6" style="display: none;">
+                <div class="janela-botoes">
+                    <button class="botao-expandir" onclick="expandirJanelaTitulo(6)">❐</button>
+                    <button class="botao-fechar" onclick="fecharJanelaTitulo(6)">✖︎</button>
+                </div>
+                <div class="conteudo-janela">
+                    <h3>Título: Amante do Destino</h3>
+                    <p><span class='subtitulo'>Classe:</span> <span class='texto'>Mítico</span></p>
+                    <p><span class='subtitulo'>Nível:</span> <span class='texto'>1</span></p>
+                    <p><span class='subtitulo'>Modo:</span> <span class='texto-brilhante'>[on]</span> <span class='texto'>[off]</span></p>
+                    <p><span class='subtitulo'>Descrição:</span> <span class='texto'>Este é um título que marca sua afinidade única com os caminhos do destino...</span></p>
+                    <p><span class='subtitulo'>Habilidade Desbloqueada - Visão do Destino:</span> <span class='texto'>No nível 1, você ganha a habilidade de vislumbrar...</span></p>
+                    <p><span class='subtitulo'>Habilidade Desbloqueada - Teia do Destino:</span> <span class='texto'>No nível 2, você pode manipular...</span></p>
+                </div>
+            </div>
+
+            <div class="janela-titulos" id="janelaTitulo7" style="display: none;">
+                <div class="janela-botoes">
+                    <button class="botao-expandir" onclick="expandirJanelaTitulo(7)">❐</button>
+                    <button class="botao-fechar" onclick="fecharJanelaTitulo(7)">✖︎</button>
+                </div>
+                <div class="conteudo-janela">
+                    <h3>Título: Rainha da Casta</h3>
+                </div>
+            </div>
+
+             <div class="janela-titulos" id="janelaTitulo8" style="display: none;">
+                <div class="janela-botoes">
+                    <button class="botao-expandir" onclick="expandirJanelaTitulo(8)">❐</button>
+                    <button class="botao-fechar" onclick="fecharJanelaTitulo(8)">✖︎</button>
+                </div>
+                <div class="conteudo-janela">
+                    <h3>Título: Rainha de Todos os Vampiros</h3>
+                </div>
+            </div>
+
+              <div class="janela-titulos" id="janelaTitulo9" style="display: none;">
+                <div class="janela-botoes">
+                    <button class="botao-expandir" onclick="expandirJanelaTitulo(9)">❐</button>
+                    <button class="botao-fechar" onclick="fecharJanelaTitulo(9)">✖︎</button>
+                </div>
+                <div class="conteudo-janela">
+                    <h3>Título: Four of Clubs</h3>
+                </div>
+            </div>
+
+             <div class="janela-titulos" id="janelaTitulo10" style="display: none;">
+                <div class="janela-botoes">
+                    <button class="botao-expandir" onclick="expandirJanelaTitulo(10)">❐</button>
+                    <button class="botao-fechar" onclick="fecharJanelaTitulo(10)">✖︎</button>
+                </div>
+                <div class="conteudo-janela">
+                    <h3>Título: Dreamer</h3>
+                </div>
+            </div>
+
+
+            <div class="janela-titulos" id="janelaTitulo11" style="display: none;">
+                <div class="janela-botoes">
+                    <button class="botao-expandir" onclick="expandirJanelaTitulo(11)">❐</button>
+                    <button class="botao-fechar" onclick="fecharJanelaTitulo(11)">✖︎</button>
+                </div>
+                <div class="conteudo-janela">
+                    <h3>Título: Mother of Souls</h3>
+                    <p><span class='subtitulo'>Classe:</span> <span class='texto'>Mítico</span></p>
+                    <p><span class='subtitulo'>Nível:</span> <span class='texto'>1</span></p>
+                    <p><span class='subtitulo'>Modo:</span> <span class='texto'>[on]</span> <span class='texto-brilhante'>[off]</span></p>
+                    <p><span class='subtitulo'>Descrição:</span> <span class='texto'>Este é um título único conquistado por você...</span></p>
+                    <p><span class='subtitulo'>Habilidade Desbloqueada - Aura da Alma:</span> <span class='texto'>No nível 1, você ganha a habilidade de emanar...</span></p>
+                    <p><span class='subtitulo'>Habilidade Desbloqueada - Comunhão Espiritual:</span> <span class='texto'>No nível 2, você poderá se comunicar...</span></p>
+                </div>
+            </div>
+
+            <div class="janela-titulos" id="janelaTitulo12" style="display: none;">
+                <div class="janela-botoes">
+                    <button class="botao-expandir" onclick="expandirJanelaTitulo(12)">❐</button>
+                    <button class="botao-fechar" onclick="fecharJanelaTitulo(12)">✖︎</button>
+                </div>
+                <div class="conteudo-janela">
+                    <h3>Título: A Lady da Segunda Forja</h3>
+                </div>
+            </div>
+
+            <div class="janela-titulos" id="janelaTitulo13" style="display: none;">
+                <div class="janela-botoes">
+                    <button class="botao-expandir" onclick="expandirJanelaTitulo(13)">❐</button>
+                    <button class="botao-fechar" onclick="fecharJanelaTitulo(13)">✖︎</button>
+                </div>
+                <div class="conteudo-janela">
+                    <h3>Título: Consumidora da Loucura</h3>
+                </div>
+            </div>
+
+             <div class="janela-titulos" id="janelaTitulo14" style="display: none;">
+                <div class="janela-botoes">
+                    <button class="botao-expandir" onclick="expandirJanelaTitulo(14)">❐</button>
+                    <button class="botao-fechar" onclick="fecharJanelaTitulo(14)">✖︎</button>
+                </div>
+                <div class="conteudo-janela">
+                    <h3>Título: Lady do Segundo Domo</h3>
+                </div>
+            </div>
+
+             <div class="janela-titulos" id="janelaTitulo15" style="display: none;">
+                <div class="janela-botoes">
+                    <button class="botao-expandir" onclick="expandirJanelaTitulo(15)">❐</button>
+                    <button class="botao-fechar" onclick="fecharJanelaTitulo(15)">✖︎</button>
+                </div>
+                <div class="conteudo-janela">
+                    <h3>Título: Soberana das Primeiras Terras</h3>
+                </div>
+            </div>
+
+             <div class="janela-titulos" id="janelaTitulo16" style="display: none;">
+                <div class="janela-botoes">
+                    <button class="botao-expandir" onclick="expandirJanelaTitulo(16)">❐</button>
+                    <button class="botao-fechar" onclick="fecharJanelaTitulo(16)">✖︎</button>
+                </div>
+                <div class="conteudo-janela">
+                    <h3>Título: Detentora do Fim</h3>
+                </div>
+            </div>
+
+             <div class="janela-titulos" id="janelaTitulo17" style="display: none;">
+                <div class="janela-botoes">
+                    <button class="botao-expandir" onclick="expandirJanelaTitulo(17)">❐</button>
+                    <button class="botao-fechar" onclick="fecharJanelaTitulo(17)">✖︎</button>
+                </div>
+                <div class="conteudo-janela">
+                    <h3>Título: Mãe do Início</h3>
+                </div>
+            </div>
+
+            <div class="janela-titulos" id="janelaTitulo18" style="display: none;">
+                <div class="janela-botoes">
+                    <button class="botao-expandir" onclick="expandirJanelaTitulo(18)">❐</button>
+                    <button class="botao-fechar" onclick="fecharJanelaTitulo(18)">✖︎</button>
+                </div>
+                <div class="conteudo-janela">
+                   <h3>Título: Agressora de Primordiais</h3>
+                </div>
+            </div>
+
+            <div class="janela-titulos" id="janelaTitulo19" style="display: none;">
+                <div class="janela-botoes">
+                    <button class="botao-expandir" onclick="expandirJanelaTitulo(19)">❐</button>
+                    <button class="botao-fechar" onclick="fecharJanelaTitulo(19)">✖︎</button>
+                </div>
+                <div class="conteudo-janela">
+                    <h3>Título: Mãe Agressora</h3>
+                </div>
+            </div>
+
+            <div class="janela-titulos" id="janelaTitulo20" style="display: none;">
+                <div class="janela-botoes">
+                    <button class="botao-expandir" onclick="expandirJanelaTitulo(20)">❐</button>
+                    <button class="botao-fechar" onclick="fecharJanelaTitulo(20)">✖︎</button>
+                </div>
+                <div class="conteudo-janela">
+                    <h3>Título: Guardiã do Elísio</h3>
+                </div>
+            </div>
+          </section>
+
+            <!-- Atributos -->
+          <section id="atributos">
+            <h2 class="titulo2">Atributos</h2>
+
+            <div class="atributos-container">
+                <!-- Primeira linha de atributos: HP e MP -->
+                <div class="atributo">
+                    <div class="icone-atributo"><img src="https://github.com/PrinnyXII/st/blob/main/rep/HP.gif?raw=true" alt="HP Icone"></div>
+                    <div class="conteudo-atributo">
+                        <div class="titulo-e-marcacao">
+                            <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
+                            <div class="titulo-barra-atributo">HP:</div>
+                        </div>
+                        <div class="barra-porcentagem-atributo">
+                            <div class="preenchimento-barra-atributo hp" id="barra-hp"></div>
+                            <span class="texto-barra-atributo" id="texto-hp"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="atributo">
+                    <div class="icone-atributo"><img src="https://github.com/PrinnyXII/st/blob/main/rep/MP.gif?raw=true" alt="MP Icone"></div>
+                    <div class="conteudo-atributo">
+                        <div class="titulo-e-marcacao">
+                            <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
+                            <div class="titulo-barra-atributo">MP:</div>
+                        </div>
+                        <div class="barra-porcentagem-atributo">
+                            <div class="preenchimento-barra-atributo mp" id="barra-mp"></div>
+                            <span class="texto-barra-atributo" id="texto-mp"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Segunda linha de atributos: AGI e DEF -->
+                <div class="atributo">
+                    <div class="icone-atributo"><img src="https://github.com/PrinnyXII/st/blob/main/rep/AGI.gif?raw=true" alt="AGI Icone"></div>
+                    <div class="conteudo-atributo">
+                        <div class="titulo-e-marcacao">
+                            <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
+                            <div class="titulo-barra-atributo">AGI:</div>
+                        </div>
+                        <div class="barra-porcentagem-atributo">
+                            <div class="preenchimento-barra-atributo agi" id="barra-agi"></div>
+                            <span class="texto-barra-atributo" id="texto-agi"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="atributo">
+                    <div class="icone-atributo"><img src="https://github.com/PrinnyXII/st/blob/main/rep/DEF.gif?raw=true" alt="DEF Icone"></div>
+                    <div class="conteudo-atributo">
+                        <div class="titulo-e-marcacao">
+                            <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
+                            <div class="titulo-barra-atributo">DEF:</div>
+                        </div>
+                        <div class="barra-porcentagem-atributo">
+                            <div class="preenchimento-barra-atributo def" id="barra-def"></div>
+                            <span class="texto-barra-atributo" id="texto-def"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terceira linha de atributos: RES e SPD -->
+                <div class="atributo">
+                    <div class="icone-atributo"><img src="https://github.com/PrinnyXII/st/blob/main/rep/RES.gif?raw=true" alt="RES Icone"></div>
+                    <div class="conteudo-atributo">
+                        <div class="titulo-e-marcacao">
+                            <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
+                            <div class="titulo-barra-atributo">RES:</div>
+                        </div>
+                        <div class="barra-porcentagem-atributo">
+                            <div class="preenchimento-barra-atributo res" id="barra-res"></div>
+                            <span class="texto-barra-atributo" id="texto-res"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="atributo">
+                    <div class="icone-atributo"><img src="https://github.com/PrinnyXII/st/blob/main/rep/SPD.gif?raw=true" alt="SPD Icone"></div>
+                    <div class="conteudo-atributo">
+                        <div class="titulo-e-marcacao">
+                            <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
+                            <div class="titulo-barra-atributo">SPD:</div>
+                        </div>
+                        <div class="barra-porcentagem-atributo">
+                            <div class="preenchimento-barra-atributo spd" id="barra-spd"></div>
+                            <span class="texto-barra-atributo" id="texto-spd"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quarta linha de atributos: INT e ATK -->
+                <div class="atributo">
+                    <div class="icone-atributo"><img src="https://github.com/PrinnyXII/st/blob/main/rep/INT.gif?raw=true" alt="Icone de INT"></div>
+                    <div class="conteudo-atributo">
+                        <div class="titulo-e-marcacao">
+                            <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
+                            <div class="titulo-barra-atributo">INT:</div>
+                        </div>
+                        <div class="barra-porcentagem-atributo">
+                            <div class="preenchimento-barra-atributo int" id="barra-int"></div>
+                            <span class="texto-barra-atributo" id="texto-int"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="atributo">
+                    <div class="icone-atributo"><img src="https://github.com/PrinnyXII/st/blob/main/rep/ATK.gif?raw=true" alt="Icone de ATK"></div>
+                    <div class="conteudo-atributo">
+                        <div class="titulo-e-marcacao">
+                            <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
+                            <div class="titulo-barra-atributo">ATK:</div>
+                        </div>
+                        <div class="barra-porcentagem-atributo">
+                            <div class="preenchimento-barra-atributo atk" id="barra-atk"></div>
+                            <span class="texto-barra-atributo" id="texto-atk"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quinta linha de atributos: SMP e ?? -->
+                <div class="atributo">
+                    <div class="icone-atributo"><img src="https://github.com/PrinnyXII/st/blob/main/rep/SMP.gif?raw=true" alt="Icone de SMP"></div>
+                    <div class="conteudo-atributo">
+                        <div class="titulo-e-marcacao">
+                            <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
+                            <div class="titulo-barra-atributo">SMP:</div>
+                        </div>
+                        <div class="barra-porcentagem-atributo">
+                            <div class="preenchimento-barra-atributo smp" id="barra-smp"></div>
+                            <span class="texto-barra-atributo" id="texto-smp"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="atributo">
+                    <div class="icone-atributo"><img src="https://github.com/PrinnyXII/st/blob/main/rep/ASMP.gif?raw=true" alt="Icone de ??"></div>
+                    <div class="conteudo-atributo">
+                        <div class="titulo-e-marcacao">
+                            <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
+                            <div class="titulo-barra-atributo">??:</div>
+                        </div>
+                        <div class="barra-porcentagem-atributo">
+                            <div class="preenchimento-barra-atributo unknown" id="barra-unknown"></div>
+                            <span class="texto-barra-atributo" id="texto-unknown"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </section>
+
+            <div class="linha-separadora"></div>
+
+            <!-- Informações 02 -->
+           <section id='info-02'>
+            <p><span class="subtitulo">Seiki:</span> <span class="texto">32.112 pontos</span></p>
+            <p><span class="subtitulo">Bônus de Dominância por Território Conquistado pelo Reino:</span> <span class="texto">11.567.241</span></p>
+            <p><span class="subtitulo">Poder de Dominância:</span> <span class="texto">279 / 845.512</span></p>
+            <p><span class="subtitulo">Pontos de Habilidade Disponíveis:</span> <span class="texto">351</span></p>
+            <p><span class="subtitulo">Pontos de recompensa:</span> <span class="texto">272.330.324</span></p>
+            <p><span class="subtitulo">Sementes de Dungeon:</span>
+               <span class="texto">Forest of Ruins (1x)</span>
+               <span class="gif-dungeon">
+                   <img src="https://github.com/PrinnyXII/st/blob/main/rep/pseed.gif?raw=true" alt="GIF Dungeon">
+               </span>
+            </p>
+            <p><span class="subtitulo">Férula:</span> <span class="texto">Férula Umbrefossa (Matilha dos Garras Longas) [Toupeiras gigantes lordes de montanhas e tuneis]</span></p>
+           </section>
+           <!-- Chaves -->
+           <section id="chaves">
+            <div class="container-chave">
+                <!-- Bloco Esquerdo -->
+                <div class="bloco-esquerdo">
+                    <div class="circulo-base">
+
+                        <!-- Círculos Pequenos -->
+                       <div class="circulo-pequeno" id="circulo1" onclick="navegar(0)">
+                            <img src="https://github.com/Cueinhah/Painel-de-Buffy/blob/main/assets/Recursos/Key%20of%20Souls.png?raw=true" alt="Key of Souls">
+                            <div class="janela-chave"
+                                >Key of Souls <span class="quantidade">(1x)</span>
+                            </div>
+                        </div>
+                        <div class="circulo-pequeno" id="circulo2" onclick="navegar(1)">
+                            <img src="https://github.com/Cueinhah/Painel-de-Buffy/blob/main/assets/Recursos/Key%20of%20Dreams.png?raw=true" alt="Key of Dreams">
+                            <div class="janela-chave">
+                                Key of Dreams <span class="quantidade">(1x)</span>
+                            </div>
+                        </div>
+                        <div class="circulo-pequeno" id="circulo3" onclick="navegar(2)">
+                            <img src="https://github.com/Cueinhah/Painel-de-Buffy/blob/main/assets/Recursos/Key%20of%20Infinite%20Moon%20Mansion.png?raw=true" alt="Key of Infinite Moon Mansion">
+                            <div class="janela-chave">
+                                Key of Infinite Moon Mansion <span class="quantidade">(1x)</span>
+                            </div>
+                        </div>
+                        <div class="circulo-pequeno" id="circulo4" onclick="navegar(3)">
+                            <img src="https://github.com/Cueinhah/Painel-de-Buffy/blob/main/assets/Recursos/Key%20of%20Desires.png?raw=true" alt="Key of Desires">
+                            <div class="janela-chave"
+                                >Key of Desires <span class="quantidade">(1x)</span>
+                            </div>
+                        </div>
+                        <div class="circulo-pequeno" id="circulo5" onclick="navegar(4)">
+                            <img src="https://github.com/Cueinhah/Painel-de-Buffy/blob/main/assets/Recursos/Key%20of%20Soul%20World.png?raw=true" alt="Key of Soul World">
+                            <div class="janela-chave">
+                                Key of Soul World <span class="quantidade">(1x)</span>
+                            </div>
+                        </div>
+                        <div class="circulo-pequeno" id="circulo6" onclick="navegar(5)">
+                            <img src="https://github.com/Cueinhah/Painel-de-Buffy/blob/main/assets/Recursos/Key%20of%20Pendragon.png?raw=true" alt="Key of Pendragon">
+                            <div class="janela-chave">
+                                Key of Pendragon <span class="quantidade">(1x)</span>
+                            </div>
+                        </div>
+                        <div class="circulo-pequeno" id="circulo7" onclick="navegar(6)">
+                            <img src="https://github.com/Cueinhah/Painel-de-Buffy/blob/main/assets/Recursos/Key%20Pinnacle%20of%20Flames.png?raw=true" alt="Key Pinnacle of Flames">
+                            <div class="janela-chave">
+                                Key Pinnacle of Flames <span class="quantidade">(1x)</span>
+                            </div>
+                        </div>
+                        <div class="circulo-pequeno" id="circulo8" onclick="navegar(7)">
+                            <img src="https://github.com/Cueinhah/Painel-de-Buffy/blob/main/assets/Recursos/Key%20of%20Isaac's%20Heart.png?raw=true" alt="Key of Isaac's Heart">
+                            <div class="janela-chave">
+                                Key of Isaac's Heart <span class="quantidade">(2/2)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloco Direito -->
+                <div class="bloco-direito">
+                    <!-- Retângulo Item -->
+                    <div class="retangulo item" id="retangulo-item">
+                        <div class="item-imagem">
+                            <img src="https://imgur.com/zHQo8sh.png" alt="Item-Imagem">
+                        </div>
+                        <div class="topo-retangulo">
+                            <h4 class="titulo-item" id="titulo-item">Nome da Chave</h4>
+                            <span class="descricao-secao">CHAVES</span>
+                        </div>
+                        <p class="descricao-detalhada">Descrição da chave aqui.</p>
+                        <p class="clicavel" onclick="ativarChave()">Clique para Ativar</p>
+                    </div>
+
+                    <!-- Retângulo Efeitos -->
+                    <div class="retangulo efeitos" id="retangulo-efeitos">
+                        <div class="topo-retangulo">
+                            <img src="https://imgur.com/zHQo8sh.png" alt="Ícone do Efeito">
+                            <h4 class="titulo-efeito">Efeito da Chave</h4>
+                            <span class="descricao-secao">EFEITOS</span>
+                        </div>
+                        <p class="detalhes-detalhados">Detalhes do efeito da chave.</p>
+                    </div>
+
+                    <!-- Navegação -->
+                    <div class="navegacao">
+                        <button onclick="navegar(-1)">◄</button>
+                        <button onclick="navegar(1)">►</button>
+                    </div>
+                </div>
+            </div>
+          </section>
+
+            <!-- Bençãos/Maldições -->
+          <section id='bencaos'>  
+            <h2 class="titulo2">Bençãos e Maldições</h2>
+
+            <div class="carrossel-selos">
+                <button class="seta" onclick="moverCarrossel(-1)">❮</button>
+                <div class="carrossel-diamantes">
+                    <div class="diamante-item" onclick="abrirJanela('janelaBencao1')">
+                        <div class="diamante">
+                            <img src="https://github.com/PrinnyXII/st/blob/main/rep/Energias/ER6.jpg?raw=true" alt="Diamante">
+                        </div>
+                        <div class="texto-diamante">Redo revenger</div>
+                    </div>
+                    <div class="diamante-item" onclick="abrirJanela('janelaBencao2')">
+                        <div class="diamante">
+                            <img src="https://github.com/PrinnyXII/st/blob/main/rep/Energias/ER5.jpg?raw=true" alt="Diamante">
+                        </div>
+                        <div class="texto-diamante">Tentação Vampírica…</div>
+                    </div>
+                    <div class="diamante-item" onclick="abrirJanela('janelaBencao3')">
+                        <div class="diamante">
+                            <img src="https://github.com/PrinnyXII/st/blob/main/rep/Energias/EC3.jpg?raw=true" alt="Diamante">
+                        </div>
+                        <div class="texto-diamante">Reunion Memories</div>
+                    </div>
+                    <div class="diamante-item" onclick="abrirJanela('janelaBencao4')">
+                        <div class="diamante">
+                            <img src="https://github.com/PrinnyXII/st/blob/main/rep/Energias/EL5.jpg?raw=true">
+                        </div>
+                        <div class="texto-diamante">Luminar Duplo</div>
+                    </div>
+                    <div class="diamante-item" onclick="abrirJanela('janelaBencao5')">
+                        <div class="diamante">
+                            <img src="https://github.com/PrinnyXII/st/blob/main/rep/Energias/EC6.jpg?raw=true" alt="Diamante">
+                        </div>
+                        <div class="texto-diamante">Rainbow Bird</div>
+                    </div>
+                </div>
+                <button class="seta" onclick="moverCarrossel(1)">❯</button>
+            </div>
+          </section>
+
+            <!-- Janela Flutuante para Bênção/Maldição -->
+            <div class="janela-bencao" id="janelaBencao2">
+                <div class="janela-botoes">
+                    <button class="botao-expandir" onclick="expandirJanela('janelaBencao2')">❐</button>
+                    <button class="botao-fechar" onclick="fecharJanela('janelaBencao2')">✖︎</button>
+                </div>
+                <div class="conteudo-janela">
+                    <h3>#Nova Bênção Única Desbloqueada: Tentação Vampírica da Rainha</h3>
+                    <p><span class='subtitulo'>Descrição:</span> <span class="texto">Seres com a capacidade de transferir vampirismo sentem uma atração irresistível por você e experimentam prazer em seguir suas ordens. Enquanto estiverem obedecendo a suas instruções, aqueles sob seu comando receberão um constante aumento nos seus atributos. Além disso, essa bênção pode esconder efeitos ocultos que proporcionam benefícios adicionais.</span></p>
+                    <p><span class='subtitulo'>Tipo:</span> <span class='texto'>Luz/Vampiro/Succubus/Empusa</span></p>
+                    <p><span class='subtitulo'>Nível:</span> <span class='texto'>Máximo</span></p>
+                    <p><span class='subtitulo'>Classe:</span> <span class='texto'>Bênção de Classe SS</span></p>
+                    <h3>Funcionamento Detalhado:</h3>
+                    <p><span class='subtitulo'>Atração Vampírica:</span> <span class='texto'>A bênção cria uma irresistível atração em seres com a capacidade de transferir o vampirismo. Eles se sentem atraídos por você e desejam segui-lo.</span></p>
+                    <p><span class='subtitulo'>Prazer na Obediência:</span> <span class='texto'>Aqueles que obedecem às suas ordens experimentam um prazer profundo e gratificante em fazê-lo.</span></p>
+                    <p><span class='subtitulo'>Aumento de Atributos:</span> <span class='texto'>Enquanto estiverem sob seu comando, os seguidores recebem um aumento constante em seus atributos, tornando-os mais fortes e eficazes em suas ações.</span></p>
+                    <p><span class='subtitulo'>Efeitos Ocultos:</span> <span class='texto'>Além dos benefícios declarados, essa bênção pode conter efeitos ocultos que podem se manifestar em situações específicas, proporcionando vantagens adicionais.</span></p>
+                    <p><span class='texto'>A "Tentação Vampírica da Rainha" é uma bênção de classe SS extremamente poderosa que não apenas atrai aqueles com a capacidade de transferir o vampirismo, mas também os fortalece e os faz sentir prazer em segui-la. Além disso, a presença de efeitos ocultos torna essa bênção ainda mais misteriosa e vantajosa. Este é um presente divino excepcional que aumenta sua influência sobre os seguidores e aliados que a obedecem.</span></p>
+                </div>
+            </div>
+
+            <div class="janela-bencao" id="janelaBencao3">
+                <div class="janela-botoes">
+                    <button class="botao-expandir" onclick="expandirJanela('janelaBencao3')">❐</button>
+                    <button class="botao-fechar" onclick="fecharJanela('janelaBencao3')">✖︎</button>
+                </div>
+                <div class="conteudo-janela">
+                    <h3>#Nova Bênção Única Desbloqueada: Reunion Memories</h3>
+                    <p><span class='subtitulo'>Descrição:</span> <span class="texto">Desencadeada pela luz da lua cheia, os usuários desta habilidade assumem uma aparência semelhante à de um animal lupino ou felino, com pelagem branca e um intenso brilho azul nos olhos. A forma ?? aumenta significativamente a força, velocidade e sentidos do usuário em até ?? vezes. No entanto, a transformação tem um custo alto e pode levar o usuário à exaustão rapidamente. Além disso, a habilidade só pode ser ativada na presença da luz da lua cheia.</span></p>
+                    <p><span class='subtitulo'>Tipo:</span> <span class='texto'>??</span></p>
+                    <p><span class='subtitulo'>Nível:</span> <span class='texto'>??</span></p>
+                    <p><span class='subtitulo'>Classe:</span> <span class='texto'>?? Blessing</span></p>
+                    <h3>Funcionamento Detalhado:</h3>
+                    <p><span class='subtitulo'>Ativação pela Lua Cheia:</span> <span class='texto'>Esta habilidade só pode ser desencadeada quando a luz da lua está em seu auge, na fase de lua cheia.</span></p>
+                    <p><span class='subtitulo'>Transformação Lupina ou Felina:</span> <span class='texto'>Ao ativá-la, o usuário adquire uma aparência semelhante à de um animal lupino (lobo) ou felino (felino), com pelagem branca e olhos brilhantes azuis.</span></p>
+                    <p><span class='subtitulo'>Aumento de Habilidades:</span> <span class='texto'>A forma concede ao usuário um significativo aumento de força, velocidade e sentidos, multiplicando essas capacidades em até ?? vezes.</span></p>
+                    <p><span class='subtitulo'>Custo e Exaustão:</span> <span class='texto'>No entanto, essa transformação vem com um alto custo de energia e pode levar o usuário à exaustão rapidamente, tornando seu uso limitado em combate.</span></p>
+                    <p><span class='subtitulo'>Restrição à Luz da Lua Cheia:</span> <span class='texto'>A habilidade só pode ser ativada sob a luz da lua cheia, tornando-a uma habilidade condicional.</span></p>
+                    <p><span class='texto'>A "Reunion Memories" é uma bênção misteriosa que permite ao usuário assumir uma forma lupina ou felina poderosa sob a luz da lua cheia. Essa forma amplia suas habilidades físicas, tornando-o muito mais forte, rápido e sensível, mas a transformação tem um alto custo de energia e só pode ser usada nas noites de lua cheia. Esta é uma habilidade única que adiciona uma camada de complexidade e poder ao usuário quando as condições certas são atendidas.</span></p>
+                </div>
+            </div>
+
+            <div class="janela-bencao" id="janelaBencao4">
+                <div class="janela-botoes">
+                    <button class="botao-expandir" onclick="expandirJanela('janelaBencao4')">❐</button>
+                    <button class="botao-fechar" onclick="fecharJanela('janelaBencao4')">✖︎</button>
+                </div>
+                <div class="conteudo-janela">
+                    <h3>#Nova Bênção Única Desbloqueada: Luminar Duplo</h3>
+                    <p><span class='subtitulo'>Descrição:</span> <span class="texto">Toda energia divina recebida por orações é duplicada, fortalecendo a conexão entre você e seus seguidores.</span></p>
+                    <p><span class='subtitulo'>Tipo:</span> <span class='texto'>??</span></p>
+                    <p><span class='subtitulo'>Nível:</span> <span class='texto'>??</span></p>
+                    <p><span class='subtitulo'>Classe:</span> <span class='texto'>?? Blessing</span></p>
+                    <h3>Funcionamento Detalhado:</h3>
+                    <p><span class='subtitulo'>Aura Potenciadora:</span> <span class='texto'>Uma aura divina envolve seu Apóstolo, amplificando suas habilidades e bençãos. Essa aura se estende a todos que estão ao seu redor, multiplicando a eficácia das bençãos concedidas.</span></p>
+                    <p><span class='subtitulo'>Duplicação de Energia Divina:</span> <span class='texto'>Todas as energias divinas recebidas por meio de orações são duplicadas. Isso significa que cada prece, ritual ou demonstração de fé resulta em uma quantidade dobrada de energia divina para você.</span></p>
+                    <p><span class='subtitulo'>Fortalecimento da Conexão:</span> <span class='texto'>A duplicação da energia divina fortalece a conexão entre você e seus seguidores, intensificando a eficácia de suas bênçãos e favores divinos.</span></p>
+                    <p><span class='subtitulo'>Amplificação do Impacto Divino:</span> <span class='texto'>A aura potenciadora não apenas reforça as habilidades do Apóstolo, mas também amplifica o impacto de suas intervenções divinas, tornando cada manifestação divina mais poderosa e influente.</span></p>
+                    <p><span class='subtitulo'>Alcance da Aura:</span> <span class='texto'>A aura potenciadora tem um alcance que se estende a todos ao redor do Apóstolo, criando um campo de fortalecimento divino que beneficia todos aqueles que estão em proximidade.</span></p>
+                    <p><span class='texto'>A "Luminar Duplo" é uma bênção única que não apenas duplica a energia divina recebida, mas também fortalece a conexão com os seguidores por meio de uma aura potenciadora. Isso não apenas amplifica as habilidades dos seguidores, mas também aumenta o impacto das intervenções divinas, criando um ambiente mais potente e sagrado ao seu redor.</span></p>
+                </div>
+            </div>
+
+            <div class="linha-separadora"></div>
+            
+            <!-- Categoria Mãe -->
+          <section id="mae">
+            <div class="categoria-mae">
+                <!-- Barra EA -->
+                <div class="barra-ea">
+                    <div class="preenchimento-ea" id="preenchimento-ea"></div>
+                    <span class="texto-ea" id="texto-ea">EA: 100%</span>
+                </div>
+                
+                <!-- Títulos EA -->
+                <div class="titulos-ea">
+                    <span class="titulo-ea-esquerda">Título Anterior</span>
+                    <span class="titulo-ea-central">Mãe Agressora</span>
+                    <span class="titulo-ea-direita">Próximo Título</span>
+                </div>
+            </div>
+    
+            <div class="container-ea">
+                <!-- Bloco Filhos -->
+                <div class="bloco-ea">
+                    <h3>Filhos</h3>
+                    <div class="item-ea">
+                        <button type="button" class="nome-filho" onclick="abrirJanelaFilho('Kaito')">Kurae Kaito Von Pendragon</button>
+                    </div>
+                    <div class="item-ea">
+                        <button type="button" class="nome-filho" onclick="abrirJanelaFilho('Twenty')">Twenty Radiânthia Von Karmelin</button>
+                    </div>
+                </div>
+            
+                <!-- Setas no centro -->
+                <div class="setas-ea">
+                    <span>➔</span>
+                    <span>➔</span>
+                </div>
+            
+                <!-- Bloco Tutores -->
+                <div class="bloco-ea">
+                    <h3>Tutores</h3>
+                    <div class="item-ea">
+                        <span class="nome-tutor">Mission</span>
+                    </div>
+                    <div class="item-ea">
+                        <span class="nome-tutor">Code</span>
+                    </div>
+                </div>
+            </div>
+         </section>
+            
+            <!-- Janela Flutuante para Kaito -->
+            <div class="janela-filhos" id="janelaKaito">
+                <div class="janela-botoes">
+                    <button class="botao-expandir" onclick="expandirJanelaFilho('Kaito')">❐</button>
+                    <button class="botao-fechar" onclick="fecharJanelaFilho('Kaito')">✖</button>
+                </div>
+                <div class="conteudo-janela">
+                    <h3>Kaito</h3>
+                    <p><strong>Nome Completo:</strong> Kurae Kaito Von Pendragon</p>
+                    <p><strong>Idade:</strong> ??? anos</p>
+                    <p><strong>Gênero:</strong> Masculino</p>
+                    <p><strong>Raça:</strong> Humano</p>
+                    <p><strong>Pai:</strong> Kurae Isaac Radiânthia Pendragon</p>
+                    <p><strong>Mãe:</strong> Buffy le fay Pendragon Karmelin</p>
+                </div>
+            </div>
+            
+            <!-- Janela Flutuante para Twenty -->
+            <div class="janela-filhos" id="janelaTwenty">
+                <div class="janela-botoes">
+                    <button class="botao-expandir" onclick="expandirJanelaFilho('Twenty')">❐</button>
+                    <button class="botao-fechar" onclick="fecharJanelaFilho('Twenty')">✖</button>
+                </div>
+                <div class="conteudo-janela">
+                    <h3>Twenty</h3>
+                    <p><strong>Nome Completo:</strong> Twenty Radiânthia Von Karmelin</p>
+                    <p><strong>Idade:</strong> ??? anos</p>
+                    <p><strong>Gênero:</strong> Feminino</p>
+                    <p><strong>Raça:</strong> ???</p>
+                    <p><strong>Pai:</strong> Kurae Isaac Radiânthia Pendragon</p>
+                    <p><strong>Mãe:</strong> Buffy le fay Pendragon Karmelin</p>
+                </div>
+            </div>
+            
+            <div class="linha-separadora"></div>
+    
+            <!-- Necessidades Básicas -->
+            <section id="necessidades">
+            <h2 class="titulo2">Necessidades Básicas</h2>
+    
+            <div class="necessidades-basicas-container">
+                <!-- Grupo 01 -->
+                <div class="necessidades-basicas" id="grupo-higiene">
+                    <div class="circulo-nbasico">
+                        <span class="circulo-texto-nbasico">🧽</span>
+                    </div>
+                    <div class="status-nbasico">
+                        <span class="status-titulo-nbasico">Higiene</span>
+                        <div class="bar-nbasico">
+                            <div id="barra-progresso-grupo-higiene" class="fill-nbasico"></div>
+                            <span id="progresso-texto-grupo-higiene" class="progresso-texto-nbasico">75%</span>
+                        </div>
+                        <div class="status-indicador-nbasico">
+                            <span id="estado-grupo-higiene" class="status-texto-nbasico">Necessidade Atual</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="necessidades-basicas" id="grupo-banheiro">
+                    <div class="circulo-nbasico">
+                        <span class="circulo-texto-nbasico">🧻</span>
+                    </div>
+                    <div class="status-nbasico">
+                        <span class="status-titulo-nbasico">Banheiro</span>
+                        <div class="bar-nbasico">
+                            <div id="barra-progresso-grupo-banheiro" class="fill-nbasico"></div>
+                            <span id="progresso-texto-grupo-banheiro" class="progresso-texto-nbasico">50%</span>
+                        </div>
+                        <div class="status-indicador-nbasico">
+                            <span id="estado-grupo-banheiro" class="status-texto-nbasico">Necessidade Atual</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="necessidades-basicas" id="grupo-sono">
+                    <div class="circulo-nbasico">
+                        <span class="circulo-texto-nbasico">💤</span>
+                    </div>
+                    <div class="status-nbasico">
+                        <span class="status-titulo-nbasico">Sono</span>
+                        <div class="bar-nbasico">
+                            <div id="barra-progresso-grupo-sono" class="fill-nbasico"></div>
+                            <span id="progresso-texto-grupo-sono" class="progresso-texto-nbasico">40%</span>
+                        </div>
+                        <div class="status-indicador-nbasico">
+                            <span id="estado-grupo-sono" class="status-texto-nbasico">Necessidade Atual</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Grupo 02 -->
+                <div class="necessidades-basicas" id="grupo-desgaste">
+                    <div class="circulo-nbasico">
+                        <span class="circulo-texto-nbasico">🩹</span>
+                    </div>
+                    <div class="status-nbasico">
+                        <span class="status-titulo-nbasico">Desgaste</span>
+                        <div class="bar-nbasico">
+                            <div id="barra-progresso-grupo-desgaste" class="fill-nbasico"></div>
+                            <span id="progresso-texto-grupo-desgaste" class="progresso-texto-nbasico">60%</span>
+                        </div>
+                        <div class="status-indicador-nbasico">
+                            <span id="estado-grupo-desgaste" class="status-texto-nbasico">Necessidade Atual</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="necessidades-basicas" id="grupo-fome">
+                    <div class="circulo-nbasico">
+                        <span class="circulo-texto-nbasico">🍴</span>
+                    </div>
+                    <div class="status-nbasico">
+                        <span class="status-titulo-nbasico">Fome</span>
+                        <div class="bar-nbasico">
+                            <div id="barra-progresso-grupo-fome" class="fill-nbasico"></div>
+                            <span id="progresso-texto-grupo-fome" class="progresso-texto-nbasico">30%</span>
+                        </div>
+                        <div class="status-indicador-nbasico">
+                            <span id="estado-grupo-fome" class="status-texto-nbasico">Necessidade Atual</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="necessidades-basicas" id="grupo-sede">
+                    <div class="circulo-nbasico">
+                        <span class="circulo-texto-nbasico">🥛</span>
+                    </div>
+                    <div class="status-nbasico">
+                        <span class="status-titulo-nbasico">Sede</span>
+                        <div class="bar-nbasico">
+                            <div id="barra-progresso-grupo-sede" class="fill-nbasico"></div>
+                            <span id="progresso-texto-grupo-sede" class="progresso-texto-nbasico">20%</span>
+                        </div>
+                        <div class="status-indicador-nbasico">
+                            <span id="estado-grupo-sede" class="status-texto-nbasico">Necessidade Atual</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Grupo 03 -->
+                <div class="necessidades-basicas" id="grupo-diversao">
+                    <div class="circulo-nbasico">
+                        <span class="circulo-texto-nbasico">🎲</span>
+                    </div>
+                    <div class="status-nbasico">
+                        <span class="status-titulo-nbasico">Diversão</span>
+                        <div class="bar-nbasico">
+                            <div id="barra-progresso-grupo-diversao" class="fill-nbasico"></div>
+                            <span id="progresso-texto-grupo-diversao" class="progresso-texto-nbasico">90%</span>
+                        </div>
+                        <div class="status-indicador-nbasico">
+                            <span id="estado-grupo-diversao" class="status-texto-nbasico">Necessidade Atual</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="necessidades-basicas" id="grupo-social">
+                    <div class="circulo-nbasico">
+                        <span class="circulo-texto-nbasico">🥂</span>
+                    </div>
+                    <div class="status-nbasico">
+                        <span class="status-titulo-nbasico">Social</span>
+                        <div class="bar-nbasico">
+                            <div id="barra-progresso-grupo-social" class="fill-nbasico"></div>
+                            <span id="progresso-texto-grupo-social" class="progresso-texto-nbasico">50%</span>
+                        </div>
+                        <div class="status-indicador-nbasico">
+                            <span id="estado-grupo-social" class="status-texto-nbasico">Necessidade Atual</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="necessidades-basicas" id="grupo-foco">
+                    <div class="circulo-nbasico">
+                        <span class="circulo-texto-nbasico">🧠</span>
+                    </div>
+                    <div class="status-nbasico">
+                        <span class="status-titulo-nbasico">Foco</span>
+                        <div class="bar-nbasico">
+                            <div id="barra-progresso-grupo-foco" class="fill-nbasico"></div>
+                            <span id="progresso-texto-grupo-foco" class="progresso-texto-nbasico">45%</span>
+                        </div>
+                        <div class="status-indicador-nbasico">
+                            <span id="estado-grupo-foco" class="status-texto-nbasico">Necessidade Atual</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Necessidades Temporárias -->
+            <h2 class="titulo2">Necessidades Temporárias</h2>
+            
+            <div class="necessidades-basicas-container">
+                <!-- Grupo 01 -->
+                <div class="necessidades-basicas" id="grupo-enjoo:">
+                    <div class="circulo-nbasico">
+                        <span class="circulo-texto-nbasico">🤢</span>
+                    </div>
+                    <div class="status-nbasico">
+                        <span class="status-titulo-nbasico">Enjoo</span>
+                        <div class="bar-nbasico">
+                            <div id="barra-progresso-grupo-enjoo" class="fill-nbasico"></div>
+                            <span id="progresso-texto-grupo-enjoo" class="progresso-texto-nbasico">75%</span>
+                        </div>
+                        <div class="status-indicador-nbasico">
+                            <span id="estado-grupo-enjoo" class="status-texto-nbasico">Necessidade Atual</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="necessidades-basicas" id="grupo-fadiga">
+                    <div class="circulo-nbasico">
+                        <span class="circulo-texto-nbasico">☕</span>
+                    </div>
+                    <div class="status-nbasico">
+                        <span class="status-titulo-nbasico">Fadiga</span>
+                        <div class="bar-nbasico">
+                            <div id="barra-progresso-grupo-fadiga" class="fill-nbasico"></div>
+                            <span id="progresso-texto-grupo-fadiga" class="progresso-texto-nbasico">50%</span>
+                        </div>
+                        <div class="status-indicador-nbasico">
+                            <span id="estado-grupo-fadiga" class="status-texto-nbasico">Necessidade Atual</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="necessidades-basicas" id="grupo-estresse">
+                    <div class="circulo-nbasico">
+                        <span class="circulo-texto-nbasico">💥</span>
+                    </div>
+                    <div class="status-nbasico">
+                        <span class="status-titulo-nbasico">Estresse</span>
+                        <div class="bar-nbasico">
+                            <div id="barra-progresso-grupo-estresse" class="fill-nbasico"></div>
+                            <span id="progresso-texto-grupo-estresse" class="progresso-texto-nbasico">40%</span>
+                        </div>
+                        <div class="status-indicador-nbasico">
+                            <span id="estado-grupo-estresse" class="status-texto-nbasico">Necessidade Atual</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Grupo 02 -->
+                <div class="necessidades-basicas" id="grupo-ansiedade">
+                    <div class="circulo-nbasico">
+                        <span class="circulo-texto-nbasico">🤡</span>
+                    </div>
+                    <div class="status-nbasico">
+                        <span class="status-titulo-nbasico">Ansiedade</span>
+                        <div class="bar-nbasico">
+                            <div id="barra-progresso-grupo-ansiedade" class="fill-nbasico"></div>
+                            <span id="progresso-texto-grupo-ansiedade" class="progresso-texto-nbasico">60%</span>
+                        </div>
+                        <div class="status-indicador-nbasico">
+                            <span id="estado-grupo-ansiedade" class="status-texto-nbasico">Necessidade Atual</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="necessidades-basicas" id="grupo-medo">
+                    <div class="circulo-nbasico">
+                        <span class="circulo-texto-nbasico">😨</span>
+                    </div>
+                    <div class="status-nbasico">
+                        <span class="status-titulo-nbasico">Medo</span>
+                        <div class="bar-nbasico">
+                            <div id="barra-progresso-grupo-medo" class="fill-nbasico"></div>
+                            <span id="progresso-texto-grupo-medo" class="progresso-texto-nbasico">30%</span>
+                        </div>
+                        <div class="status-indicador-nbasico">
+                            <span id="estado-grupo-medo" class="status-texto-nbasico">Necessidade Atual</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="necessidades-basicas" id="grupo-felicidade">
+                    <div class="circulo-nbasico">
+                        <span class="circulo-texto-nbasico">🥳</span>
+                    </div>
+                    <div class="status-nbasico">
+                        <span class="status-titulo-nbasico">Felicidade</span>
+                        <div class="bar-nbasico">
+                            <div id="barra-progresso-grupo-felicidade" class="fill-nbasico"></div>
+                            <span id="progresso-texto-grupo-felicidade" class="progresso-texto-nbasico">20%</span>
+                        </div>
+                        <div class="status-indicador-nbasico">
+                            <span id="estado-grupo-felicidade" class="status-texto-nbasico">Necessidade Atual</span>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Grupo 03 -->
+                <div class="necessidades-basicas" id="grupo-tesao">
+                    <div class="circulo-nbasico">
+                        <span class="circulo-texto-nbasico">💋</span>
+                    </div>
+                    <div class="status-nbasico">
+                        <span class="status-titulo-nbasico">Tesão</span>
+                        <div class="bar-nbasico">
+                            <div id="barra-progresso-grupo-tesao" class="fill-nbasico"></div>
+                            <span id="progresso-texto-grupo-tesao" class="progresso-texto-nbasico">90%</span>
+                        </div>
+                        <div class="status-indicador-nbasico">
+                            <span id="estado-grupo-tesao" class="status-texto-nbasico">Necessidade Atual</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="necessidades-basicas" id="grupo-tedio">
+                    <div class="circulo-nbasico">
+                        <span class="circulo-texto-nbasico">😑</span>
+                    </div>
+                    <div class="status-nbasico">
+                        <span class="status-titulo-nbasico">Tédio</span>
+                        <div class="bar-nbasico">
+                            <div id="barra-progresso-grupo-tedio" class="fill-nbasico"></div>
+                            <span id="progresso-texto-grupo-tedio" class="progresso-texto-nbasico">50%</span>
+                        </div>
+                        <div class="status-indicador-nbasico">
+                            <span id="estado-grupo-tedio" class="status-texto-nbasico">Necessidade Atual</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="necessidades-basicas" id="grupo-raiva">
+                    <div class="circulo-nbasico">
+                        <span class="circulo-texto-nbasico">🤬</span>
+                    </div>
+                    <div class="status-nbasico">
+                        <span class="status-titulo-nbasico">Raiva</span>
+                        <div class="bar-nbasico">
+                        <div id="barra-progresso-grupo-raiva" class="fill-nbasico"></div>
+            <span id="progresso-texto-grupo-raiva" class="progresso-texto-nbasico">45%</span>
+        </div>
+        <div class="status-indicador-nbasico">
+            <span id="estado-grupo-raiva" class="status-texto-nbasico">Necessidade Atual</span>
+        </div>
+    </div>
+</div>
+</section>
+
+<div class="container-aether">
+    <!-- Bloco Energia Aether -->
+    <div class="bloco-aether">
+        <h3>Energias:</h3>
+        <div class="info-energia">
+            <span class="texto-esquerda">Ki: 90%</span>
+            <span class="texto-direita">Mana: 11%</span>
+        </div>
+    </div>
+
+    <!-- Bloco Barra Aether -->
+    <div class="bloco-barra">
+        <div class="barra-aether">
+            <div class="preenchimento-aether" id="preenchimentoAether"></div>
+            <span class="texto-barra-aether" id="textoAether">Aether: 101%</span>
+        </div>
+        <p class="tipo-aether">Tipo: Neutro</p>
+    </div>
+
+    <!-- Bloco Corpo Aether -->
+    <div class="bloco-aether">
+        <h3>Corpo:</h3>
+        <div class="info-energia">
+            <div class="bpm-info">
+                <img src="https://github.com/Cueinhah/Painel-de-Buffy/blob/main/assets/Recursos/heartbeat.gif?raw=true" alt="Batimentos Cardíacos" class="gif-bpm">
+                <span>349bpm</span>
+            </div>
+            <div class="temperatura-info">
+                <span class="temperatura-icone">🌡</span>
+                <span>47,4°C</span>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div> <!-- Fim do background2 -->
+</div>  <!-- Fim do background1 -->
+<script src="script.js"></script>
+</body>
+</html>
+        

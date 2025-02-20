@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bençãos e Maldições</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <section id='bencaos'>
+        <h2 class="titulo2">Bençãos e Maldições</h2>
+
+        <div class="carrossel-selos">
+            <button class="seta" onclick="moverCarrossel(-1)">❮</button>
+            <div class="carrossel-diamantes">
+                <div class="diamante-item" onclick="abrirJanela('janelaBencao1')">
+                    <div class="diamante">
+                        <img src="https://github.com/PrinnyXII/st/blob/main/rep/Energias/ER6.jpg?raw=true" alt="Diamante">
+                    </div>
+                    <div class="texto-diamante">Redo revenger</div>
+                </div>
+                <div class="diamante-item" onclick="abrirJanela('janelaBencao2')">
+                    <div class="diamante">
+                        <img src="https://github.com/PrinnyXII/st/blob/main/rep/Energias/ER5.jpg?raw=true" alt="Diamante">
+                    </div>
+                    <div class="texto-diamante">Tentação Vampírica…</div>
+                </div>
+                <div class="diamante-item" onclick="abrirJanela('janelaBencao3')">
+                    <div class="diamante">
+                        <img src="https://github.com/PrinnyXII/st/blob/main/rep/Energias/EC3.jpg?raw=true" alt="Diamante">
+                    </div>
+                    <div class="texto-diamante">Reunion Memories</div>
+                </div>
+                <div class="diamante-item" onclick="abrirJanela('janelaBencao4')">
+                    <div class="diamante">
+                        <img src="https://github.com/PrinnyXII/st/blob/main/rep/Energias/EL5.jpg?raw=true">
+                    </div>
+                    <div class="texto-diamante">Luminar Duplo</div>
+                </div>
+                <div class="diamante-item" onclick="abrirJanela('janelaBencao5')">
+                    <div class="diamante">
+                        <img src="https://github.com/PrinnyXII/st/blob/main/rep/Energias/EC6.jpg?raw=true" alt="Diamante">
+                    </div>
+                    <div class="texto-diamante">Rainbow Bird</div>
+                </div>
+            </div>
+            <button class="seta" onclick="moverCarrossel(1)">❯</button>
+        </div>
+
+    </section>
+
+    <!-- Janela Flutuante para Bênção/Maldição -->
+    <div class="janela-bencao" id="janelaBencao2">
+        <div class="janela-botoes">
+            <button class="botao-expandir" onclick="expandirJanela('janelaBencao2')">❐</button>
+            <button class="botao-fechar" onclick="fecharJanela('janelaBencao2')">✖︎</button>
+        </div>
+        <div class="conteudo-janela">
+            <h3>#Nova Bênção Única Desbloqueada: Tentação Vampírica da Rainha</h3>
+            <p><span class='subtitulo'>Descrição:</span> <span class="texto">Seres com a capacidade de transferir vampirismo sentem uma atração irresistível por você e experimentam prazer em seguir suas ordens. Enquanto estiverem obedecendo a suas instruções, aqueles sob seu comando receberão um constante aumento nos seus atributos. Além disso, essa bênção pode esconder efeitos ocultos que proporcionam benefícios adicionais.</span></p>
+            <p><span class='subtitulo'>Tipo:</span> <span class='texto'>Luz/Vampiro/Succubus/Empusa</span></p>
+            <p><span class='subtitulo'>Nível:</span> <span class='texto'>Máximo</span></p>
+            <p><span class='subtitulo'>Classe:</span> <span class='texto'>Bênção de Classe SS</span></p>
+            <h3>Funcionamento Detalhado:</h3>
+            <p><span class='subtitulo'>Atração Vampírica:</span> <span class='texto'>A bênção cria uma irresistível atração em seres com a capacidade de transferir o vampirismo. Eles se sentem atraídos por você e desejam segui-lo.</span></p>
+            <p><span class='subtitulo'>Prazer na Obediência:</span> <span class='texto'>Aqueles que obedecem às suas ordens experimentam um prazer profundo e gratificante em fazê-lo.</span></p>
+            <p><span class='subtitulo'>Aumento de Atributos:</span> <span class='texto'>Enquanto estiverem sob seu comando, os seguidores recebem um aumento constante em seus atributos, tornando-os mais fortes e eficazes em suas ações.</span></p>
+            <p><span class='subtitulo'>Efeitos Ocultos:</span> <span class='texto'>Além dos benefícios declarados, essa bênção pode conter efeitos ocultos que podem se manifestar em situações específicas, proporcionando vantagens adicionais.</span></p>
+            <p><span class='texto'>A "Tentação Vampírica da Rainha" é uma bênção de classe SS extremamente poderosa que não apenas atrai aqueles com a capacidade de transferir o vampirismo, mas também os fortalece e os faz sentir prazer em segui-la. Além disso, a presença de efeitos ocultos torna essa bênção ainda mais misteriosa e vantajosa. Este é um presente divino excepcional que aumenta sua influência sobre os seguidores e aliados que a obedecem.</span></p>
+        </div>
+    </div>
+
+    <div class="janela-bencao" id="janelaBencao3">
+        <div class="janela-botoes">
+            <button class="botao-expandir" onclick="expandirJanela('janelaBencao3')">❐</button>
+            <button class="botao-fechar" onclick="fecharJanela('janelaBencao3')">✖︎</button>
+        </div>
+        <div class="conteudo-janela">
+            <h3>#Nova Bênção Única Desbloqueada: Reunion Memories</h3>
+            <p><span class='subtitulo'>Descrição:</span> <span class="texto">Desencadeada pela luz da lua cheia, os usuários desta habilidade assumem uma aparência semelhante à de um animal lupino ou felino, com pelagem branca e um intenso brilho azul nos olhos. A forma ?? aumenta significativamente a força, velocidade e sentidos do usuário em até ?? vezes. No entanto, a transformação tem um custo alto e pode levar o usuário à exaustão rapidamente. Além disso, a habilidade só pode ser ativada na presença da luz da lua cheia.</span></p>
+            <p><span class='subtitulo'>Tipo:</span> <span class='texto'>??</span></p>
+            <p><span class='subtitulo'>Nível:</span> <span class='texto'>??</span></p>
+            <p><span class='subtitulo'>Classe:</span> <span class='texto'>?? Blessing</span></p>
+            <h3>Funcionamento Detalhado:</h3>
+            <p><span class='subtitulo'>Ativação pela Lua Cheia:</span> <span class='texto'>Esta habilidade só pode ser desencadeada quando a luz da lua está em seu auge, na fase de lua cheia.</span></p>
+            <p><span class='subtitulo'>Transformação Lupina ou Felina:</span> <span class='texto'>Ao ativá-la, o usuário adquire uma aparência semelhante à de um animal lupino (lobo) ou felino (felino), com pelagem branca e olhos brilhantes azuis.</span></p>
+            <p><span class='subtitulo'>Aumento de Habilidades:</span> <span class='texto'>A forma concede ao usuário um significativo aumento de força, velocidade e sentidos, multiplicando essas capacidades em até ?? vezes.</span></p>
+            <p><span class='subtitulo'>Custo e Exaustão:</span> <span class='texto'>No entanto, essa transformação vem com um alto custo de energia e pode levar o usuário à exaustão rapidamente, tornando seu uso limitado em combate.</span></p>
+            <p><span class='subtitulo'>Restrição à Luz da Lua Cheia:</span> <span class='texto'>A habilidade só pode ser ativada sob a luz da lua cheia, tornando-a uma habilidade condicional.</span></p>
+            <p><span class='texto'>A "Reunion Memories" é uma bênção misteriosa que permite ao usuário assumir uma forma lupina ou felina poderosa sob a luz da lua cheia. Essa forma amplia suas habilidades físicas, tornando-o muito mais forte, rápido e sensível, mas a transformação tem um alto custo de energia e só pode ser usada nas noites de lua cheia. Esta é uma habilidade única que adiciona uma camada de complexidade e poder ao usuário quando as condições certas são atendidas.</span></p>
+        </div>
+    </div>
+
+    <div class="janela-bencao" id="janelaBencao4">
+        <div class="janela-botoes">
+            <button class="botao-expandir" onclick="expandirJanela('janelaBencao4')">❐</button>
+            <button class="botao-fechar" onclick="fecharJanela('janelaBencao4')">✖︎</button>
+        </div>
+        <div class="conteudo-janela">
+            <h3>#Nova Bênção Única Desbloqueada: Luminar Duplo</h3>
+            <p><span class='subtitulo'>Descrição:</span> <span class="texto">Toda energia divina recebida por orações é duplicada, fortalecendo a conexão entre você e seus seguidores.</span></p>
+            <p><span class='subtitulo'>Tipo:</span> <span class='texto'>??</span></p>
+            <p><span class='subtitulo'>Nível:</span> <span class='texto'>??</span></p>
+            <p><span class='subtitulo'>Classe:</span> <span class='texto'>?? Blessing</span></p>
+            <h3>Funcionamento Detalhado:</h3>
+            <p><span class='subtitulo'>Aura Potenciadora:</span> <span class='texto'>Uma aura divina envolve seu Apóstolo, amplificando suas habilidades e bençãos. Essa aura se estende a todos que estão ao seu redor, multiplicando a eficácia das bençãos concedidas.</span></p>
+            <p><span class='subtitulo'>Duplicação de Energia Divina:</span> <span class='texto'>Todas as energias divinas recebidas por meio de orações são duplicadas. Isso significa que cada prece, ritual ou demonstração de fé resulta em uma quantidade dobrada de energia divina para você.</span></p>
+            <p><span class='subtitulo'>Fortalecimento da Conexão:</span> <span class='texto'>A duplicação da energia divina fortalece a conexão entre você e seus seguidores, intensificando a eficácia de suas bênçãos e favores divinos.</span></p>
+            <p><span class='subtitulo'>Amplificação do Impacto Divino:</span> <span class='texto'>A aura potenciadora não apenas reforça as habilidades do Apóstolo, mas também amplifica o impacto de suas intervenções divinas, tornando cada manifestação divina mais poderosa e influente.</span></p>
+            <p><span class='subtitulo'>Alcance da Aura:</span> <span class='texto'>A aura potenciadora tem um alcance que se estende a todos ao redor do Apóstolo, criando um campo de fortalecimento divino que beneficia todos aqueles que estão em proximidade.</span></p>
+            <p><span class='texto'>A "Luminar Duplo" é uma bênção única que não apenas duplica a energia divina recebida, mas também fortalece a conexão com os seguidores por meio de uma aura potenciadora. Isso não apenas amplifica as habilidades dos seguidores, mas também aumenta o impacto das intervenções divinas, criando um ambiente mais potente e sagrado ao seu redor.</span></p>
+        </div>
+    </div>
+</body>
+</html>

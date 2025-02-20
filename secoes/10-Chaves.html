@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaves</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+   <section id="chaves">
+            <div class="container-chave">
+                <!-- Bloco Esquerdo -->
+                <div class="bloco-esquerdo">
+                    <div class="circulo-base">
+
+                        <!-- Círculos Pequenos -->
+                       <div class="circulo-pequeno" id="circulo1" onclick="navegar(0)">
+                            <img src="https://github.com/Cueinhah/Painel-de-Buffy/blob/main/assets/Recursos/Key%20of%20Souls.png?raw=true" alt="Key of Souls">
+                            <div class="janela-chave"
+                                >Key of Souls <span class="quantidade">(1x)</span>
+                            </div>
+                        </div>
+                        <div class="circulo-pequeno" id="circulo2" onclick="navegar(1)">
+                            <img src="https://github.com/Cueinhah/Painel-de-Buffy/blob/main/assets/Recursos/Key%20of%20Dreams.png?raw=true" alt="Key of Dreams">
+                            <div class="janela-chave">
+                                Key of Dreams <span class="quantidade">(1x)</span>
+                            </div>
+                        </div>
+                        <div class="circulo-pequeno" id="circulo3" onclick="navegar(2)">
+                            <img src="https://github.com/Cueinhah/Painel-de-Buffy/blob/main/assets/Recursos/Key%20of%20Infinite%20Moon%20Mansion.png?raw=true" alt="Key of Infinite Moon Mansion">
+                            <div class="janela-chave">
+                                Key of Infinite Moon Mansion <span class="quantidade">(1x)</span>
+                            </div>
+                        </div>
+                        <div class="circulo-pequeno" id="circulo4" onclick="navegar(3)">
+                            <img src="https://github.com/Cueinhah/Painel-de-Buffy/blob/main/assets/Recursos/Key%20of%20Desires.png?raw=true" alt="Key of Desires">
+                            <div class="janela-chave"
+                                >Key of Desires <span class="quantidade">(1x)</span>
+                            </div>
+                        </div>
+                        <div class="circulo-pequeno" id="circulo5" onclick="navegar(4)">
+                            <img src="https://github.com/Cueinhah/Painel-de-Buffy/blob/main/assets/Recursos/Key%20of%20Soul%20World.png?raw=true" alt="Key of Soul World">
+                            <div class="janela-chave">
+                                Key of Soul World <span class="quantidade">(1x)</span>
+                            </div>
+                        </div>
+                        <div class="circulo-pequeno" id="circulo6" onclick="navegar(5)">
+                            <img src="https://github.com/Cueinhah/Painel-de-Buffy/blob/main/assets/Recursos/Key%20of%20Pendragon.png?raw=true" alt="Key of Pendragon">
+                            <div class="janela-chave">
+                                Key of Pendragon <span class="quantidade">(1x)</span>
+                            </div>
+                        </div>
+                        <div class="circulo-pequeno" id="circulo7" onclick="navegar(6)">
+                            <img src="https://github.com/Cueinhah/Painel-de-Buffy/blob/main/assets/Recursos/Key%20Pinnacle%20of%20Flames.png?raw=true" alt="Key Pinnacle of Flames">
+                            <div class="janela-chave">
+                                Key Pinnacle of Flames <span class="quantidade">(1x)</span>
+                            </div>
+                        </div>
+                        <div class="circulo-pequeno" id="circulo8" onclick="navegar(7)">
+                            <img src="https://github.com/Cueinhah/Painel-de-Buffy/blob/main/assets/Recursos/Key%20of%20Isaac's%20Heart.png?raw=true" alt="Key of Isaac's Heart">
+                            <div class="janela-chave">
+                                Key of Isaac's Heart <span class="quantidade">(2/2)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloco Direito -->
+                <div class="bloco-direito">
+                    <!-- Retângulo Item -->
+                    <div class="retangulo item" id="retangulo-item">
+                        <div class="item-imagem">
+                            <img src="https://imgur.com/zHQo8sh.png" alt="Item-Imagem">
+                        </div>
+                        <div class="topo-retangulo">
+                            <h4 class="titulo-item" id="titulo-item">Nome da Chave</h4>
+                            <span class="descricao-secao">CHAVES</span>
+                        </div>
+                        <p class="descricao-detalhada">Descrição da chave aqui.</p>
+                        <p class="clicavel" onclick="ativarChave()">Clique para Ativar</p>
+                    </div>
+
+                    <!-- Retângulo Efeitos -->
+                    <div class="retangulo efeitos" id="retangulo-efeitos">
+                        <div class="topo-retangulo">
+                            <img src="https://imgur.com/zHQo8sh.png" alt="Ícone do Efeito">
+                            <h4 class="titulo-efeito">Efeito da Chave</h4>
+                            <span class="descricao-secao">EFEITOS</span>
+                        </div>
+                        <p class="detalhes-detalhados">Detalhes do efeito da chave.</p>
+                    </div>
+
+                    <!-- Navegação -->
+                    <div class="navegacao">
+                        <button onclick="navegar(-1)">◄</button>
+                        <button onclick="navegar(1)">►</button>
+                    </div>
+                </div>
+            </div>
+          </section>
+</body>
+</html>

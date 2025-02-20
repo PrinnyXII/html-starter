@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atributos</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <section id="atributos">
+    <h2 class="titulo2">Atributos</h2>
+
+    <div class="atributos-container">
+        <!-- Primeira linha de atributos: HP e MP -->
+        <div class="atributo">
+            <div class="icone-atributo"><img src="https://github.com/PrinnyXII/st/blob/main/rep/HP.gif?raw=true" alt="HP Icone"></div>
+            <div class="conteudo-atributo">
+                <div class="titulo-e-marcacao">
+                    <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
+                    <div class="titulo-barra-atributo">HP:</div>
+                </div>
+                <div class="barra-porcentagem-atributo">
+                    <div class="preenchimento-barra-atributo hp" id="barra-hp"></div>
+                    <span class="texto-barra-atributo" id="texto-hp"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="atributo">
+            <div class="icone-atributo"><img src="https://github.com/PrinnyXII/st/blob/main/rep/MP.gif?raw=true" alt="MP Icone"></div>
+            <div class="conteudo-atributo">
+                <div class="titulo-e-marcacao">
+                    <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
+                    <div class="titulo-barra-atributo">MP:</div>
+                </div>
+                <div class="barra-porcentagem-atributo">
+                    <div class="preenchimento-barra-atributo mp" id="barra-mp"></div>
+                    <span class="texto-barra-atributo" id="texto-mp"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Segunda linha de atributos: AGI e DEF -->
+        <div class="atributo">
+            <div class="icone-atributo"><img src="https://github.com/PrinnyXII/st/blob/main/rep/AGI.gif?raw=true" alt="AGI Icone"></div>
+            <div class="conteudo-atributo">
+                <div class="titulo-e-marcacao">
+                    <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
+                    <div class="titulo-barra-atributo">AGI:</div>
+                </div>
+                <div class="barra-porcentagem-atributo">
+                    <div class="preenchimento-barra-atributo agi" id="barra-agi"></div>
+                    <span class="texto-barra-atributo" id="texto-agi"></span>
+                </div>
+            </div>
+        </div>
+        <div class="atributo">
+            <div class="icone-atributo"><img src="https://github.com/PrinnyXII/st/blob/main/rep/DEF.gif?raw=true" alt="DEF Icone"></div>
+            <div class="conteudo-atributo">
+                <div class="titulo-e-marcacao">
+                    <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
+                    <div class="titulo-barra-atributo">DEF:</div>
+                </div>
+                <div class="barra-porcentagem-atributo">
+                    <div class="preenchimento-barra-atributo def" id="barra-def"></div>
+                    <span class="texto-barra-atributo" id="texto-def"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Terceira linha de atributos: RES e SPD -->
+        <div class="atributo">
+            <div class="icone-atributo"><img src="https://github.com/PrinnyXII/st/blob/main/rep/RES.gif?raw=true" alt="RES Icone"></div>
+            <div class="conteudo-atributo">
+                <div class="titulo-e-marcacao">
+                    <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
+                    <div class="titulo-barra-atributo">RES:</div>
+                </div>
+                <div class="barra-porcentagem-atributo">
+                    <div class="preenchimento-barra-atributo res" id="barra-res"></div>
+                    <span class="texto-barra-atributo" id="texto-res"></span>
+                </div>
+            </div>
+        </div>
+        <div class="atributo">
+            <div class="icone-atributo"><img src="https://github.com/PrinnyXII/st/blob/main/rep/SPD.gif?raw=true" alt="SPD Icone"></div>
+            <div class="conteudo-atributo">
+                <div class="titulo-e-marcacao">
+                    <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
+                    <div class="titulo-barra-atributo">SPD:</div>
+                </div>
+                <div class="barra-porcentagem-atributo">
+                    <div class="preenchimento-barra-atributo spd" id="barra-spd"></div>
+                    <span class="texto-barra-atributo" id="texto-spd"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quarta linha de atributos: INT e ATK -->
+        <div class="atributo">
+            <div class="icone-atributo"><img src="https://github.com/PrinnyXII/st/blob/main/rep/INT.gif?raw=true" alt="Icone de INT"></div>
+            <div class="conteudo-atributo">
+                <div class="titulo-e-marcacao">
+                    <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
+                    <div class="titulo-barra-atributo">INT:</div>
+                </div>
+                <div class="barra-porcentagem-atributo">
+                    <div class="preenchimento-barra-atributo int" id="barra-int"></div>
+                    <span class="texto-barra-atributo" id="texto-int"></span>
+                </div>
+            </div>
+        </div>
+        <div class="atributo">
+            <div class="icone-atributo"><img src="https://github.com/PrinnyXII/st/blob/main/rep/ATK.gif?raw=true" alt="Icone de ATK"></div>
+            <div class="conteudo-atributo">
+                <div class="titulo-e-marcacao">
+                    <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
+                    <div class="titulo-barra-atributo">ATK:</div>
+                </div>
+                <div class="barra-porcentagem-atributo">
+                    <div class="preenchimento-barra-atributo atk" id="barra-atk"></div>
+                    <span class="texto-barra-atributo" id="texto-atk"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quinta linha de atributos: SMP e ?? -->
+        <div class="atributo">
+            <div class="icone-atributo"><img src="https://github.com/PrinnyXII/st/blob/main/rep/SMP.gif?raw=true" alt="Icone de SMP"></div>
+            <div class="conteudo-atributo">
+                <div class="titulo-e-marcacao">
+                    <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
+                    <div class="titulo-barra-atributo">SMP:</div>
+                </div>
+                <div class="barra-porcentagem-atributo">
+                    <div class="preenchimento-barra-atributo smp" id="barra-smp"></div>
+                    <span class="texto-barra-atributo" id="texto-smp"></span>
+                </div>
+            </div>
+        </div>
+        <div class="atributo">
+            <div class="icone-atributo"><img src="https://github.com/PrinnyXII/st/blob/main/rep/ASMP.gif?raw=true" alt="Icone de ??"></div>
+            <div class="conteudo-atributo">
+                <div class="titulo-e-marcacao">
+                    <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
+                    <div class="titulo-barra-atributo">??:</div>
+                </div>
+                <div class="barra-porcentagem-atributo">
+                    <div class="preenchimento-barra-atributo unknown" id="barra-unknown"></div>
+                    <span class="texto-barra-atributo" id="texto-unknown"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+</body>
+</html>

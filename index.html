@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel da Buffy</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Painel da Buffy</title> <!-- Adicionei um título, importante para SEO -->
-    <meta charset="UTF-8">  <!-- Boa prática: sempre especificar o charset -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Boa prática: viewport para responsividade -->
 </head>
 <body>
 
@@ -17,7 +17,6 @@
             <!-- Conteúdo de secoes/1-aura-buffy.html será carregado aqui -->
           </div>
         </section>
-
 
         <!-- 2. Taxa de Assimilação -->
         <section id="taxa-assimilacao">
@@ -44,6 +43,7 @@
         <section id="classes">
             <div id="classes-content">
               <!-- Conteúdo de secoes/5-classes.html será carregado aqui -->
+              <!-- Mantive o conteúdo estático aqui -->
               <p><span class="subtitulo">Classes Secundárias:</span> <span class="texto">Monge </span> <span class="texto-brilhante2">(Nível 97)</span>
               <span class="texto">, Maga Demoníaca </span> <span class="texto-brilhante2">(Nível 88)</span>
               <span class="texto">, Caminhante dos Sonhos </span> <span class="texto-brilhante2">(Nível 379)</span>
@@ -74,142 +74,111 @@
 
         <!-- 7. Títulos -->
         <section id="titulos">
-             <!-- Conteúdo de secoes/7-Titulos.html será carregado aqui -->
+             <div id="titulos-content">
+                <!-- Conteúdo de secoes/7-Titulos.html será carregado aqui -->
+             </div>
         </section>
 
-            <!--Adicionei as janelas aqui pois elas estavam dentro da section titulos-->
-            <!-- Janelas flutuantes dos títulos -->
-            <div class="janela-titulos" id="janelaTitulo11" style="display: none;">
-                <div class="janela-botoes">
-                    <button class="botao-expandir" onclick="expandirJanelaTitulo(11)">❐</button>
-                    <button class="botao-fechar" onclick="fecharJanelaTitulo(11)">✖︎</button>
-                </div>
-                <div class="conteudo-janela">
-                    <h3>Título: Mother of Souls</h3>
-                    <p><span class='subtitulo'>Classe:</span> <span class='texto'>Mítico</span></p>
-                    <p><span class='subtitulo'>Nível:</span> <span class='texto'>1</span></p>
-                    <p><span class='subtitulo'>Modo:</span> <span class='texto'>[on]</span> <span class='texto-brilhante'>[off]</span></p>
-                    <p><span class='subtitulo'>Descrição:</span> <span class='texto'>Este é um título único conquistado por você, um marco em sua jornada em direção à posição de Deusa das Almas. À medida que você avança nos níveis deste título, diversas habilidades e vantagens relacionadas ao uso de almas serão liberadas.</span></p>
-                    <p><span class='subtitulo'>Habilidade Desbloqueada - Aura da Alma:</span> <span class='texto'>No nível 1, você ganha a habilidade de emanar uma aura que fortalece as almas ao seu redor. Isso aumenta a resistência espiritual de seus aliados e enfraquece os espíritos malignos que se opõem a você.</span></p>
-                    <p><span class='subtitulo'>Habilidade Desbloqueada - Comunhão Espiritual:</span> <span class='texto'>No nível 2, você poderá se comunicar diretamente com as almas, entendendo suas histórias e desejos. Isso pode ser útil para coletar informações, obter assistência espiritual e até mesmo persuadir almas a ajudarem em sua causa.</span></p>
-                </div>
-            </div>
 
-            <div class="janela-titulos" id="janelaTitulo6" style="display: none;">
-                <div class="janela-botoes">
-                    <button class="botao-expandir" onclick="expandirJanelaTitulo(6)">❐</button>
-                    <button class="botao-fechar" onclick="fecharJanelaTitulo(6)">✖︎</button>
-                </div>
-                <div class="conteudo-janela">
-                    <h3>Título: Amante do Destino</h3>
-                    <p><span class='subtitulo'>Classe:</span> <span class='texto'>Mítico</span></p>
-                    <p><span class='subtitulo'>Nível:</span> <span class='texto'>1</span></p>
-                    <p><span class='subtitulo'>Modo:</span> <span class='texto-brilhante'>[on]</span> <span class='texto'>[off]</span></p>                          
-                    <p><span class='subtitulo'>Descrição:</span> <span class='texto'>Este é um título que marca sua afinidade única com os caminhos do destino, uma conexão profunda com os fios que tecem a trama da vida. À medida que você avança nos níveis deste título, habilidades e vantagens relacionadas ao controle e compreensão do destino serão desbloqueadas.</span></p>                                             <p><span class='subtitulo'>Habilidade Desbloqueada - Visão do Destino:</span> <span class='texto'>No nível 1, você ganha a habilidade de vislumbrar vislumbres do futuro iminente, permitindo-lhe antecipar eventos e tomar decisões mais informadas.</span></p>
-                    <p><span class='subtitulo'>Habilidade Desbloqueada - Teia do Destino:</span> <span class='texto'>No nível 2, você pode manipular sutilmente os fios do destino, tecendo e alterando pequenos aspectos das vidas das pessoas ao seu redor para alinhar-se com seus objetivos ou propósitos maiores.</span></p>  
-                </div>
+        <!-- Janelas flutuantes dos títulos (agora fora da section titulos) -->
+        <div class="janela-titulos" id="janelaTitulo11" style="display: none;">
+            <div class="janela-botoes">
+                <button class="botao-expandir" onclick="expandirJanelaTitulo(11)">❐</button>
+                <button class="botao-fechar" onclick="fecharJanelaTitulo(11)">✖︎</button>
             </div>
+            <div class="conteudo-janela">
+                <h3>Título: Mother of Souls</h3>
+                <p><span class='subtitulo'>Classe:</span> <span class='texto'>Mítico</span></p>
+                <p><span class='subtitulo'>Nível:</span> <span class='texto'>1</span></p>
+                <p><span class='subtitulo'>Modo:</span> <span class='texto'>[on]</span> <span class='texto-brilhante'>[off]</span></p>
+                <p><span class='subtitulo'>Descrição:</span> <span class='texto'>Este é um título único conquistado por você, um marco em sua jornada em direção à posição de Deusa das Almas. À medida que você avança nos níveis deste título, diversas habilidades e vantagens relacionadas ao uso de almas serão liberadas.</span></p>
+                <p><span class='subtitulo'>Habilidade Desbloqueada - Aura da Alma:</span> <span class='texto'>No nível 1, você ganha a habilidade de emanar uma aura que fortalece as almas ao seu redor. Isso aumenta a resistência espiritual de seus aliados e enfraquece os espíritos malignos que se opõem a você.</span></p>
+                <p><span class='subtitulo'>Habilidade Desbloqueada - Comunhão Espiritual:</span> <span class='texto'>No nível 2, você poderá se comunicar diretamente com as almas, entendendo suas histórias e desejos. Isso pode ser útil para coletar informações, obter assistência espiritual e até mesmo persuadir almas a ajudarem em sua causa.</span></p>
+            </div>
+        </div>
+
+        <div class="janela-titulos" id="janelaTitulo6" style="display: none;">
+            <div class="janela-botoes">
+                <button class="botao-expandir" onclick="expandirJanelaTitulo(6)">❐</button>
+                <button class="botao-fechar" onclick="fecharJanelaTitulo(6)">✖︎</button>
+            </div>
+            <div class="conteudo-janela">
+                <h3>Título: Amante do Destino</h3>
+                <p><span class='subtitulo'>Classe:</span> <span class='texto'>Mítico</span></p>
+                <p><span class='subtitulo'>Nível:</span> <span class='texto'>1</span></p>
+                <p><span class='subtitulo'>Modo:</span> <span class='texto-brilhante'>[on]</span> <span class='texto'>[off]</span></p>
+                <p><span class='subtitulo'>Descrição:</span> <span class='texto'>Este é um título que marca sua afinidade única com os caminhos do destino, uma conexão profunda com os fios que tecem a trama da vida. À medida que você avança nos níveis deste título, habilidades e vantagens relacionadas ao controle e compreensão do destino serão desbloqueadas.</span></p>                                             <p><span class='subtitulo'>Habilidade Desbloqueada - Visão do Destino:</span> <span class='texto'>No nível 1, você ganha a habilidade de vislumbrar vislumbres do futuro iminente, permitindo-lhe antecipar eventos e tomar decisões mais informadas.</span></p>
+                <p><span class='subtitulo'>Habilidade Desbloqueada - Teia do Destino:</span> <span class='texto'>No nível 2, você pode manipular sutilmente os fios do destino, tecendo e alterando pequenos aspectos das vidas das pessoas ao seu redor para alinhar-se com seus objetivos ou propósitos maiores.</span></p>
+            </div>
+        </div>
 
         <div class="linha-separadora"></div>
 
         <!-- 8. Atributos -->
         <section id="atributos">
-           <!-- Conteúdo de secoes/8-Atributos.html será carregado aqui -->
+            <div id="atributos-content">
+                <!-- Conteúdo de secoes/8-Atributos.html será carregado aqui -->
+            </div>
         </section>
 
         <div class="linha-separadora"></div>
 
         <!-- 9. Informações 02 -->
         <section id="info-02">
+            <div id="info-02-content">
            <!-- Conteúdo de secoes/9-Info02.html será carregado aqui -->
+            </div>
         </section>
 
         <div class="linha-separadora"></div>
 
         <!-- 10. Chaves -->
         <section id="chaves">
+            <div id="chaves-content">
           <!-- Conteúdo de secoes/10-Chaves.html será carregado aqui -->
+            </div>
         </section>
 
         <div class="linha-separadora"></div>
 
         <!-- 11. Bênçãos e Maldições -->
         <section id='bencaos'>
+            <div id="bencaos-content">
           <!-- Conteúdo de secoes/11-Bencoes.html será carregado aqui -->
+            </div>
         </section>
 
         <div class="linha-separadora"></div>
 
         <!-- 12. Mãe (Categoria) -->
         <section id="mae">
+            <div id="mae-content">
          <!-- Conteúdo de secoes/12-Mae.html será carregado aqui -->
+            </div>
         </section>
-        
+
 
         <div class="linha-separadora"></div>
 
         <!-- 13. Necessidades -->
         <section id="necessidades">
+            <div id="necessidades-content">
             <!-- Conteúdo de secoes/13-Necessidades.html será carregado aqui -->
+            </div>
         </section>
-        
+
         <div class="linha-separadora"></div>
 
         <!-- 14. Aether -->
        <section id="aether">
+           <div id="aether-content">
             <!-- Conteúdo de secoes/14-Aether.html será carregado aqui -->
+           </div>
        </section>
     </div>
 </div>
 
-<script src="scripts.js"></script> <!-- Referência ao arquivo JS principal -->
-
-<script>
-    //Função universal assincrona para carregar os conteudos
-    async function carregarConteudo(url, idElemento) {
-        try {
-            const response = await fetch(url);
-            if (!response.ok) {
-                throw new Error(`Erro ao carregar ${url}: ${response.status}`);
-            }
-            const html = await response.text();
-            document.getElementById(idElemento).innerHTML = html;
-
-            // Procurar por scripts dentro do HTML carregado
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
-            const scripts = doc.querySelectorAll('script');
-            scripts.forEach(script => {
-                const novoScript = document.createElement('script');
-                novoScript.textContent = script.textContent;
-                document.body.appendChild(novoScript);
-            });
-
-
-        } catch (error) {
-            console.error(error);
-            document.getElementById(idElemento).innerHTML = `<p>Erro ao carregar conteúdo de ${url}.</p>`;
-        }
-    }
-    //Carregamento dos conteudos
-    document.addEventListener('DOMContentLoaded', () => {
-      carregarConteudo('secoes/1-aura-buffy.html', 'aura-buffy-content');
-      carregarConteudo('secoes/2-taxa-de-assimilacao.html', 'taxa-assimilacao-content');
-      carregarConteudo('secoes/3-cabecalho.html', 'cabecalho-content');
-      carregarConteudo('secoes/4-barra-dinheiro.html', 'barra-dinheiro-content');
-      carregarConteudo('secoes/5-classes.html', 'classes-content');
-      carregarConteudo('secoes/6-caracteristicas.html', 'caracteristicas-content');
-      carregarConteudo('secoes/7-Titulos.html', 'titulos');
-      carregarConteudo('secoes/8-Atributos.html', 'atributos');
-      carregarConteudo('secoes/9-Info02.html', 'info-02');
-      carregarConteudo('secoes/10-Chaves.html', 'chaves');
-      carregarConteudo('secoes/11-Bencoes.html', 'bencaos');
-      carregarConteudo('secoes/12-Mae.html', 'mae');
-      carregarConteudo('secoes/13-Necessidades.html', 'necessidades');
-      carregarConteudo('secoes/14-Aether.html', 'aether');
-    });
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>

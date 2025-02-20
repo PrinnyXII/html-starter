@@ -849,7 +849,7 @@ loadSection("secao-classes", "Seções/5-Classes.html");
 
 //Seção que carrega a maior parte do código.
 //Adiciona os event listeners aqui, pois é depois que essa seção carrega que temos acesso aos botões
-loadSection("secao-", "Seções/6-Caracteristicas.html",  function () {
+loadSection("secao-caracteristicas", "Seções/6-Caracteristicas.html",  function () {
     console.log("Seção Características carregada!");
 
      // Adiciona os event listeners *depois* que a seção for carregada.
